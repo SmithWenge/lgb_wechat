@@ -1,4 +1,4 @@
-package com.lgb.wechat.function.share.dictionary;
+package com.lgb.wechat.function.support.dictionary;
 
 import com.lgb.wechat.arc.entity.Entity;
 
@@ -6,7 +6,7 @@ public class Dictionary extends Entity {
     private int id;
     private int groupKey;
     private String groupValue;
-    private int itemKey;
+    private String itemKey;
     private String itemValue;
     private int status;
     private int sort;
@@ -23,7 +23,7 @@ public class Dictionary extends Entity {
         this.groupValue = groupValue;
     }
 
-    public void setItemKey(int itemKey) {
+    public void setItemKey(String itemKey) {
         this.itemKey = itemKey;
     }
 
@@ -51,7 +51,7 @@ public class Dictionary extends Entity {
         return groupValue;
     }
 
-    public int getItemKey() {
+    public String getItemKey() {
         return itemKey;
     }
 

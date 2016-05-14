@@ -11,13 +11,13 @@
 
     <function>
         <name>list</name>
-        <function-class>com.lgb.arc.web.tag.DictionaryTag</function-class>
+        <function-class>com.lgb.wechat.arc.util.tag.DictionaryTag</function-class>
         <function-signature>java.util.List list(java.lang.String)</function-signature>
     </function>
 
     <function>
         <name>show</name>
-        <function-class>com.lgb.arc.web.tag.DictionaryTag</function-class>
-        <function-signature>java.lang.String show(java.lang.String, int)</function-signature>
+        <function-class>com.lgb.wechat.arc.util.tag.DictionaryTag</function-class>
+        <function-signature>java.lang.String show(java.lang.String, java.lang.String)</function-signature>
     </function>
 </taglib>

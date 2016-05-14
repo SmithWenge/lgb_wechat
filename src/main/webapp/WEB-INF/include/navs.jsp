@@ -6,7 +6,7 @@
     <div class="col-md-12">
         <ul class="nav nav-pills">
             <%--<li role="presentation" class="active"><a href="${contextPath}/admin/home/index.action">首页</a></li>--%>
-            <li role="presentation"><a href="${contextPath}/admin/article/route/add.action">文章添加</a></li>
+            <li role="presentation"><a href="${contextPath}/admin/article/list/zxjy.action">文章管理</a></li>
             <%--<li role="presentation"><a href="${contextPath}/admin/department/page.action">系管理</a></li>--%>
             <%--<li role="presentation"><a href="${contextPath}/admin/major/page.action">专业管理</a></li>--%>
             <%--<li role="presentation"><a href="${contextPath}/admin/teacher/routePage.action">教师管理</a></li>--%>

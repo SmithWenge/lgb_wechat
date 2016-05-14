@@ -98,7 +98,7 @@
     </beans:bean>
 
     <!-- Init the Dictionary -->
-    <beans:bean id="dictionaryManager" class="com.lgb.wechat.function.share.dictionary.impl.DefaultDictionaryManager" />
+    <beans:bean id="dictionaryManager" class="com.lgb.wechat.function.support.dictionary.impl.DefaultDictionaryManager" />
 
     <beans:bean class="com.lgb.wechat.arc.util.tag.DictionaryTag" init-method="init" lazy-init="false">
         <beans:property name="manager" ref="dictionaryManager" />

@@ -1,10 +1,10 @@
-package com.lgb.wechat.function.share.dictionary.impl;
+package com.lgb.wechat.function.support.dictionary.impl;
 
 import com.google.common.base.Optional;
 import com.google.common.collect.Maps;
-import com.lgb.wechat.function.share.dictionary.Dictionary;
-import com.lgb.wechat.function.share.dictionary.IDictionaryManager;
-import com.lgb.wechat.function.share.dictionary.IDictionaryRepository;
+import com.lgb.wechat.function.support.dictionary.Dictionary;
+import com.lgb.wechat.function.support.dictionary.IDictionaryManager;
+import com.lgb.wechat.function.support.dictionary.IDictionaryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -89,11 +89,11 @@ public class DefaultDictionaryManager implements IDictionaryManager {
         }
     }
 
-    public Dictionary dictionary(int itemKey, String groupValue) {
+    public Dictionary dictionary(String itemKey, String groupValue) {
         List<Dictionary> dictionaries = CACHE.get(groupValue);
 
         for (Dictionary dictionary : dictionaries) {
-            if (dictionary.getItemKey() == itemKey) {
+            if (dictionary.getItemKey().equals(itemKey)) {
                 return dictionary;
             }
         }

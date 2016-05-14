@@ -1,8 +1,8 @@
 package com.lgb.wechat.arc.util.tag;
 
 
-import com.lgb.wechat.function.share.dictionary.Dictionary;
-import com.lgb.wechat.function.share.dictionary.IDictionaryManager;
+import com.lgb.wechat.function.support.dictionary.Dictionary;
+import com.lgb.wechat.function.support.dictionary.IDictionaryManager;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class DictionaryTag {
     /**
      * The Taglib function's method must be static
      * @param groupValue the groupValue field at table;
-     * @return The List of value in CACHE {@link com.lgb.wechat.function.share.dictionary.impl.DefaultDictionaryManager}
+     * @return The List of value in CACHE {@link com.lgb.wechat.function.support.dictionary.impl.DefaultDictionaryManager}
      */
     public static List<Dictionary> list(String groupValue) {
         List<Dictionary> list = tag.manager.dictionaries(groupValue);
@@ -34,7 +34,7 @@ public class DictionaryTag {
         return list;
     }
 
-    public static String show(String groupValue, int itemKey) {
+    public static String show(String groupValue, String itemKey) {
         Dictionary dictionary = tag.manager.dictionary(itemKey, groupValue);
 
         return dictionary.getItemValue();

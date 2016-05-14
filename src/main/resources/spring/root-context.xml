@@ -5,10 +5,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context
-	http://www.springframework.org/schema/context/spring-context.xsd">
+	http://www.springframework.org/schema/context/spring-context.xsd"
+	   default-lazy-init="false">
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<context:property-placeholder ignore-unresolvable="true" location="classpath:db/db.properties"/>
+	<context:property-placeholder location="classpath:db/*.properties"/>
+
 
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
 		<property name="driverClassName" value="${jdbc.driverClassName}" />
@@ -32,4 +34,10 @@
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="dataSource"/>  
     </bean>
+
+	<bean id="mongodbTemplate" class="com.lgb.wechat.function.support.mongodb.MongoTemplate">
+		<constructor-arg name="mongodbDb" value="${mongodb.db}" />
+		<constructor-arg name="mongodbHost" value="${mongodb.host}" />
+		<constructor-arg name="port" value="${mongodb.port}" />
+	</bean>
 </beans>

@@ -1,7 +1,7 @@
-package com.lgb.wechat.function.share.dictionary.impl;
+package com.lgb.wechat.function.support.dictionary.impl;
 
-import com.lgb.wechat.function.share.dictionary.Dictionary;
-import com.lgb.wechat.function.share.dictionary.IDictionaryRepository;
+import com.lgb.wechat.function.support.dictionary.Dictionary;
+import com.lgb.wechat.function.support.dictionary.IDictionaryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,17 +22,16 @@ public class DictionaryRepository implements IDictionaryRepository {
             LoggerFactory.getLogger(DictionaryRepository.class);
 
     public Dictionary selectById(String id) {
-        String sql = "SELECT id, groupKey, groupKey, itemKey, itemValue, status, sort WHERE id=?";
+        String sql = "SELECT id, groupKey, groupKey, itemKey, itemValue, states, sort WHERE id=?";
         Object[] args = { id };
 
         return jdbcTemplate.queryForObject(sql, args, new DictionaryRowMapper());
     }
 
     public List<Dictionary> selectAll() {
-        String sql = "SELECT id, groupKey, groupValue, itemKey, itemValue, status, sort FROM lgb_dictionary";
+        String sql = "SELECT id, groupKey, groupValue, itemKey, itemValue, states, sort FROM wechat_dictionary";
         Object[] args = {};
 
-        //TODO Don't using query replace with other api or other JdbcTemplate
         return jdbcTemplate.query(sql, args, new DictionaryRowMapper());
     }
 
@@ -42,7 +41,7 @@ public class DictionaryRepository implements IDictionaryRepository {
         private static final String DICTIONARY_FIELD_GROUPVALUE = "groupValue";
         private static final String DICTIONARY_FIELD_ITEMKEY = "itemKey";
         private static final String DICTIONARY_FIELD_ITEMVALUE = "itemValue";
-        private static final String DICTIONARY_FIELD_STATUS = "status";
+        private static final String DICTIONARY_FIELD_STATUS = "states";
         private static final String DICTIONARY_FIELD_SORT = "sort";
 
         @Override
@@ -51,7 +50,7 @@ public class DictionaryRepository implements IDictionaryRepository {
 
             dictionary.setId(rs.getInt(DICTIONARY_FIELD_ID));
             dictionary.setGroupKey(rs.getInt(DICTIONARY_FIELD_GROUPKEY));
-            dictionary.setItemKey(rs.getInt(DICTIONARY_FIELD_ITEMKEY));
+            dictionary.setItemKey(rs.getString(DICTIONARY_FIELD_ITEMKEY));
             dictionary.setGroupValue(rs.getString(DICTIONARY_FIELD_GROUPVALUE));
             dictionary.setItemValue(rs.getString(DICTIONARY_FIELD_ITEMVALUE));
             dictionary.setStatus(rs.getInt(DICTIONARY_FIELD_STATUS));

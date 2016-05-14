@@ -1,8 +1,8 @@
-package com.lgb.wechat.function.share.dictionary.impl;
+package com.lgb.wechat.function.support.dictionary.impl;
 
-import com.lgb.wechat.function.share.dictionary.Dictionary;
-import com.lgb.wechat.function.share.dictionary.IDictionaryRepository;
-import com.lgb.wechat.function.share.dictionary.IDictionaryService;
+import com.lgb.wechat.function.support.dictionary.Dictionary;
+import com.lgb.wechat.function.support.dictionary.IDictionaryRepository;
+import com.lgb.wechat.function.support.dictionary.IDictionaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

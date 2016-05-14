@@ -1,4 +1,4 @@
-package com.lgb.wechat.function.share.dictionary;
+package com.lgb.wechat.function.support.dictionary;
 
 import java.util.List;
 
