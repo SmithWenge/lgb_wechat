@@ -37,3 +37,5 @@ Caused by: java.net.SocketTimeoutException: Read timed out
 	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
 	... 21 common frames omitted
 19:16:50.199 [main] WARN  c.g.s.fastweixin.util.NetWorkCenter [NetWorkCenter.java:293] -----------------请求出现IO异常:org.apache.http.conn.ConnectTimeoutException: Connect to api.weixin.qq.com:443 [api.weixin.qq.com/140.206.160.101, api.weixin.qq.com/140.207.135.108] failed: Read timed out-----------------
+22:31:29.330 [main] WARN  c.g.s.fastweixin.util.NetWorkCenter [NetWorkCenter.java:235] The target '/Users/jileilei/Desktop/1.jpg' not a file,please check and try again!
+22:32:28.309 [main] WARN  c.g.s.fastweixin.util.NetWorkCenter [NetWorkCenter.java:235] The target '/Users/liunaidi/Document/1.png' not a file,please check and try again!
