@@ -1,10 +1,5 @@
 package com.lgb.wechat.function.weixin.servlet;
 
-import com.github.sd4324530.fastweixin.api.MediaAPI;
-import com.github.sd4324530.fastweixin.api.MessageAPI;
-import com.github.sd4324530.fastweixin.api.enums.MediaType;
-import com.github.sd4324530.fastweixin.api.response.GetSendMessageResponse;
-import com.github.sd4324530.fastweixin.api.response.UploadMediaResponse;
 import com.github.sd4324530.fastweixin.message.*;
 import com.github.sd4324530.fastweixin.message.req.MenuEvent;
 import com.github.sd4324530.fastweixin.message.req.TextReqMsg;
@@ -16,9 +11,7 @@ import org.bson.Document;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ServletWeixinSupport extends WeixinSupport {
@@ -45,18 +38,36 @@ public class ServletWeixinSupport extends WeixinSupport {
     protected BaseMsg handleMenuClickEvent(MenuEvent event) {
         String eventKey = event.getEventKey();
 
-        if (eventKey.equals(ConstantsCollection.MENU_CJCX_KEY)) {
-            List<Document> documents = ARTICLE_SERVICE.firstThreeArticles(ConstantsCollection.MENU_ZXJY_KEY);
-            List<Article> articles = new ArrayList<>();
-
-            for (Document document : documents) {
-                Article article = new Article(document.getString("articleTitle"), document.getString("articleTitle"), "http://www.56team.com/photo/index/welcome001.jpg", "http://localhost:8080/wechat/weixin/article/view/" + ConstantsCollection.MENU_ZXJY_KEY + "/" + document.getString("_id"));
-                articles.add(article);
-            }
-            return new NewsMsg(articles);
+        if (eventKey.equals(ConstantsCollection.MENU_ZXJY_KEY)) {
+            return getArticleMsg(ConstantsCollection.MENU_ZXJY_KEY);
+        } else if (eventKey.equals(ConstantsCollection.MENU_JWGG_KEY)) {
+            return getArticleMsg(ConstantsCollection.MENU_JWGG_KEY);
+        } else if (eventKey.equals(ConstantsCollection.MENU_WYJ_KEY)) {
+            return getArticleMsg(ConstantsCollection.MENU_WYJ_KEY);
+        } else if (eventKey.equals(ConstantsCollection.MENU_JQHD_KEY)) {
+            return getArticleMsg(ConstantsCollection.MENU_JQHD_KEY);
+        } else if (eventKey.equals(ConstantsCollection.MENU_LSZK_KEY)) {
+            return getArticleMsg(ConstantsCollection.MENU_LSZK_KEY);
+        } else if (eventKey.equals(ConstantsCollection.MENU_CJCX_KEY)) {
+            return new TextMsg("成绩查询");
+        } else if (eventKey.equals(ConstantsCollection.MENU_CXBZ_KEY)) {
+            return new TextMsg("查询帮助");
+        } else if (eventKey.equals(ConstantsCollection.MENU_RQCX_KEY)) {
+            return new TextMsg("日期查询");
         }
 
-        return new TextMsg("你好");
+        return new TextMsg("请选择正确的菜单");
+    }
+
+    private BaseMsg getArticleMsg(String msgType) {
+        List<Document> documents = ARTICLE_SERVICE.firstThreeArticles(msgType);
+        List<Article> articles = new ArrayList<>();
+
+        for (Document document : documents) {
+            Article article = new Article(document.getString("articleTitle"), document.getString("articleTitle"), "http://www.56team.com/photo/index/welcome001.jpg", "http://localhost:8080/wechat/weixin/article/view/" + ConstantsCollection.MENU_ZXJY_KEY + "/" + document.getString("_id"));
+            articles.add(article);
+        }
+        return new NewsMsg(articles);
     }
 
     private void sendCJCXMessage() {

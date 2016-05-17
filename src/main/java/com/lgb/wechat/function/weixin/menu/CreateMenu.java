@@ -45,16 +45,89 @@ public class CreateMenu {
         cjcx.setKey(ConstantsCollection.MENU_CJCX_KEY);
         cjcx.setName("成绩查询");
         cjcx.setType(MenuType.CLICK);
+//        cjcx.setUrl("http://www.56team.com");
+
+        MenuButton zxjy = new MenuButton();
+        zxjy.setKey(ConstantsCollection.MENU_ZXJY_KEY);
+        zxjy.setName("在线教育");
+        zxjy.setType(MenuType.CLICK);
 
         List<MenuButton> xnfwSub = new ArrayList<MenuButton>();
         xnfwSub.add(jrkc);
         xnfwSub.add(jwgg);
         xnfwSub.add(cjcx);
+        xnfwSub.add(zxjy);
 
         xnfw.setSubButton(xnfwSub);
 
+        MenuButton shzs = new MenuButton();
+        shzs.setType(MenuType.CLICK);
+        shzs.setName("生活助手");
+        shzs.setKey(ConstantsCollection.MENU_SHZS_KEY);
+
+        MenuButton wyj = new MenuButton();
+        wyj.setKey(ConstantsCollection.MENU_WYJ_KEY);
+        wyj.setType(MenuType.CLICK);
+        wyj.setName("外语角");
+
+        MenuButton cxbz = new MenuButton();
+        cxbz.setType(MenuType.CLICK);
+        cxbz.setName("查询帮助");
+        cxbz.setKey(ConstantsCollection.MENU_CXBZ_KEY);
+//        cxbz.setUrl("http://www.56team.com");
+
+        MenuButton rqcx = new MenuButton();
+        rqcx.setKey(ConstantsCollection.MENU_RQCX_KEY);
+        rqcx.setName("日期查询");
+        rqcx.setType(MenuType.CLICK);
+//        rqcx.setUrl("http://www.56team.com");
+
+        List<MenuButton> shzsSub = new ArrayList<MenuButton>();
+        shzsSub.add(wyj);
+        shzsSub.add(cxbz);
+        shzsSub.add(rqcx);
+
+        shzs.setSubButton(shzsSub);
+
+        MenuButton dcxy = new MenuButton();
+        dcxy.setKey(ConstantsCollection.MENU_DCXY_KEY);
+        dcxy.setType(MenuType.CLICK);
+        dcxy.setName("多彩校园");
+
+        MenuButton jqhd = new MenuButton();
+        jqhd.setKey(ConstantsCollection.MENU_JQHD_KEY);
+        jqhd.setType(MenuType.CLICK);
+        jqhd.setName("近期活动");
+
+        MenuButton lszk = new MenuButton();
+        lszk.setKey(ConstantsCollection.MENU_LSZK_KEY);
+        lszk.setType(MenuType.CLICK);
+        lszk.setName("历史周刊");
+
+        MenuButton xxjj = new MenuButton();
+        xxjj.setKey(ConstantsCollection.MENU_XXJJ_KEY);
+        xxjj.setType(MenuType.VIEW);
+        xxjj.setName("学校简介");
+        xxjj.setUrl("http://www.56team.com");
+
+        MenuButton dxwz = new MenuButton();
+        dxwz.setKey(ConstantsCollection.MENU_DXWZ_KEY);
+        dxwz.setType(MenuType.VIEW);
+        dxwz.setName("大学网站");
+        dxwz.setUrl("http://www.56team.com");
+
+        List<MenuButton> dcxySub = new ArrayList<MenuButton>();
+        dcxySub.add(jqhd);
+        dcxySub.add(lszk);
+        dcxySub.add(xxjj);
+        dcxySub.add(dxwz);
+
+        dcxy.setSubButton(dcxySub);
+
         List<MenuButton> mainList = new ArrayList<MenuButton>();
         mainList.add(xnfw);
+        mainList.add(shzs);
+        mainList.add(dcxy);
 
         menu.setButton(mainList);
         System.out.println(menu.toJsonString());
