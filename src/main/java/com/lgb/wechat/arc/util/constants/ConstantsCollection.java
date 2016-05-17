@@ -18,4 +18,7 @@ public class ConstantsCollection {
     public final static String APPSECRET = "d4624c36b6795d1d99dcf0547af5443d";
 
     public final static ApiConfig APPCONFIG = new ApiConfig(APPID, APPSECRET);
+
+    // 默认显示文章数
+    public final static int DEFAULT_WEIXIN_RETURN_ARTICLE_NUM = 3;
 }

@@ -72,6 +72,29 @@ public class MongoTemplate {
         return documents;
     }
 
+    public List<Document> findSort(String collectionName, Document condition, Document sortDocument) {
+        final List<Document> documents = new ArrayList<>();
+
+        client = new MongoClient(mongodbHost, Integer.valueOf(port));
+        db = client.getDatabase(mongodbDb);
+
+        FindIterable<Document> iterable = db.getCollection(collectionName)
+                .find(condition)
+                .sort(sortDocument)
+                .limit(ConstantsCollection.DEFAULT_WEIXIN_RETURN_ARTICLE_NUM);
+
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(Document document) {
+                documents.add(document);
+            }
+        });
+
+        client.close();
+        client = null;
+        return documents;
+    }
+
     public long updateOne(String collectionName, Document condition, Document document) {
         client = new MongoClient(mongodbHost, Integer.valueOf(port));
         db = client.getDatabase(mongodbDb);
