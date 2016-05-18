@@ -5,7 +5,7 @@
 <%@ include file="/WEB-INF/include/navs.jsp"%>
 
 <script>window.PROJECT_CONTEXT="${contextPath}"</script>
-<form class="form" action="${contextPath}/admin/article/add.action" method="post">
+<form class="form" action="${contextPath}/admin/article/add.action" method="post" enctype="multipart/form-data">
     <div class="panel panel-default" style="margin-left: 1%; margin-right: 1%; margin-top: 10px;">
         <div class="panel-heading">
 
@@ -21,17 +21,17 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="inputAuthor" class="col-sm-3 control-label" style="margin-top: 5px;">文章标题</label>
+                        <label for="inputArticleTitle" class="col-sm-3 control-label" style="margin-top: 5px;">文章标题</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputAuthor" placeholder="文章标题" name="articleTitle">
+                            <input type="text" class="form-control" id="inputArticleTitle" placeholder="文章标题" name="articleTitle">
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="inputPassword3" class="col-sm-2 control-label" style="margin-top: 5px;">作者</label>
+                        <label for="inputArticleAuthor" class="col-sm-2 control-label" style="margin-top: 5px;">作者</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="作者姓名" name="articleAuthor">
+                            <input type="text" class="form-control" id="inputArticleAuthor" placeholder="作者姓名" name="articleAuthor">
                         </div>
                     </div>
                 </div>
@@ -39,9 +39,9 @@
             <div class="row" style="margin-top: 5px;">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="inputAuthor" class="col-sm-3 control-label" style="margin-top: 5px;">文章类别</label>
+                        <label for="selectArticleType" class="col-sm-3 control-label" style="margin-top: 5px;">文章类别</label>
                         <div class="col-sm-9">
-                            <select class="form-control" name="articleType">
+                            <select class="form-control" name="articleType" id="selectArticleType">
                                 <option value="0">--请选择--</option>
                                 <option value="jwgg">教务公告</option>
                                 <option value="zxjy">在线教育</option>
@@ -52,6 +52,15 @@
                                 <option value="xxjj">学校简介</option>
                                 <option value="bz">帮助</option>
                             </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="inputArticlePicture" class="col-sm-2 control-label" style="margin-top: 5px;">图片</label>
+                        <div class="col-sm-10">
+                            <input type="file" id="inputArticlePicture" name="articlePicture">
+                            <p class="help-block">请添加jpg或者png格式的图片</p>
                         </div>
                     </div>
                 </div>

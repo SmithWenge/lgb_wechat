@@ -30,9 +30,9 @@
 		<property name="poolPreparedStatements" value="${jdbc.poolPreparedStatements}" />
 		<property name="maxPoolPreparedStatementPerConnectionSize" value="${jdbc.maxPoolPreparedStatementPerConnectionSize}" />
 	</bean>
-	
+
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <property name="dataSource" ref="dataSource"/>  
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
 	<bean id="mongodbTemplate" class="com.lgb.wechat.function.support.mongodb.MongoTemplate">

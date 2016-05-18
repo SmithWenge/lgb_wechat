@@ -1,17 +1,24 @@
 package com.lgb.wechat.function.admin.article.controller;
 
+import com.google.common.base.Optional;
 import com.lgb.wechat.arc.util.constants.ConstantsCollection;
 import com.lgb.wechat.function.admin.article.Article;
 import com.lgb.wechat.function.admin.article.service.ArticleService;
 import org.bson.Document;
+import org.bson.types.ObjectId;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -19,7 +26,6 @@ import java.util.List;
 public class ArticleController {
     private static final String REQUEST_SUFFIX_ACTION = ".action";
     private static final String ADMIN_ARTICLE_ROUTE_EDIT = "redirect:/admin/article/route/edit/";
-    private static final String DEFAULT_ARTICLE_LIST_REQUEST_ACTION = "redirect:/admin/article/route/edit/" + ConstantsCollection.DEFAULT_ARTICLE_COLLECTION_NAME + REQUEST_SUFFIX_ACTION;
     private static final String REDIRECT_ADMIN_ARTICLE_LIST = "redirect:/admin/article/list/";
 
     @Autowired
@@ -31,10 +37,66 @@ public class ArticleController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addArticle(Article article) {
-        articleService.add(article);
+    public String addArticle(Article article, @RequestParam("articlePicture") MultipartFile articlePicture,
+                             HttpServletRequest request) {
+        String tmpFileName = articlePicture.getOriginalFilename();
+        if (tmpFileName == null || tmpFileName.length() == 0) {
+            return "redirect:/admin/article/route/add.action";
+        }
 
-        return DEFAULT_ARTICLE_LIST_REQUEST_ACTION;
+        File uploadImage = save(articlePicture, request);
+        String requestURL = request.getRequestURL().toString();
+
+        String serverURL = requestURL.substring(0, requestURL.indexOf("/", 8)) + request.getContextPath();
+
+        Optional<File> optional = Optional.fromNullable(uploadImage);
+        if (optional.isPresent()) {
+            String articleId = new ObjectId().toString();
+            article.setId(articleId);
+            article.setArticleUrl(serverURL + "/weixin/article/view/" + article.getArticleType() + "/" + articleId + REQUEST_SUFFIX_ACTION);
+            article.setPictureUrl(serverURL + "/static/article/image/" + uploadImage.getName());
+
+            articleService.add(article);
+
+            return REDIRECT_ADMIN_ARTICLE_LIST + article.getArticleType() + REQUEST_SUFFIX_ACTION;
+        }
+
+
+        return "redirect:/admin/article/route/add.action";
+    }
+
+    private File save(@RequestParam("file") MultipartFile file, HttpServletRequest request) {
+        String targetPath = request.getSession().getServletContext().getRealPath("/static/article/image/");
+        String sourceFileName = file.getOriginalFilename();
+
+        String subName = sourceFileName.substring(sourceFileName.lastIndexOf("."));
+
+        if (!subName.equals(".jpg") && !subName.equals(".png")) {
+            return null;
+        }
+
+        String dateString = DateTime.now().toString("MM-dd-yyyy-HH-mm-ss-SSS");
+        String prefixName = sourceFileName.substring(0, sourceFileName.indexOf("."));
+
+        String newName = prefixName + "-" + dateString + subName;
+
+        File targetFile = new File(targetPath, newName);
+
+        if (!targetFile.exists()) {
+            targetFile.mkdirs();
+        }
+
+        try {
+            file.transferTo(targetFile);
+
+            return targetFile;
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+            return null;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @RequestMapping("/list/{articleType}")

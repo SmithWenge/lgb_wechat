@@ -1,0 +1,453 @@
+14:05:53.728 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+14:05:53.819 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Wed May 18 14:05:53 CST 2016]; root of context hierarchy
+14:05:53.887 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/root-context.xml]
+14:05:54.268 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/db.properties]
+14:05:54.269 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/mongodb.properties]
+14:05:54.619 [localhost-startStop-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:05:54.685 [cluster-ClusterId{value='573c06422590c403f45bf353', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:76] Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:114)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50)
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58)
+	... 3 common frames omitted
+14:05:54.692 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 961 ms
+14:05:54.743 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:484] FrameworkServlet 'springServlet': initialization started
+14:05:54.746 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 14:05:54 CST 2016]; parent: Root WebApplicationContext
+14:05:54.748 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/servlet-context.xml]
+14:05:55.323 [localhost-startStop-1] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+14:05:55.666 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.route2Add()
+14:05:55.666 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.addArticle(com.lgb.wechat.function.admin.article.Article)
+14:05:55.667 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list/{articleType}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticle(java.lang.String)
+14:05:55.668 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticleByType(java.lang.String)
+14:05:55.668 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/view/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.viewArticle(java.lang.String,java.lang.String)
+14:05:55.669 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/edit/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.routeEdit(java.lang.String,java.lang.String)
+14:05:55.669 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/edit],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(com.lgb.wechat.function.admin.article.Article)
+14:05:55.670 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/delete/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.deleteArticle(java.lang.String,java.lang.String)
+14:05:55.671 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/weixin/article/view/{colName}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.weixin.article.controller.WeixinArticleController.weixinViewArticle(java.lang.String,java.lang.String)
+14:05:56.299 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 14:05:54 CST 2016]; parent: Root WebApplicationContext
+14:05:56.351 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 14:05:54 CST 2016]; parent: Root WebApplicationContext
+14:05:56.444 [localhost-startStop-1] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+14:05:56.472 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 14:05:54 CST 2016]; parent: Root WebApplicationContext
+14:05:56.860 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:503] FrameworkServlet 'springServlet': initialization completed in 2117 ms
+14:06:30.858 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:06:30.859 [cluster-ClusterId{value='573c06662590c403f45bf354', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:76] Exception in monitor thread while connecting to server 127.0.0.1:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:114)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50)
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58)
+	... 3 common frames omitted
+14:06:30.878 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused}}]}. Waiting for 30000 ms before timing out
+14:07:00.883 [http-bio-8080-exec-5] WARN  WARN [AbstractHandlerExceptionResolver.java:187] Handler execution resulted in exception
+com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches ReadPreferenceServerSelector{readPreference=primary}. Client view of cluster state is {type=UNKNOWN, servers=[{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused}}]
+	at com.mongodb.connection.BaseCluster.createTimeoutException(BaseCluster.java:369)
+	at com.mongodb.connection.BaseCluster.selectServer(BaseCluster.java:101)
+	at com.mongodb.binding.ClusterBinding$ClusterBindingConnectionSource.<init>(ClusterBinding.java:75)
+	at com.mongodb.binding.ClusterBinding$ClusterBindingConnectionSource.<init>(ClusterBinding.java:71)
+	at com.mongodb.binding.ClusterBinding.getReadConnectionSource(ClusterBinding.java:63)
+	at com.mongodb.operation.OperationHelper.withConnection(OperationHelper.java:210)
+	at com.mongodb.operation.FindOperation.execute(FindOperation.java:482)
+	at com.mongodb.operation.FindOperation.execute(FindOperation.java:79)
+	at com.mongodb.Mongo.execute(Mongo.java:772)
+	at com.mongodb.Mongo$2.execute(Mongo.java:759)
+	at com.mongodb.OperationIterable.iterator(OperationIterable.java:47)
+	at com.mongodb.OperationIterable.forEach(OperationIterable.java:70)
+	at com.mongodb.FindIterableImpl.forEach(FindIterableImpl.java:158)
+	at com.lgb.wechat.function.support.mongodb.MongoTemplate.find(MongoTemplate.java:44)
+	at com.lgb.wechat.function.admin.article.repository.impl.ArticleRepositoryImpl.select(ArticleRepositoryImpl.java:35)
+	at com.lgb.wechat.function.admin.article.service.impl.ArticleServiceImpl.list(ArticleServiceImpl.java:24)
+	at com.lgb.wechat.function.admin.article.controller.ArticleController.listArticle(ArticleController.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:776)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:705)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1002)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+14:07:20.596 [cluster-ClusterId{value='573c06662590c403f45bf354', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:71, serverValue:1}] to 127.0.0.1:27017
+14:07:20.601 [cluster-ClusterId{value='573c06662590c403f45bf354', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=1777000}
+14:07:24.733 [cluster-ClusterId{value='573c06422590c403f45bf353', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:72, serverValue:2}] to localhost:27017
+14:07:24.734 [cluster-ClusterId{value='573c06422590c403f45bf353', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=787000}
+14:07:28.028 [http-bio-8080-exec-6] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:07:28.029 [http-bio-8080-exec-6] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+14:07:28.031 [cluster-ClusterId{value='573c06a02590c403f45bf355', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:73, serverValue:3}] to 127.0.0.1:27017
+14:07:28.032 [cluster-ClusterId{value='573c06a02590c403f45bf355', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=493000}
+14:07:28.037 [http-bio-8080-exec-6] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:74, serverValue:4}] to 127.0.0.1:27017
+14:07:28.052 [http-bio-8080-exec-6] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:74, serverValue:4}] to 127.0.0.1:27017 because the pool has been closed.
+14:08:43.314 [http-bio-8080-exec-6] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:08:43.317 [http-bio-8080-exec-6] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+14:08:43.319 [cluster-ClusterId{value='573c06eb2590c403f45bf356', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:75, serverValue:5}] to 127.0.0.1:27017
+14:08:43.320 [cluster-ClusterId{value='573c06eb2590c403f45bf356', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=557000}
+14:08:43.323 [http-bio-8080-exec-6] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:76, serverValue:6}] to 127.0.0.1:27017
+14:08:43.325 [http-bio-8080-exec-6] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:76, serverValue:6}] to 127.0.0.1:27017 because the pool has been closed.
+14:08:47.964 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:08:47.965 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+14:08:47.967 [cluster-ClusterId{value='573c06ef2590c403f45bf357', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:77, serverValue:7}] to 127.0.0.1:27017
+14:08:47.968 [cluster-ClusterId{value='573c06ef2590c403f45bf357', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=456000}
+14:08:47.971 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:78, serverValue:8}] to 127.0.0.1:27017
+14:08:47.973 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:78, serverValue:8}] to 127.0.0.1:27017 because the pool has been closed.
+14:08:50.994 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:08:50.995 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+14:08:50.999 [cluster-ClusterId{value='573c06f22590c403f45bf358', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:79, serverValue:9}] to 127.0.0.1:27017
+14:08:51.000 [cluster-ClusterId{value='573c06f22590c403f45bf358', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=623000}
+14:08:51.003 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:80, serverValue:10}] to 127.0.0.1:27017
+14:08:51.004 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:80, serverValue:10}] to 127.0.0.1:27017 because the pool has been closed.
+14:08:53.712 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:08:53.714 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+14:08:53.716 [cluster-ClusterId{value='573c06f52590c403f45bf359', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:81, serverValue:11}] to 127.0.0.1:27017
+14:08:53.716 [cluster-ClusterId{value='573c06f52590c403f45bf359', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=526000}
+14:08:53.719 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:82, serverValue:12}] to 127.0.0.1:27017
+14:08:53.721 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:82, serverValue:12}] to 127.0.0.1:27017 because the pool has been closed.
+14:09:15.595 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:09:15.596 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+14:09:15.597 [cluster-ClusterId{value='573c070b2590c403f45bf35a', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:83, serverValue:13}] to 127.0.0.1:27017
+14:09:15.598 [cluster-ClusterId{value='573c070b2590c403f45bf35a', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=388000}
+14:09:15.601 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:84, serverValue:14}] to 127.0.0.1:27017
+14:09:15.602 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:84, serverValue:14}] to 127.0.0.1:27017 because the pool has been closed.
+14:09:18.999 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:09:19.000 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+14:09:19.003 [cluster-ClusterId{value='573c070e2590c403f45bf35b', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:85, serverValue:15}] to 127.0.0.1:27017
+14:09:19.004 [cluster-ClusterId{value='573c070e2590c403f45bf35b', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=430000}
+14:09:19.009 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:86, serverValue:16}] to 127.0.0.1:27017
+14:09:19.012 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:86, serverValue:16}] to 127.0.0.1:27017 because the pool has been closed.
+14:09:21.632 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:09:21.633 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+14:09:21.635 [cluster-ClusterId{value='573c07112590c403f45bf35c', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:87, serverValue:17}] to 127.0.0.1:27017
+14:09:21.636 [cluster-ClusterId{value='573c07112590c403f45bf35c', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=399000}
+14:09:21.638 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:88, serverValue:18}] to 127.0.0.1:27017
+14:09:21.639 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:88, serverValue:18}] to 127.0.0.1:27017 because the pool has been closed.
+14:09:24.177 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:09:24.178 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+14:09:24.180 [cluster-ClusterId{value='573c07142590c403f45bf35d', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:89, serverValue:19}] to 127.0.0.1:27017
+14:09:24.181 [cluster-ClusterId{value='573c07142590c403f45bf35d', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=389000}
+14:09:24.183 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:90, serverValue:20}] to 127.0.0.1:27017
+14:09:24.184 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:90, serverValue:20}] to 127.0.0.1:27017 because the pool has been closed.
+14:09:27.919 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:09:27.920 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+14:09:27.922 [cluster-ClusterId{value='573c07172590c403f45bf35e', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:91, serverValue:21}] to 127.0.0.1:27017
+14:09:27.922 [cluster-ClusterId{value='573c07172590c403f45bf35e', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=382000}
+14:09:27.926 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:92, serverValue:22}] to 127.0.0.1:27017
+14:09:27.927 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:92, serverValue:22}] to 127.0.0.1:27017 because the pool has been closed.
+14:09:30.765 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:09:30.769 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+14:09:30.772 [cluster-ClusterId{value='573c071a2590c403f45bf35f', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:93, serverValue:23}] to 127.0.0.1:27017
+14:09:30.773 [cluster-ClusterId{value='573c071a2590c403f45bf35f', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=752000}
+14:09:30.776 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:94, serverValue:24}] to 127.0.0.1:27017
+14:09:30.777 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:94, serverValue:24}] to 127.0.0.1:27017 because the pool has been closed.
+14:09:33.475 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:09:33.476 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+14:09:33.478 [cluster-ClusterId{value='573c071d2590c403f45bf360', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:95, serverValue:25}] to 127.0.0.1:27017
+14:09:33.479 [cluster-ClusterId{value='573c071d2590c403f45bf360', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=388000}
+14:09:33.482 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:96, serverValue:26}] to 127.0.0.1:27017
+14:09:33.484 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:96, serverValue:26}] to 127.0.0.1:27017 because the pool has been closed.
+14:10:07.224 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+14:10:07.226 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+14:10:07.231 [cluster-ClusterId{value='573c073f2590c403f45bf361', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:97, serverValue:28}] to 127.0.0.1:27017
+14:10:07.234 [cluster-ClusterId{value='573c073f2590c403f45bf361', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=1910000}
+14:10:07.238 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:98, serverValue:29}] to 127.0.0.1:27017
+14:10:07.239 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:98, serverValue:29}] to 127.0.0.1:27017 because the pool has been closed.
+23:14:25.687 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+23:14:25.932 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Wed May 18 23:14:25 CST 2016]; root of context hierarchy
+23:14:26.014 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/root-context.xml]
+23:14:26.825 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/db.properties]
+23:14:26.829 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/mongodb.properties]
+23:14:28.097 [localhost-startStop-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+23:14:28.189 [cluster-ClusterId{value='573c86d4226b8204a35a3fa9', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:76] Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:114)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50)
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58)
+	... 3 common frames omitted
+23:14:28.205 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 2509 ms
+23:14:28.318 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:484] FrameworkServlet 'springServlet': initialization started
+23:14:28.357 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:14:28 CST 2016]; parent: Root WebApplicationContext
+23:14:28.359 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/servlet-context.xml]
+23:14:29.186 [localhost-startStop-1] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+23:14:29.640 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.route2Add()
+23:14:29.641 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.addArticle(com.lgb.wechat.function.admin.article.Article)
+23:14:29.643 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list/{articleType}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticle(java.lang.String)
+23:14:29.644 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticleByType(java.lang.String)
+23:14:29.645 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/view/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.viewArticle(java.lang.String,java.lang.String)
+23:14:29.646 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/edit/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.routeEdit(java.lang.String,java.lang.String)
+23:14:29.646 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/edit],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(com.lgb.wechat.function.admin.article.Article)
+23:14:29.646 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/delete/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.deleteArticle(java.lang.String,java.lang.String)
+23:14:29.647 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/weixin/article/view/{colName}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.weixin.article.controller.WeixinArticleController.weixinViewArticle(java.lang.String,java.lang.String)
+23:14:30.432 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:14:28 CST 2016]; parent: Root WebApplicationContext
+23:14:30.548 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:14:28 CST 2016]; parent: Root WebApplicationContext
+23:14:30.765 [localhost-startStop-1] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+23:14:30.828 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:14:28 CST 2016]; parent: Root WebApplicationContext
+23:14:31.111 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:503] FrameworkServlet 'springServlet': initialization completed in 2792 ms
+23:15:32.765 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+23:15:32.767 [cluster-ClusterId{value='573c8714226b8204a35a3faa', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:76] Exception in monitor thread while connecting to server 127.0.0.1:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:114)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50)
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58)
+	... 3 common frames omitted
+23:15:32.795 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused}}]}. Waiting for 30000 ms before timing out
+23:16:02.801 [http-bio-8080-exec-3] WARN  WARN [AbstractHandlerExceptionResolver.java:187] Handler execution resulted in exception
+com.mongodb.MongoTimeoutException: Timed out after 30000 ms while waiting for a server that matches ReadPreferenceServerSelector{readPreference=primary}. Client view of cluster state is {type=UNKNOWN, servers=[{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Connection refused}}]
+	at com.mongodb.connection.BaseCluster.createTimeoutException(BaseCluster.java:369)
+	at com.mongodb.connection.BaseCluster.selectServer(BaseCluster.java:101)
+	at com.mongodb.binding.ClusterBinding$ClusterBindingConnectionSource.<init>(ClusterBinding.java:75)
+	at com.mongodb.binding.ClusterBinding$ClusterBindingConnectionSource.<init>(ClusterBinding.java:71)
+	at com.mongodb.binding.ClusterBinding.getReadConnectionSource(ClusterBinding.java:63)
+	at com.mongodb.operation.OperationHelper.withConnection(OperationHelper.java:210)
+	at com.mongodb.operation.FindOperation.execute(FindOperation.java:482)
+	at com.mongodb.operation.FindOperation.execute(FindOperation.java:79)
+	at com.mongodb.Mongo.execute(Mongo.java:772)
+	at com.mongodb.Mongo$2.execute(Mongo.java:759)
+	at com.mongodb.OperationIterable.iterator(OperationIterable.java:47)
+	at com.mongodb.OperationIterable.forEach(OperationIterable.java:70)
+	at com.mongodb.FindIterableImpl.forEach(FindIterableImpl.java:158)
+	at com.lgb.wechat.function.support.mongodb.MongoTemplate.find(MongoTemplate.java:50)
+	at com.lgb.wechat.function.admin.article.repository.impl.ArticleRepositoryImpl.select(ArticleRepositoryImpl.java:35)
+	at com.lgb.wechat.function.admin.article.service.impl.ArticleServiceImpl.list(ArticleServiceImpl.java:24)
+	at com.lgb.wechat.function.admin.article.controller.ArticleController.listArticles(ArticleController.java:51)
+	at com.lgb.wechat.function.admin.article.controller.ArticleController.listArticle(ArticleController.java:42)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:776)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:705)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:857)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1002)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+23:17:01.586 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+23:17:01.766 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Wed May 18 23:17:01 CST 2016]; root of context hierarchy
+23:17:01.831 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/root-context.xml]
+23:17:02.170 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/db.properties]
+23:17:02.170 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/mongodb.properties]
+23:17:02.537 [localhost-startStop-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+23:17:02.601 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 1010 ms
+23:17:02.684 [cluster-ClusterId{value='573c876e226b8204bed8bd95', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+23:17:02.688 [cluster-ClusterId{value='573c876e226b8204bed8bd95', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=684000}
+23:17:02.703 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:484] FrameworkServlet 'springServlet': initialization started
+23:17:02.709 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:17:02 CST 2016]; parent: Root WebApplicationContext
+23:17:02.712 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/servlet-context.xml]
+23:17:03.352 [localhost-startStop-1] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+23:17:03.776 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.route2Add()
+23:17:03.777 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.addArticle(com.lgb.wechat.function.admin.article.Article)
+23:17:03.778 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list/{articleType}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticle(java.lang.String)
+23:17:03.778 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticleByType(java.lang.String)
+23:17:03.779 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/view/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.viewArticle(java.lang.String,java.lang.String)
+23:17:03.779 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/edit/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.routeEdit(java.lang.String,java.lang.String)
+23:17:03.780 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/edit],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(com.lgb.wechat.function.admin.article.Article)
+23:17:03.781 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/delete/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.deleteArticle(java.lang.String,java.lang.String)
+23:17:03.783 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/weixin/article/view/{colName}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.weixin.article.controller.WeixinArticleController.weixinViewArticle(java.lang.String,java.lang.String)
+23:17:04.593 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:17:02 CST 2016]; parent: Root WebApplicationContext
+23:17:04.806 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:17:02 CST 2016]; parent: Root WebApplicationContext
+23:17:05.051 [localhost-startStop-1] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+23:17:05.133 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:17:02 CST 2016]; parent: Root WebApplicationContext
+23:17:05.367 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:503] FrameworkServlet 'springServlet': initialization completed in 2664 ms
+23:17:20.082 [http-bio-8080-exec-6] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+23:17:20.087 [cluster-ClusterId{value='573c8780226b8204bed8bd96', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:2, serverValue:2}] to 127.0.0.1:27017
+23:17:20.088 [cluster-ClusterId{value='573c8780226b8204bed8bd96', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=666000}
+23:17:20.115 [http-bio-8080-exec-6] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:3, serverValue:3}] to 127.0.0.1:27017
+23:17:20.139 [http-bio-8080-exec-6] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:3, serverValue:3}] to 127.0.0.1:27017 because the pool has been closed.
+23:18:13.198 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+23:18:13.313 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Wed May 18 23:18:13 CST 2016]; root of context hierarchy
+23:18:13.374 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/root-context.xml]
+23:18:13.637 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/db.properties]
+23:18:13.637 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/mongodb.properties]
+23:18:13.906 [localhost-startStop-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+23:18:13.949 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 746 ms
+23:18:13.997 [cluster-ClusterId{value='573c87b5226b8204c56e655c', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:1, serverValue:4}] to localhost:27017
+23:18:13.999 [cluster-ClusterId{value='573c87b5226b8204c56e655c', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=619000}
+23:18:14.010 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:484] FrameworkServlet 'springServlet': initialization started
+23:18:14.014 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:18:14 CST 2016]; parent: Root WebApplicationContext
+23:18:14.015 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/servlet-context.xml]
+23:18:14.511 [localhost-startStop-1] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+23:18:14.809 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticleByType(java.lang.String)
+23:18:14.810 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/view/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.viewArticle(java.lang.String,java.lang.String)
+23:18:14.810 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/edit/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.routeEdit(java.lang.String,java.lang.String)
+23:18:14.810 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/edit],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(com.lgb.wechat.function.admin.article.Article)
+23:18:14.811 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/delete/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.deleteArticle(java.lang.String,java.lang.String)
+23:18:14.811 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.route2Add()
+23:18:14.811 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.addArticle(com.lgb.wechat.function.admin.article.Article)
+23:18:14.811 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list/{articleType}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticle(java.lang.String)
+23:18:14.813 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/weixin/article/view/{colName}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.weixin.article.controller.WeixinArticleController.weixinViewArticle(java.lang.String,java.lang.String)
+23:18:15.322 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:18:14 CST 2016]; parent: Root WebApplicationContext
+23:18:15.392 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:18:14 CST 2016]; parent: Root WebApplicationContext
+23:18:15.510 [localhost-startStop-1] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+23:18:15.562 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:18:14 CST 2016]; parent: Root WebApplicationContext
+23:18:16.009 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:503] FrameworkServlet 'springServlet': initialization completed in 1999 ms
+23:18:26.770 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+23:18:26.774 [cluster-ClusterId{value='573c87c2226b8204c56e655d', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:2, serverValue:5}] to 127.0.0.1:27017
+23:18:26.775 [cluster-ClusterId{value='573c87c2226b8204c56e655d', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=540000}
+23:18:26.798 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:3, serverValue:6}] to 127.0.0.1:27017
+23:18:26.818 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:3, serverValue:6}] to 127.0.0.1:27017 because the pool has been closed.
+23:50:42.033 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+23:50:42.133 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Wed May 18 23:50:42 CST 2016]; root of context hierarchy
+23:50:42.230 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/root-context.xml]
+23:50:42.552 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/db.properties]
+23:50:42.553 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/mongodb.properties]
+23:50:42.825 [localhost-startStop-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+23:50:42.867 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 828 ms
+23:50:42.914 [cluster-ClusterId{value='573c8f52226b8205ea845214', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:1, serverValue:7}] to localhost:27017
+23:50:42.915 [cluster-ClusterId{value='573c8f52226b8205ea845214', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=593000}
+23:50:42.924 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:484] FrameworkServlet 'springServlet': initialization started
+23:50:42.927 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:50:42 CST 2016]; parent: Root WebApplicationContext
+23:50:42.928 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/servlet-context.xml]
+23:50:43.429 [localhost-startStop-1] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+23:50:43.746 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.route2Add()
+23:50:43.747 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.addArticle(com.lgb.wechat.function.admin.article.Article,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+23:50:43.748 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list/{articleType}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticle(java.lang.String)
+23:50:43.748 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticleByType(java.lang.String)
+23:50:43.748 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/view/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.viewArticle(java.lang.String,java.lang.String)
+23:50:43.748 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/edit/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.routeEdit(java.lang.String,java.lang.String)
+23:50:43.749 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/edit],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(com.lgb.wechat.function.admin.article.Article)
+23:50:43.749 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/delete/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.deleteArticle(java.lang.String,java.lang.String)
+23:50:43.751 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/weixin/article/view/{colName}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.weixin.article.controller.WeixinArticleController.weixinViewArticle(java.lang.String,java.lang.String)
+23:50:44.295 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:50:42 CST 2016]; parent: Root WebApplicationContext
+23:50:44.359 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:50:42 CST 2016]; parent: Root WebApplicationContext
+23:50:44.472 [localhost-startStop-1] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+23:50:44.508 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Wed May 18 23:50:42 CST 2016]; parent: Root WebApplicationContext
+23:50:44.928 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:503] FrameworkServlet 'springServlet': initialization completed in 2004 ms
+23:52:40.844 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+23:52:40.850 [cluster-ClusterId{value='573c8fc8226b8205ea845215', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:2, serverValue:8}] to 127.0.0.1:27017
+23:52:40.851 [cluster-ClusterId{value='573c8fc8226b8205ea845215', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=536000}
+23:52:40.880 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:3, serverValue:9}] to 127.0.0.1:27017
+23:52:40.900 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:3, serverValue:9}] to 127.0.0.1:27017 because the pool has been closed.
+23:54:39.924 [http-bio-8080-exec-7] WARN  WARN [AbstractHandlerExceptionResolver.java:187] Handler execution resulted in exception
+java.lang.IllegalArgumentException: invalid hexadecimal representation of an ObjectId: [f25a9bdb-cf19-4277-aafd-92f35240408b]
+	at org.bson.types.ObjectId.parseHexString(ObjectId.java:523)
+	at org.bson.types.ObjectId.<init>(ObjectId.java:237)
+	at com.lgb.wechat.function.admin.article.repository.impl.ArticleRepositoryImpl.insert(ArticleRepositoryImpl.java:22)
+	at com.lgb.wechat.function.admin.article.service.impl.ArticleServiceImpl.add(ArticleServiceImpl.java:19)
+	at com.lgb.wechat.function.admin.article.controller.ArticleController.addArticle(ArticleController.java:57)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:776)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:705)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1002)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)

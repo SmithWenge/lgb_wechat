@@ -24,7 +24,10 @@ public class ArticleRepositoryImpl implements ArticleRepository {
                 .append("articleContent", article.getArticleContent())
                 .append("articleTime", DateUtils.nowYMD())
                 .append("articleType", article.getArticleType())
-                .append("articleDelete", ConstantsCollection.DEFAULT_RECORD_NOT_DELETE);
+                .append("articleDelete", ConstantsCollection.DEFAULT_RECORD_NOT_DELETE)
+                .append("_id", new ObjectId(article.getId()))
+                .append("pictureUrl", article.getPictureUrl())
+                .append("articleUrl", article.getArticleUrl());
 
         mongodbTemplate.insertOne(article.getArticleType(), document);
     }

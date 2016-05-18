@@ -6,6 +6,24 @@ public class Article {
     private String articleType;
     private String articleAuthor;
     private String articleTitle;
+    private String pictureUrl;
+    private String articleUrl;
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
+    }
+
+    public void setArticleUrl(String articleUrl) {
+        this.articleUrl = articleUrl;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public String getArticleUrl() {
+        return articleUrl;
+    }
 
     public void setArticleContent(String articleContent) {
         this.articleContent = articleContent;
