@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -37,6 +38,20 @@ public class ArticleController {
 
     @RequestMapping("/list/{articleType}")
     public ModelAndView listArticle(@PathVariable("articleType") String articleType) {
+        if (null == articleType || articleType.length() == 0) {
+            articleType = ConstantsCollection.DEFAULT_ARTICLE_COLLECTION_NAME;
+        }
+
+        List<Document> documents = articleService.list(articleType);
+
+        ModelAndView mav = new ModelAndView("admin/article/list");
+        mav.addObject("documents", documents);
+
+        return mav;
+    }
+
+    @RequestMapping("/list")
+    public ModelAndView listArticleByType(@RequestParam(required = false) String articleType) {
         if (null == articleType || articleType.length() == 0) {
             articleType = ConstantsCollection.DEFAULT_ARTICLE_COLLECTION_NAME;
         }

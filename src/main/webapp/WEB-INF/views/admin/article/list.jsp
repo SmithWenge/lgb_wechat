@@ -7,7 +7,28 @@
 <div class="panel panel-default" style="margin-left: 2%; margin-right: 2%; margin-top: 1%;">
     <div class="panel-heading">
         <ul class="nav nav-pills">
-            <li role="presentation" ><a href="${contextPath}/admin/article/list/zxjy.action">文章管理</a></li>
+            <li role="presentation" >
+                <a href="${contextPath}/admin/article/list/zxjy.action">文章管理</a>
+            </li>
+            <li role="presentation">
+                <form class="form-inline" action="${contextPath}/admin/article/list.action" method="post">
+                    <div class="form-group">
+                        <label class="sr-only" for="selectArticleType">文章类别</label>
+                        <select class="form-control" name="articleType" id="selectArticleType">
+                            <option value="zxjy">默认文章类别</option>
+                            <option value="jwgg">教务公告</option>
+                            <option value="zxjy">在线教育</option>
+                            <option value="cjcx">成绩查询</option>
+                            <option value="wyj">外语角</option>
+                            <option value="jqhd">近期活动</option>
+                            <option value="lszk">历史周刊</option>
+                            <option value="xxjj">学校简介</option>
+                            <option value="bz">帮助</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-default">查看</button>
+                </form>
+            </li>
             <li role="presentation" style="float: right">
                 <a href="${contextPath}/admin/article/route/add.action">
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
