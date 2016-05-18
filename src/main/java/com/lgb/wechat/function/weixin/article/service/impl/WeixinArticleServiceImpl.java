@@ -1,17 +1,18 @@
 package com.lgb.wechat.function.weixin.article.service.impl;
 
 import com.lgb.wechat.function.weixin.article.repository.WeixinArticleRepository;
+import com.lgb.wechat.function.weixin.article.repository.impl.WeixinArticleRepositoryImpl;
 import com.lgb.wechat.function.weixin.article.service.WeixinArticleService;
 import org.bson.Document;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public class WeixinArticleServiceImpl implements WeixinArticleService {
-    @Autowired
     private WeixinArticleRepository weixinArticleRepository;
+
+    public WeixinArticleServiceImpl() {
+        weixinArticleRepository = new WeixinArticleRepositoryImpl();
+    }
 
     @Override
     public List<Document> firstThreeArticles(String collectionName) {

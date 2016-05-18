@@ -25,6 +25,7 @@ public class ConstantsCollection {
     // 平台配置常量
     public final static String APPID = "wx7ce01a4ebcc29e75";
     public final static String APPSECRET = "d4624c36b6795d1d99dcf0547af5443d";
+    public final static String TOKEN = "lgbwechat";
 
     public final static ApiConfig APPCONFIG = new ApiConfig(APPID, APPSECRET);
 

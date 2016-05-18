@@ -4,8 +4,6 @@ import com.lgb.wechat.arc.util.constants.ConstantsCollection;
 import com.lgb.wechat.function.admin.article.Article;
 import com.lgb.wechat.function.admin.article.service.ArticleService;
 import org.bson.Document;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +17,10 @@ import java.util.List;
 @Controller
 @RequestMapping("/admin/article")
 public class ArticleController {
-    private final static Logger LOG = LoggerFactory.getLogger(ArticleController.class);
+    private static final String REQUEST_SUFFIX_ACTION = ".action";
+    private static final String ADMIN_ARTICLE_ROUTE_EDIT = "redirect:/admin/article/route/edit/";
+    private static final String DEFAULT_ARTICLE_LIST_REQUEST_ACTION = "redirect:/admin/article/route/edit/" + ConstantsCollection.DEFAULT_ARTICLE_COLLECTION_NAME + REQUEST_SUFFIX_ACTION;
+    private static final String REDIRECT_ADMIN_ARTICLE_LIST = "redirect:/admin/article/list/";
 
     @Autowired
     private ArticleService articleService;
@@ -33,16 +34,21 @@ public class ArticleController {
     public String addArticle(Article article) {
         articleService.add(article);
 
-        return "redirect:/admin/article/route/edit/" + ConstantsCollection.DEFAULT_ARTICLE_COLLECTION_NAME + ".action";
+        return DEFAULT_ARTICLE_LIST_REQUEST_ACTION;
     }
 
     @RequestMapping("/list/{articleType}")
     public ModelAndView listArticle(@PathVariable("articleType") String articleType) {
-        if (null == articleType || articleType.length() == 0) {
-            articleType = ConstantsCollection.DEFAULT_ARTICLE_COLLECTION_NAME;
+        return listArticles(articleType);
+    }
+
+    private ModelAndView listArticles(String articleType) {
+        String type = articleType;
+        if (null == type || type.length() == 0) {
+            type = ConstantsCollection.DEFAULT_ARTICLE_COLLECTION_NAME;
         }
 
-        List<Document> documents = articleService.list(articleType);
+        List<Document> documents = articleService.list(type);
 
         ModelAndView mav = new ModelAndView("admin/article/list");
         mav.addObject("documents", documents);
@@ -52,16 +58,7 @@ public class ArticleController {
 
     @RequestMapping("/list")
     public ModelAndView listArticleByType(@RequestParam(required = false) String articleType) {
-        if (null == articleType || articleType.length() == 0) {
-            articleType = ConstantsCollection.DEFAULT_ARTICLE_COLLECTION_NAME;
-        }
-
-        List<Document> documents = articleService.list(articleType);
-
-        ModelAndView mav = new ModelAndView("admin/article/list");
-        mav.addObject("documents", documents);
-
-        return mav;
+        return listArticles(articleType);
     }
 
     @RequestMapping("/view/{articleType}/{id}")
@@ -91,9 +88,9 @@ public class ArticleController {
         boolean updated = articleService.edit(article);
 
         if (updated) {
-            return "redirect:/admin/article/list/" + ConstantsCollection.DEFAULT_ARTICLE_COLLECTION_NAME + ".action";
+            return REDIRECT_ADMIN_ARTICLE_LIST + ConstantsCollection.DEFAULT_ARTICLE_COLLECTION_NAME + ".action";
         } else {
-            return "redirect:/admin/article/route/edit/" + article.getArticleType() + "/" + article.getId() + ".action";
+            return ADMIN_ARTICLE_ROUTE_EDIT + article.getArticleType() + "/" + article.getId() + REQUEST_SUFFIX_ACTION;
         }
     }
 
@@ -103,9 +100,9 @@ public class ArticleController {
         boolean deleted = articleService.delete(articleType, id);
 
         if (deleted) {
-            return "redirect:/admin/article/route/edit/" + articleType + ".action";
+            return REDIRECT_ADMIN_ARTICLE_LIST + articleType + REQUEST_SUFFIX_ACTION;
         } else {
-            return "redirect:/admin/article/route/edit/" + articleType + ".action";
+            return REDIRECT_ADMIN_ARTICLE_LIST + articleType + REQUEST_SUFFIX_ACTION;
         }
     }
 }

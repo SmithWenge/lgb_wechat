@@ -16,11 +16,16 @@ import java.util.List;
 
 public class ServletWeixinSupport extends WeixinSupport {
     private static final Logger LOG = LoggerFactory.getLogger(ServletWeixinSupport.class);
-    private static final WeixinArticleService ARTICLE_SERVICE = new WeixinArticleServiceImpl();
+
+    private WeixinArticleService weixinArticleService;
+
+    public ServletWeixinSupport() {
+        weixinArticleService = new WeixinArticleServiceImpl();
+    }
 
     @Override
     protected String getToken() {
-        return "myToken";
+        return ConstantsCollection.TOKEN;
     }
 
 
@@ -60,7 +65,7 @@ public class ServletWeixinSupport extends WeixinSupport {
     }
 
     private BaseMsg getArticleMsg(String msgType) {
-        List<Document> documents = ARTICLE_SERVICE.firstThreeArticles(msgType);
+        List<Document> documents = weixinArticleService.firstThreeArticles(msgType);
         List<Article> articles = new ArrayList<>();
 
         for (Document document : documents) {
@@ -70,7 +75,7 @@ public class ServletWeixinSupport extends WeixinSupport {
         return new NewsMsg(articles);
     }
 
-    private void sendCJCXMessage() {
+//    private void sendCJCXMessage() {
 //        MediaAPI mediaAPI = new MediaAPI(ConstantsCollection.APPCONFIG);
 //        UploadMediaResponse response = mediaAPI.uploadMedia(MediaType.IMAGE, new File("/Users/liunaidi/Documents/tmp.png"));
 //        String media_id = response.getMediaId();
@@ -81,5 +86,5 @@ public class ServletWeixinSupport extends WeixinSupport {
 //        MessageAPI messageAPI = new MessageAPI(ConstantsCollection.APPCONFIG);
 //        GetSendMessageResponse messageResponse = messageAPI.sendMessageToUser(mpNewsMsg, true, "0", null);
 //        LOG.info("Send Message Id is " + messageResponse.getMsgId());
-    }
+//    }
 }

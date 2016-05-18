@@ -19,8 +19,14 @@ public class MongoTemplate {
     private MongoClient client = null;
     private MongoDatabase db = null;
 
+    public MongoTemplate() {
+        // TODO read from properties file
+        client = new MongoClient(mongodbHost, Integer.parseInt(port));
+        db = client.getDatabase(mongodbDb);
+    }
+
     public MongoTemplate(String mongodbHost, String port, String mongodbDb) {
-        client = new MongoClient(mongodbHost, Integer.valueOf(port));
+        client = new MongoClient(mongodbHost, Integer.parseInt(port));
         db = client.getDatabase(mongodbDb);
     }
 
