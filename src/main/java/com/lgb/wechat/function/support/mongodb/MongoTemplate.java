@@ -1,5 +1,6 @@
 package com.lgb.wechat.function.support.mongodb;
 
+import com.google.common.base.Optional;
 import com.lgb.wechat.arc.util.constants.ConstantsCollection;
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
@@ -21,8 +22,7 @@ public class MongoTemplate {
 
     public MongoTemplate() {
         // TODO read from properties file
-        client = new MongoClient(mongodbHost, Integer.parseInt(port));
-        db = client.getDatabase(mongodbDb);
+        init();
     }
 
     public MongoTemplate(String mongodbHost, String port, String mongodbDb) {
@@ -31,8 +31,7 @@ public class MongoTemplate {
     }
 
     public void insertOne(String collection,Document document) {
-        client = new MongoClient(mongodbHost, Integer.valueOf(port));
-        db = client.getDatabase(mongodbDb);
+        init();
 
         db.getCollection(collection).insertOne(document);
 
@@ -40,11 +39,17 @@ public class MongoTemplate {
         client = null;
     }
 
-    public List<Document> find(String collectionName) {
-        final List<Document> documents = new ArrayList<>();
+    private void init() {
+        if (!Optional.fromNullable(client).isPresent()) {
+            client = new MongoClient(mongodbHost, Integer.parseInt(port));
+            db = client.getDatabase(mongodbDb);
+        }
+    }
 
-        client = new MongoClient(mongodbHost, Integer.valueOf(port));
-        db = client.getDatabase(mongodbDb);
+    public List<Document> find(String collectionName) {
+        init();
+
+        final List<Document> documents = new ArrayList<>();
 
         FindIterable<Document> iterable = db.getCollection(collectionName).find(new Document("articleDelete", ConstantsCollection.DEFAULT_RECORD_NOT_DELETE));
         iterable.forEach(new Block<Document>() {
@@ -60,10 +65,9 @@ public class MongoTemplate {
     }
 
     public List<Document> find(String collectionName, Document document) {
-        final List<Document> documents = new ArrayList<>();
+        init();
 
-        client = new MongoClient(mongodbHost, Integer.valueOf(port));
-        db = client.getDatabase(mongodbDb);
+        final List<Document> documents = new ArrayList<>();
 
         FindIterable<Document> iterable = db.getCollection(collectionName).find(document);
         iterable.forEach(new Block<Document>() {
@@ -79,10 +83,8 @@ public class MongoTemplate {
     }
 
     public List<Document> findSort(String collectionName, Document condition, Document sortDocument) {
+        init();
         final List<Document> documents = new ArrayList<>();
-
-        client = new MongoClient(mongodbHost, Integer.valueOf(port));
-        db = client.getDatabase(mongodbDb);
 
         FindIterable<Document> iterable = db.getCollection(collectionName)
                 .find(condition)
@@ -102,8 +104,7 @@ public class MongoTemplate {
     }
 
     public long updateOne(String collectionName, Document condition, Document document) {
-        client = new MongoClient(mongodbHost, Integer.valueOf(port));
-        db = client.getDatabase(mongodbDb);
+        init();
 
         UpdateResult result = db.getCollection(collectionName).updateOne(condition, document);
 
