@@ -87,7 +87,7 @@ public class Test {
 
         ServletWeixinSupport servletWeixinSupport = new ServletWeixinSupport();
         MenuEvent event = new MenuEvent("zxjy");
-        servletWeixinSupport.getArticleMsg(event.getEventKey());
+//        servletWeixinSupport.getArticleMsg(event.getEventKey());
 
     }
 }
