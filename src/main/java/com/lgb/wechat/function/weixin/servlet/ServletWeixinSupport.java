@@ -53,6 +53,8 @@ public class ServletWeixinSupport extends WeixinSupport {
             return getArticleMsg(ConstantsCollection.MENU_JQHD_KEY);
         } else if (eventKey.equals(ConstantsCollection.MENU_LSZK_KEY)) {
             return getArticleMsg(ConstantsCollection.MENU_LSZK_KEY);
+        } else if (eventKey.equals(ConstantsCollection.MENU_WYJ_KEY)) {
+            return getArticleMsg(ConstantsCollection.MENU_WYJ_KEY);
         } else if (eventKey.equals(ConstantsCollection.MENU_CJCX_KEY)) {
             return new TextMsg("成绩查询");
         } else if (eventKey.equals(ConstantsCollection.MENU_CXBZ_KEY)) {
