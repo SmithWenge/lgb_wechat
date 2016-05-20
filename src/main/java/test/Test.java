@@ -10,10 +10,14 @@ import com.github.sd4324530.fastweixin.api.response.GetSendMessageResponse;
 import com.github.sd4324530.fastweixin.api.response.UploadMediaResponse;
 import com.github.sd4324530.fastweixin.message.MpNewsMsg;
 //import com.github.sd4324530.fastweixin.util.JSONUtil;
+import com.github.sd4324530.fastweixin.message.req.MenuEvent;
 import com.github.sd4324530.fastweixin.util.JSONUtil;
 import com.lgb.wechat.arc.util.constants.ConstantsCollection;
 import com.lgb.wechat.arc.util.date.DateUtils;
 import com.lgb.wechat.function.support.mongodb.MongoTemplate;
+import com.lgb.wechat.function.weixin.article.repository.WeixinArticleRepository;
+import com.lgb.wechat.function.weixin.article.repository.impl.WeixinArticleRepositoryImpl;
+import com.lgb.wechat.function.weixin.servlet.ServletWeixinSupport;
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
@@ -66,19 +70,24 @@ public class Test {
 
 //        System.out.println(DateUtils.nowYMD());
 
-        MediaAPI mediaAPI = new MediaAPI(ConstantsCollection.APPCONFIG);
-        UploadMediaResponse response = mediaAPI.uploadMedia(MediaType.IMAGE, new File("/Users/liunaidi/Documents/1.png"));
-        String media_id = response.getMediaId();
-        Article article = new Article(media_id, "测试用户", "群发测试", "http://www.baidu.com", "群发测试", "群发测试", Article.ShowConverPic.NO);
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("articles", Arrays.asList(article));
-        System.out.println(JSONUtil.toJson(map));
+//        MediaAPI mediaAPI = new MediaAPI(ConstantsCollection.APPCONFIG);
+//        UploadMediaResponse response = mediaAPI.uploadMedia(MediaType.IMAGE, new File("/Users/liunaidi/Documents/1.png"));
+//        String media_id = response.getMediaId();
+//        Article article = new Article(media_id, "测试用户", "群发测试", "http://www.baidu.com", "群发测试", "群发测试", Article.ShowConverPic.NO);
+//        Map<String, Object> map = new HashMap<String, Object>();
+//        map.put("articles", Arrays.asList(article));
+//        System.out.println(JSONUtil.toJson(map));
+//
+//        UploadMediaResponse uploadMediaResponse = mediaAPI.uploadNews(Arrays.asList(article));
+//        MpNewsMsg mpNewsMsg = new MpNewsMsg();
+//        mpNewsMsg.setMediaId(uploadMediaResponse.getMediaId());
+//        MessageAPI messageAPI = new MessageAPI(ConstantsCollection.APPCONFIG);
+//        GetSendMessageResponse messageResponse = messageAPI.sendMessageToUser(mpNewsMsg, true, "0", null);
+//        System.out.println("Send Message Id is " + messageResponse.getMsgId());
 
-        UploadMediaResponse uploadMediaResponse = mediaAPI.uploadNews(Arrays.asList(article));
-        MpNewsMsg mpNewsMsg = new MpNewsMsg();
-        mpNewsMsg.setMediaId(uploadMediaResponse.getMediaId());
-        MessageAPI messageAPI = new MessageAPI(ConstantsCollection.APPCONFIG);
-        GetSendMessageResponse messageResponse = messageAPI.sendMessageToUser(mpNewsMsg, true, "0", null);
-        System.out.println("Send Message Id is " + messageResponse.getMsgId());
+        ServletWeixinSupport servletWeixinSupport = new ServletWeixinSupport();
+        MenuEvent event = new MenuEvent("zxjy");
+        servletWeixinSupport.getArticleMsg(event.getEventKey());
+
     }
 }

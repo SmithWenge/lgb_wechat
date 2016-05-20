@@ -69,7 +69,7 @@ public class ServletWeixinSupport extends WeixinSupport {
         List<Article> articles = new ArrayList<>();
 
         for (Document document : documents) {
-            Article article = new Article(document.getString("articleTitle"), document.getString("articleTitle"), "http://www.56team.com/photo/index/welcome001.jpg", "http://localhost:8080/wechat/weixin/article/view/" + ConstantsCollection.MENU_ZXJY_KEY + "/" + document.getString("_id"));
+            Article article = new Article(document.getString("articleTitle"), document.getString("articleTitle"), document.getString("pictureUrl"), document.getString("articleUrl"));
             articles.add(article);
         }
         return new NewsMsg(articles);
