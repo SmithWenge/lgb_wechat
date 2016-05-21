@@ -4,6 +4,8 @@ import com.github.sd4324530.fastweixin.message.*;
 import com.github.sd4324530.fastweixin.message.req.MenuEvent;
 import com.github.sd4324530.fastweixin.message.req.TextReqMsg;
 import com.github.sd4324530.fastweixin.servlet.WeixinSupport;
+import com.lgb.wechat.arc.util.api.http.TQHttpRequest;
+import com.lgb.wechat.arc.util.api.json.tq.TQSummary;
 import com.lgb.wechat.arc.util.constants.ConstantsCollection;
 import com.lgb.wechat.function.weixin.article.service.WeixinArticleService;
 import com.lgb.wechat.function.weixin.article.service.impl.WeixinArticleServiceImpl;
@@ -31,7 +33,17 @@ public class ServletWeixinSupport extends WeixinSupport {
 
     @Override
     protected BaseMsg handleTextMsg(TextReqMsg msg) {
-        String content = msg.getContent();
+        String content = msg.getContent().trim().toUpperCase();
+        String[] requests = content.split(":");
+
+        if (requests[0].equals(ConstantsCollection.CJ_REQUEDT)) {
+            LOG.info("#########################################" + msg.getFromUserName());
+        } else if (requests[0].equals(ConstantsCollection.KC_REQUEST)) {
+            LOG.info("#########################################" + msg.getFromUserName());
+        } else if (requests[0].equals(ConstantsCollection.TQ_REQUEST)) {
+            TQSummary TQSummary = TQHttpRequest.getBaiduTQ(requests[1]);
+            return new TextMsg(TQSummary.toString());
+        }
 
         if (LOG.isDebugEnabled())
             LOG.debug("用户发送到服务器的内容:{}", content);
@@ -53,12 +65,12 @@ public class ServletWeixinSupport extends WeixinSupport {
             return getArticleMsg(ConstantsCollection.MENU_JQHD_KEY);
         } else if (eventKey.equals(ConstantsCollection.MENU_LSZK_KEY)) {
             return getArticleMsg(ConstantsCollection.MENU_LSZK_KEY);
-        } else if (eventKey.equals(ConstantsCollection.MENU_WYJ_KEY)) {
-            return getArticleMsg(ConstantsCollection.MENU_WYJ_KEY);
+        } else if (eventKey.equals(ConstantsCollection.MENU_JRKC_KEY)) {
+            return new TextMsg("请输入KC查询今日的个人课程");
         } else if (eventKey.equals(ConstantsCollection.MENU_CJCX_KEY)) {
-            return new TextMsg("成绩查询");
+            return new TextMsg("请输入CJ查询个人相关的成绩");
         } else if (eventKey.equals(ConstantsCollection.MENU_CXBZ_KEY)) {
-            return new TextMsg("查询帮助");
+            return new TextMsg("1. 登陆平台的时候请先绑定 回复BD:0123456789(卡号);\n 2. 回复TQ查看当前天气;\n");
         } else if (eventKey.equals(ConstantsCollection.MENU_RQCX_KEY)) {
             return new TextMsg("日期查询");
         }

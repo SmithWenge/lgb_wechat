@@ -1,36 +1,17 @@
 package test;
 
-import com.alibaba.fastjson.JSON;
-import com.github.sd4324530.fastweixin.api.MediaAPI;
-import com.github.sd4324530.fastweixin.api.MessageAPI;
-import com.github.sd4324530.fastweixin.api.entity.Article;
-import com.github.sd4324530.fastweixin.api.enums.MediaType;
-import com.github.sd4324530.fastweixin.api.response.BaseResponse;
-import com.github.sd4324530.fastweixin.api.response.GetSendMessageResponse;
-import com.github.sd4324530.fastweixin.api.response.UploadMediaResponse;
-import com.github.sd4324530.fastweixin.message.MpNewsMsg;
 //import com.github.sd4324530.fastweixin.util.JSONUtil;
-import com.github.sd4324530.fastweixin.message.req.MenuEvent;
-import com.github.sd4324530.fastweixin.util.JSONUtil;
-import com.lgb.wechat.arc.util.constants.ConstantsCollection;
-import com.lgb.wechat.arc.util.date.DateUtils;
-import com.lgb.wechat.function.support.mongodb.MongoTemplate;
-import com.lgb.wechat.function.weixin.article.repository.WeixinArticleRepository;
-import com.lgb.wechat.function.weixin.article.repository.impl.WeixinArticleRepositoryImpl;
-import com.lgb.wechat.function.weixin.servlet.ServletWeixinSupport;
-import com.mongodb.Block;
-import com.mongodb.MongoClient;
-import com.mongodb.client.FindIterable;
-import com.mongodb.client.MongoDatabase;
-import org.bson.Document;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonReader;
+import com.lgb.wechat.arc.util.api.json.tq.TQSummary;
+        import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+        import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 
-import java.io.File;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.*;
-
-import static com.github.sd4324530.fastweixin.util.JSONUtil.DEFAULT_FORMAT;
-import static java.util.Arrays.asList;
+        import java.io.BufferedReader;
+        import java.io.InputStreamReader;
 
 public class Test {
     public static void main(String[] args) throws Exception {
@@ -85,9 +66,20 @@ public class Test {
 //        GetSendMessageResponse messageResponse = messageAPI.sendMessageToUser(mpNewsMsg, true, "0", null);
 //        System.out.println("Send Message Id is " + messageResponse.getMsgId());
 
-        ServletWeixinSupport servletWeixinSupport = new ServletWeixinSupport();
-        MenuEvent event = new MenuEvent("zxjy");
+//        ServletWeixinSupport servletWeixinSupport = new ServletWeixinSupport();
+//        MenuEvent event = new MenuEvent("zxjy");
 //        servletWeixinSupport.getArticleMsg(event.getEventKey());
+
+        CloseableHttpClient closeableHttpClient = HttpClients.createDefault();
+        HttpGet get = new HttpGet("http://api.map.baidu.com/telematics/v3/weather?location=大连&output=json&ak=A2477172a606cd1d90253aa4d7f3285f");
+        get.setHeader("content-type", "application/json");
+        get.setHeader("Accept", "application/json");
+
+        CloseableHttpResponse response = closeableHttpClient.execute(get);
+        Gson gson = new GsonBuilder().create();
+        TQSummary TQSummary = gson.fromJson(new JsonReader(new BufferedReader(new InputStreamReader(response.getEntity().getContent()))), TQSummary.class);
+        System.out.println(TQSummary.toString());
+        closeableHttpClient.close();
 
     }
 }

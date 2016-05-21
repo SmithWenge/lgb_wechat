@@ -31,4 +31,10 @@ public class ConstantsCollection {
 
     // 默认显示文章数
     public final static int DEFAULT_WEIXIN_RETURN_ARTICLE_NUM = 3;
+
+    // 查询使用关键字
+    public final static String CJ_REQUEDT = "CJ"; // 成绩查询
+    public final static String KC_REQUEST = "KC"; //课程查询
+    public final static String TQ_REQUEST = "TQ"; //天气查询
+    public final static String BD_REQUEST = "BD"; //学员绑定
 }
