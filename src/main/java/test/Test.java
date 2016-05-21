@@ -1,11 +1,13 @@
 package test;
 
 //import com.github.sd4324530.fastweixin.util.JSONUtil;
+import com.github.sd4324530.fastweixin.message.req.MenuEvent;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import com.lgb.wechat.arc.util.api.json.tq.TQSummary;
-        import org.apache.http.client.methods.CloseableHttpResponse;
+import com.lgb.wechat.function.weixin.servlet.ServletWeixinSupport;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
         import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -66,20 +68,20 @@ public class Test {
 //        GetSendMessageResponse messageResponse = messageAPI.sendMessageToUser(mpNewsMsg, true, "0", null);
 //        System.out.println("Send Message Id is " + messageResponse.getMsgId());
 
-//        ServletWeixinSupport servletWeixinSupport = new ServletWeixinSupport();
-//        MenuEvent event = new MenuEvent("zxjy");
-//        servletWeixinSupport.getArticleMsg(event.getEventKey());
+        ServletWeixinSupport servletWeixinSupport = new ServletWeixinSupport();
+        MenuEvent event = new MenuEvent("zxjy");
+        servletWeixinSupport.getArticleMsg(event.getEventKey());
 
-        CloseableHttpClient closeableHttpClient = HttpClients.createDefault();
-        HttpGet get = new HttpGet("http://api.map.baidu.com/telematics/v3/weather?location=大连&output=json&ak=A2477172a606cd1d90253aa4d7f3285f");
-        get.setHeader("content-type", "application/json");
-        get.setHeader("Accept", "application/json");
-
-        CloseableHttpResponse response = closeableHttpClient.execute(get);
-        Gson gson = new GsonBuilder().create();
-        TQSummary TQSummary = gson.fromJson(new JsonReader(new BufferedReader(new InputStreamReader(response.getEntity().getContent()))), TQSummary.class);
-        System.out.println(TQSummary.toString());
-        closeableHttpClient.close();
+//        CloseableHttpClient closeableHttpClient = HttpClients.createDefault();
+//        HttpGet get = new HttpGet("http://api.map.baidu.com/telematics/v3/weather?location=大连&output=json&ak=A2477172a606cd1d90253aa4d7f3285f");
+//        get.setHeader("content-type", "application/json");
+//        get.setHeader("Accept", "application/json");
+//
+//        CloseableHttpResponse response = closeableHttpClient.execute(get);
+//        Gson gson = new GsonBuilder().create();
+//        TQSummary TQSummary = gson.fromJson(new JsonReader(new BufferedReader(new InputStreamReader(response.getEntity().getContent()))), TQSummary.class);
+//        System.out.println(TQSummary.toString());
+//        closeableHttpClient.close();
 
     }
 }

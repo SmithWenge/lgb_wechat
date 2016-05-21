@@ -15,7 +15,7 @@ public class WeixinArticleRepositoryImpl implements WeixinArticleRepository {
 
     @Override
     public List<Document> selectRecentThree(String collectionName) {
-        Document sortDocument = new Document("articleTime", 1);
+        Document sortDocument = new Document("articleTime", -1);
         List<Document> documents = mongodbTemplate.findSort(collectionName, new Document(), sortDocument);
 
         return documents;

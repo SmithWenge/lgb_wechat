@@ -78,7 +78,7 @@ public class ServletWeixinSupport extends WeixinSupport {
         return new TextMsg("请选择正确的菜单");
     }
 
-    private BaseMsg getArticleMsg(String msgType) {
+    public BaseMsg getArticleMsg(String msgType) {
         List<Document> documents = weixinArticleService.firstThreeArticles(msgType);
         List<Article> articles = new ArrayList<>();
 
