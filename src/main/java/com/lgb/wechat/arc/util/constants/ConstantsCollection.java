@@ -37,4 +37,7 @@ public class ConstantsCollection {
     public final static String KC_REQUEST = "KC"; //课程查询
     public final static String TQ_REQUEST = "TQ"; //天气查询
     public final static String BD_REQUEST = "BD"; //学员绑定
+
+    // 默认天气地点
+    public final static String DEFAULT_TQ_QUERY_LOCATION = "大连";
 }

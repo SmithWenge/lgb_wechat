@@ -117,7 +117,7 @@ public class Test {
 //        closeableHttpClient.close();
 
 //        ServletWeixinSupport weixinSupport = new ServletWeixinSupport();
-//        weixinSupport.handleTextMsg(new TextReqMsg("KC"));
+//        weixinSupport.handleTextMsg(new TextReqMsg("bd:200104"));
 
     }
 }

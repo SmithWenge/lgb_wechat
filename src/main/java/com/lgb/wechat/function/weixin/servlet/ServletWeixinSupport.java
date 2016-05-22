@@ -18,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ServletWeixinSupport extends WeixinSupport {
@@ -41,17 +42,17 @@ public class ServletWeixinSupport extends WeixinSupport {
     protected BaseMsg handleTextMsg(TextReqMsg msg) {
         String content = msg.getContent().trim().toUpperCase();
 
-        String[] requests = null;
+        List<String> list = null;
         if (content.contains(":")) {
-            requests = content.split(":");
+            list = Arrays.asList(content.split(":"));
         } else {
-            requests = new String[] { content };
+            list = Arrays.asList(content);
         }
 
 
-        if (requests[0].equals(ConstantsCollection.CJ_REQUEDT)) {
+        if (list.get(0).equals(ConstantsCollection.CJ_REQUEDT)) {
             LOG.info("#########################################" + msg.getFromUserName());
-        } else if (requests[0].equals(ConstantsCollection.KC_REQUEST)) {
+        } else if (list.get(0).equals(ConstantsCollection.KC_REQUEST)) {
             String userWeixinId = msg.getFromUserName();
             String userCardNum = bindService.isBind(userWeixinId);
 
@@ -67,16 +68,23 @@ public class ServletWeixinSupport extends WeixinSupport {
 
                 return textMsg;
             }
-        } else if (requests[0].equals(ConstantsCollection.TQ_REQUEST)) {
-            TQSummary TQSummary = TQHttpRequest.getBaiduTQ(requests[1]);
+        } else if (list.get(0).equals(ConstantsCollection.TQ_REQUEST)) {
+            if (list.size() <= 1) {
+                list = Arrays.asList(content, ConstantsCollection.DEFAULT_TQ_QUERY_LOCATION);
+            }
+
+            TQSummary TQSummary = TQHttpRequest.getBaiduTQ(list.get(1));
+
             return new TextMsg(TQSummary.toString());
-        } else if (requests[0].equals(ConstantsCollection.BD_REQUEST)) {
-            if (null == requests[1] || requests[1].length() <= 0) {
+        } else if (list.get(0).equals(ConstantsCollection.BD_REQUEST)) {
+            if (list.size() <= 1) {
                 return new TextMsg("请在绑定的时候输入正确的学员卡号");
             }
 
             String userWeixinId = msg.getFromUserName();
-            String userCardNum = requests[1];
+            String userCardNum = list.get(1);
+            System.out.println(userWeixinId);
+            LOG.info(userWeixinId);
 
             if (bindService.bind(userCardNum, userWeixinId)) {
                 if (LOG.isInfoEnabled())
