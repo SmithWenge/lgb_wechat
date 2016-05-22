@@ -39,7 +39,7 @@ public class ServletWeixinSupport extends WeixinSupport {
 
 
     @Override
-    protected BaseMsg handleTextMsg(TextReqMsg msg) {
+    public BaseMsg handleTextMsg(TextReqMsg msg) {
         String content = msg.getContent().trim().toUpperCase();
 
         List<String> list = null;

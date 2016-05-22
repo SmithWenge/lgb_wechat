@@ -116,8 +116,8 @@ public class Test {
 //                                        response.getEntity().getContent()))), new TypeToken<List<RestNowStudentCourseInfo>>(){}.getType());
 //        closeableHttpClient.close();
 
-//        ServletWeixinSupport weixinSupport = new ServletWeixinSupport();
-//        weixinSupport.handleTextMsg(new TextReqMsg("bd:200104"));
+        ServletWeixinSupport weixinSupport = new ServletWeixinSupport();
+        weixinSupport.handleTextMsg(new TextReqMsg("bd:200104"));
 
     }
 }
