@@ -34,7 +34,7 @@ public class BindDaoImpl implements BindDao {
             dataSource.setDriverClassName(properties.getProperty("jdbc.driverClassName"));
             dataSource.setUrl(properties.getProperty("jdbc.url"));
             dataSource.setUsername(properties.getProperty("jdbc.username"));
-            dataSource.setPassword("jdbc.password");
+            dataSource.setPassword(properties.getProperty("jdbc.password"));
             dataSource.setFilters(properties.getProperty("jdbc.filters"));
             dataSource.setInitialSize(Integer.parseInt(properties.getProperty("jdbc.initialSize")));
             dataSource.setMaxActive(Integer.parseInt(properties.getProperty("jdbc.maxActive")));
