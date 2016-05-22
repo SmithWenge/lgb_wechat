@@ -98,22 +98,22 @@ public class Test {
 //        closeableHttpClient.close();
 
         /* 课程查询 */
-        CloseableHttpClient closeableHttpClient = HttpClients.createDefault();
-        HttpGet get = new HttpGet("http://139.129.6.189:8080/manage/api/course/200104.action");
-        get.setHeader("content-type", "application/json");
-        get.setHeader("Accept", "application/json");
-
-        get.setHeader("content-type", "application/json");
-        get.setHeader("Accept", "application/json");
-
-        CloseableHttpResponse response = closeableHttpClient.execute(get);
-        Gson gson = new GsonBuilder().create();
-        List<RestNowStudentCourseInfo> info = gson.fromJson(
-                new JsonReader(
-                        new BufferedReader(
-                                new InputStreamReader(
-                                        response.getEntity().getContent()))), new TypeToken<List<RestNowStudentCourseInfo>>(){}.getType());
-        closeableHttpClient.close();
+//        CloseableHttpClient closeableHttpClient = HttpClients.createDefault();
+//        HttpGet get = new HttpGet("http://139.129.6.189:8080/manage/api/course/200104.action");
+//        get.setHeader("content-type", "application/json");
+//        get.setHeader("Accept", "application/json");
+//
+//        get.setHeader("content-type", "application/json");
+//        get.setHeader("Accept", "application/json");
+//
+//        CloseableHttpResponse response = closeableHttpClient.execute(get);
+//        Gson gson = new GsonBuilder().create();
+//        List<RestNowStudentCourseInfo> info = gson.fromJson(
+//                new JsonReader(
+//                        new BufferedReader(
+//                                new InputStreamReader(
+//                                        response.getEntity().getContent()))), new TypeToken<List<RestNowStudentCourseInfo>>(){}.getType());
+//        closeableHttpClient.close();
 
     }
 }

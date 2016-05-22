@@ -12,7 +12,7 @@ public class BindDaoImpl implements BindDao {
     private final static Properties properties = new Properties();
 
     static {
-        InputStream propertiesIn = BindDaoImpl.class.getResourceAsStream("db/db.properties");
+        InputStream propertiesIn = BindDaoImpl.class.getResourceAsStream("/db/db.properties");
 
         try {
             properties.load(propertiesIn);
