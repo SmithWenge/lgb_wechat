@@ -2,6 +2,7 @@ package test;
 
 //import com.github.sd4324530.fastweixin.util.JSONUtil;
 import com.github.sd4324530.fastweixin.message.req.MenuEvent;
+import com.github.sd4324530.fastweixin.message.req.TextReqMsg;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
@@ -114,6 +115,9 @@ public class Test {
 //                                new InputStreamReader(
 //                                        response.getEntity().getContent()))), new TypeToken<List<RestNowStudentCourseInfo>>(){}.getType());
 //        closeableHttpClient.close();
+
+//        ServletWeixinSupport weixinSupport = new ServletWeixinSupport();
+//        weixinSupport.handleTextMsg(new TextReqMsg("KC"));
 
     }
 }

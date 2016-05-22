@@ -41,11 +41,11 @@ public class ServletWeixinSupport extends WeixinSupport {
     protected BaseMsg handleTextMsg(TextReqMsg msg) {
         String content = msg.getContent().trim().toUpperCase();
 
-        String[] requests = {};
+        String[] requests = null;
         if (content.contains(":")) {
             requests = content.split(":");
         } else {
-            requests[0] = content;
+            requests = new String[] { content };
         }
 
 
