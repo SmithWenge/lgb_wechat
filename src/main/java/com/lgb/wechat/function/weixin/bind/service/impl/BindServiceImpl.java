@@ -13,7 +13,8 @@ public class BindServiceImpl implements BindService {
 
     @Override
     public boolean bind(String userCardNum, String userWeixinId) {
-        if (bindDao.selectExist(userCardNum, userWeixinId)) {
+        // 一个微信号只能绑定一个卡号
+        if (bindDao.selectWeixinId(userWeixinId) || bindDao.selectExist(userCardNum, userWeixinId)) {
             return false;
         } else {
             return bindDao.insert(userCardNum, userWeixinId);

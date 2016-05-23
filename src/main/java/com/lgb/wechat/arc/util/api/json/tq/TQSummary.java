@@ -45,8 +45,8 @@ public class TQSummary {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder()
-                .append("错误数: ").append(getError()).append(".\n")
-                .append("状态: ").append(getStatus()).append(".\n")
+//                .append("错误数: ").append(getError()).append(".\n")
+//                .append("状态: ").append(getStatus()).append(".\n")
                 .append("日期: ").append(getDate()).append(".\n");
 
         for (Results result : getResults()) {

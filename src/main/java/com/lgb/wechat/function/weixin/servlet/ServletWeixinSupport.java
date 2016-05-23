@@ -5,10 +5,13 @@ import com.github.sd4324530.fastweixin.message.req.MenuEvent;
 import com.github.sd4324530.fastweixin.message.req.TextReqMsg;
 import com.github.sd4324530.fastweixin.servlet.WeixinSupport;
 import com.lgb.wechat.arc.util.api.http.KCHttpRequest;
+import com.lgb.wechat.arc.util.api.http.RQHttpRequest;
 import com.lgb.wechat.arc.util.api.http.TQHttpRequest;
 import com.lgb.wechat.arc.util.api.json.kc.RestNowStudentCourseInfo;
+import com.lgb.wechat.arc.util.api.json.rq.RQSummary;
 import com.lgb.wechat.arc.util.api.json.tq.TQSummary;
 import com.lgb.wechat.arc.util.constants.ConstantsCollection;
+import com.lgb.wechat.arc.util.date.DateUtils;
 import com.lgb.wechat.function.weixin.article.service.WeixinArticleService;
 import com.lgb.wechat.function.weixin.article.service.impl.WeixinArticleServiceImpl;
 import com.lgb.wechat.function.weixin.bind.service.BindService;
@@ -57,9 +60,9 @@ public class ServletWeixinSupport extends WeixinSupport {
             String userCardNum = bindService.isBind(userWeixinId);
 
             if (null == userCardNum || userCardNum.isEmpty()) {
-                return new TextMsg("请先绑定学号,发送信息(BD:学号卡号)");
+                return new TextMsg("请先绑定学员卡号,发送信息(BD:学号卡号)");
             } else {
-                List<RestNowStudentCourseInfo> infos = KCHttpRequest.getBaiduTQ(userCardNum);
+                List<RestNowStudentCourseInfo> infos = KCHttpRequest.getManageKC(userCardNum);
                 TextMsg textMsg = new TextMsg();
 
                 for (RestNowStudentCourseInfo info : infos) {
@@ -73,9 +76,13 @@ public class ServletWeixinSupport extends WeixinSupport {
                 list = Arrays.asList(content, ConstantsCollection.DEFAULT_TQ_QUERY_LOCATION);
             }
 
-            TQSummary TQSummary = TQHttpRequest.getBaiduTQ(list.get(1));
+            TQSummary tqSummary = TQHttpRequest.getBaiduTQ(list.get(1));
 
-            return new TextMsg(TQSummary.toString());
+            if (tqSummary.getError() > 0) {
+                return new TextMsg("请填写正确的查询格式,TQ:地点(默认为:大连)");
+            }
+
+            return new TextMsg(tqSummary.toString());
         } else if (list.get(0).equals(ConstantsCollection.BD_REQUEST)) {
             if (list.size() <= 1) {
                 return new TextMsg("请在绑定的时候输入正确的学员卡号");
@@ -83,16 +90,28 @@ public class ServletWeixinSupport extends WeixinSupport {
 
             String userWeixinId = msg.getFromUserName();
             String userCardNum = list.get(1);
-            System.out.println(userWeixinId);
-            LOG.info(userWeixinId);
 
             if (bindService.bind(userCardNum, userWeixinId)) {
                 if (LOG.isInfoEnabled())
                     LOG.info("[OK] {} 绑定卡号成功");
                 return new TextMsg("绑定卡号成功" + userCardNum);
+            } else {
+                return new TextMsg("您已经绑定了,如绑定信息错误请联系管理员.");
+            }
+        } else if (list.get(0).equals(ConstantsCollection.RQ_REQUEST)) {
+            String queryDate = DateUtils.now4Y2M2D();
+
+            if (list.size() > 1) {
+                queryDate = DateUtils.dateFormat4Y2M2D(list.get(1));
             }
 
-            return new TextMsg("请重新绑定,格式为DB:学员卡号");
+            RQSummary summary = RQHttpRequest.getDateInfo(queryDate);
+
+            if (!summary.getErrorCode().equals("0") || summary.getErrorCode().length() > 1) {
+                return new TextMsg("请输入正确是查询格式,如 RQ:20150503");
+            } else {
+                return new TextMsg(summary.toString());
+            }
         }
 
         if (LOG.isDebugEnabled())
@@ -122,7 +141,7 @@ public class ServletWeixinSupport extends WeixinSupport {
         } else if (eventKey.equals(ConstantsCollection.MENU_CXBZ_KEY)) {
             return new TextMsg("1. 登陆平台的时候请先绑定 回复BD:0123456789(卡号);\n 2. 回复TQ:地点(默认为:大连)查看当前天气;\n");
         } else if (eventKey.equals(ConstantsCollection.MENU_RQCX_KEY)) {
-            return new TextMsg("日期查询");
+            return new TextMsg("请输入RQ查询今天的日期信息,或者输入RQ:2015-05-23(要查询的日期)查询对应的日期信息");
         }
 
         return new TextMsg("请选择正确的菜单");

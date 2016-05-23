@@ -7,8 +7,10 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
+import com.lgb.wechat.arc.util.api.http.RQHttpRequest;
 import com.lgb.wechat.arc.util.api.json.kc.RestNowStudentCourseInfo;
 import com.lgb.wechat.arc.util.api.json.tq.TQSummary;
+import com.lgb.wechat.arc.util.date.DateUtils;
 import com.lgb.wechat.function.weixin.servlet.ServletWeixinSupport;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -116,8 +118,13 @@ public class Test {
 //                                        response.getEntity().getContent()))), new TypeToken<List<RestNowStudentCourseInfo>>(){}.getType());
 //        closeableHttpClient.close();
 
-        ServletWeixinSupport weixinSupport = new ServletWeixinSupport();
-        weixinSupport.handleTextMsg(new TextReqMsg("bd:200104"));
+//        ServletWeixinSupport weixinSupport = new ServletWeixinSupport();
+//        weixinSupport.handleTextMsg(new TextReqMsg("bd:200104"));
+
+//        String testDate = "20160503";
+//        String date = testDate.substring(0, 4) + "-" + testDate.substring(4, 6) + "-" + testDate.substring(6, 8);
+//        System.out.println(date);
+//        System.out.println(RQHttpRequest.getDateInfo(DateUtils.dateFormat4Y2M2D(testDate)).toString());
 
     }
 }

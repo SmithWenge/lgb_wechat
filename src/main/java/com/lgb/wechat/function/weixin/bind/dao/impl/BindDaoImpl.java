@@ -101,4 +101,19 @@ public class BindDaoImpl implements BindDao {
             return null;
         }
     }
+
+    @Override
+    public boolean selectWeixinId(String userWeixinId) {
+        String sql = "SELECT COUNT(bindId) AS NUM FROM wechat_bind WHERE userWeixinId = ? AND deleteFlag = 0";
+        Object[] args = {
+                userWeixinId
+        };
+
+        try {
+            return jdbcTemplate.queryForObject(sql, args, Integer.class) == 1;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
