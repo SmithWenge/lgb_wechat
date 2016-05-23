@@ -4,11 +4,11 @@ import org.joda.time.DateTime;
 
 public class DateUtils {
     public static String nowYMD() {
-        return DateTime.now().toString("YYYY-mm-dd HH:mm");
+        return DateTime.now().toString("YYYY-MM-dd HH:mm");
     }
 
     public static String now4Y2M2D() {
-        return DateTime.now().toString("YYYY-mm-dd");
+        return DateTime.now().toString("YYYY-MM-dd");
     }
 
     public static String dateFormat4Y2M2D(String date) {

@@ -2,15 +2,11 @@ package com.lgb.wechat.arc.util.api.json.rq;
 
 public class RQSummary {
     private String reason;
-    private String errorCode;
+    private String error_code;
     private RQResult result;
 
     public void setReason(String reason) {
         this.reason = reason;
-    }
-
-    public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
     }
 
     public void setResult(RQResult result) {
@@ -22,10 +18,6 @@ public class RQSummary {
         return reason;
     }
 
-    public String getErrorCode() {
-        return errorCode;
-    }
-
     public RQResult getResult() {
         return result;
     }
@@ -33,5 +25,14 @@ public class RQSummary {
     @Override
     public String toString() {
         return getResult().toString();
+    }
+
+    public void setError_code(String error_code) {
+        this.error_code = error_code;
+    }
+
+    public String getError_code() {
+
+        return error_code;
     }
 }

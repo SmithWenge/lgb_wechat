@@ -16,8 +16,9 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
         import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.joda.time.DateTime;
 
-        import java.io.BufferedReader;
+import java.io.BufferedReader;
         import java.io.InputStreamReader;
 import java.util.List;
 
@@ -118,8 +119,9 @@ public class Test {
 //                                        response.getEntity().getContent()))), new TypeToken<List<RestNowStudentCourseInfo>>(){}.getType());
 //        closeableHttpClient.close();
 
-//        ServletWeixinSupport weixinSupport = new ServletWeixinSupport();
-//        weixinSupport.handleTextMsg(new TextReqMsg("bd:200104"));
+//        System.out.println(DateTime.now().toString("YYYY-MM-dd"));
+        ServletWeixinSupport weixinSupport = new ServletWeixinSupport();
+        weixinSupport.handleTextMsg(new TextReqMsg("rq"));
 
 //        String testDate = "20160503";
 //        String date = testDate.substring(0, 4) + "-" + testDate.substring(4, 6) + "-" + testDate.substring(6, 8);

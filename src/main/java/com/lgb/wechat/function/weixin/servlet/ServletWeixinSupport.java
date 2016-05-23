@@ -107,7 +107,7 @@ public class ServletWeixinSupport extends WeixinSupport {
 
             RQSummary summary = RQHttpRequest.getDateInfo(queryDate);
 
-            if (!summary.getErrorCode().equals("0") || summary.getErrorCode().length() > 1) {
+            if (!summary.getError_code().equals("0") || summary.getError_code().length() > 1) {
                 return new TextMsg("请输入正确是查询格式,如 RQ:20150503");
             } else {
                 return new TextMsg(summary.toString());
@@ -141,7 +141,7 @@ public class ServletWeixinSupport extends WeixinSupport {
         } else if (eventKey.equals(ConstantsCollection.MENU_CXBZ_KEY)) {
             return new TextMsg("1. 登陆平台的时候请先绑定 回复BD:0123456789(卡号);\n 2. 回复TQ:地点(默认为:大连)查看当前天气;\n");
         } else if (eventKey.equals(ConstantsCollection.MENU_RQCX_KEY)) {
-            return new TextMsg("请输入RQ查询今天的日期信息,或者输入RQ:2015-05-23(要查询的日期)查询对应的日期信息");
+            return new TextMsg("请输入RQ查询今天的日期信息,或者输入RQ:20150523(要查询的日期)查询对应的日期信息");
         }
 
         return new TextMsg("请选择正确的菜单");
