@@ -63,6 +63,11 @@ public class ServletWeixinSupport extends WeixinSupport {
                 return new TextMsg("请先绑定学员卡号,发送信息(BD:学号卡号)");
             } else {
                 List<RestNowStudentCourseInfo> infos = KCHttpRequest.getManageKC(userCardNum);
+
+                if (infos.size() < 1) {
+                    return new TextMsg("您今日没有课程.");
+                }
+
                 TextMsg textMsg = new TextMsg();
 
                 for (RestNowStudentCourseInfo info : infos) {
