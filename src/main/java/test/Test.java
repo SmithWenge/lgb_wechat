@@ -121,7 +121,7 @@ public class Test {
 
 //        System.out.println(DateTime.now().toString("YYYY-MM-dd"));
         ServletWeixinSupport weixinSupport = new ServletWeixinSupport();
-        weixinSupport.handleTextMsg(new TextReqMsg("rq"));
+        weixinSupport.handleTextMsg(new TextReqMsg("kc"));
 
 //        String testDate = "20160503";
 //        String date = testDate.substring(0, 4) + "-" + testDate.substring(4, 6) + "-" + testDate.substring(6, 8);
