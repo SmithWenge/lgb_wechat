@@ -11,4 +11,6 @@ public interface ArticleService {
     Document view(String artilceType, String id);
     boolean edit(Article article);
     boolean delete(String articleType, String id);
+    Document getArticleImage(String articleType, String id);
+    boolean updateImage(Article article);
 }

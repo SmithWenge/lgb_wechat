@@ -72,4 +72,26 @@ public class ArticleRepositoryImpl implements ArticleRepository {
 
         return mongodbTemplate.updateOne(articleType, condition, document) == 1;
     }
+
+    @Override
+    public Document selectImage(String articleType, String id) {
+        Document condition = new Document("_id", new ObjectId(id))
+                .append("articleDelete", ConstantsCollection.DEFAULT_RECORD_NOT_DELETE);
+
+        List<Document> documents = mongodbTemplate.find(articleType, condition);
+
+        if (documents.size() == 1) {
+            return documents.get(0);
+        }
+
+        return null;
+    }
+
+    @Override
+    public boolean updateImage(Article article) {
+        Document condition = new Document("_id", new ObjectId(article.getId()));
+        Document document = new Document("$set", new Document("pictureUrl", article.getPictureUrl()));
+
+        return mongodbTemplate.updateOne(article.getArticleType(), condition, document) == 1;
+    }
 }

@@ -59,6 +59,9 @@
                                 <a href="${contextPath}/admin/article/view/${document.articleType}/${document._id}.action" style="text-decoration: none;">
                                     <button type="button" class="btn btn-success">查看</button>
                                 </a>
+                                <a href="${contextPath}/admin/article/route/image/modify/${document.articleType}/${document._id}.action" style="text-decoration: none;">
+                                    <button type="button" class="btn btn-warning">更改图片</button>
+                                </a>
                                 <a href="${contextPath}/admin/article/route/edit/${document.articleType}/${document._id}.action" style="text-decoration: none;">
                                     <button type="button" class="btn btn-warning">编辑</button>
                                 </a>

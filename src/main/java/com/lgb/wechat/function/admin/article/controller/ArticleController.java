@@ -150,7 +150,7 @@ public class ArticleController {
         boolean updated = articleService.edit(article);
 
         if (updated) {
-            return REDIRECT_ADMIN_ARTICLE_LIST + ConstantsCollection.DEFAULT_ARTICLE_COLLECTION_NAME + ".action";
+            return REDIRECT_ADMIN_ARTICLE_LIST + article.getArticleType() + ".action";
         } else {
             return ADMIN_ARTICLE_ROUTE_EDIT + article.getArticleType() + "/" + article.getId() + REQUEST_SUFFIX_ACTION;
         }
@@ -165,6 +165,63 @@ public class ArticleController {
             return REDIRECT_ADMIN_ARTICLE_LIST + articleType + REQUEST_SUFFIX_ACTION;
         } else {
             return REDIRECT_ADMIN_ARTICLE_LIST + articleType + REQUEST_SUFFIX_ACTION;
+        }
+    }
+
+    @RequestMapping("/route/image/modify/{articleType}/{id}")
+    public ModelAndView routeImageModify(@PathVariable("articleType") String articleType,
+                                   @PathVariable("id") String id) {
+
+        Document articleImage = articleService.getArticleImage(articleType, id);
+        if (null != articleImage) {
+            ModelAndView mav = new ModelAndView("admin/article/imageEdit");
+
+            mav.addObject("document", articleImage);
+
+            return mav;
+        } else {
+            return new ModelAndView(REDIRECT_ADMIN_ARTICLE_LIST + articleType + REQUEST_SUFFIX_ACTION);
+        }
+    }
+
+    @RequestMapping("/image/edit")
+    public String imageEdit(Article article, @RequestParam("articlePicture") MultipartFile articlePicture,
+                            HttpServletRequest request, @RequestParam("oldPictureUrl") String oldPictureUrl) {
+        String tmpFileName = articlePicture.getOriginalFilename();
+        if (tmpFileName == null || tmpFileName.length() == 0) {
+            return "redirect:/admin/article/route/image/modify/" + article.getArticleType() + "/" + article.getId() + ".action";
+        }
+
+        File uploadImage = save(articlePicture, request);
+        String requestURL = request.getRequestURL().toString();
+
+        String serverURL = requestURL.substring(0, requestURL.indexOf("/", 8)) + request.getContextPath();
+
+        Optional<File> optional = Optional.fromNullable(uploadImage);
+        if (optional.isPresent()) {
+            article.setPictureUrl(serverURL + "/static/article/image/" + uploadImage.getName());
+
+            if (articleService.updateImage(article)) {
+                if (null != oldPictureUrl && oldPictureUrl.length() > 0)
+                    deleteOldPicture(oldPictureUrl, request);
+
+                return REDIRECT_ADMIN_ARTICLE_LIST + article.getArticleType() + REQUEST_SUFFIX_ACTION;
+            }
+
+            return "redirect:/admin/article/route/image/modify/" + article.getArticleType() + "/" + article.getId() + ".action";
+        }
+
+
+        return "redirect:/admin/article/route/image/modify/" + article.getArticleType() + "/" + article.getId() + ".action";
+    }
+
+    private void deleteOldPicture(String oldPictureUrl, HttpServletRequest req) {
+        String pictureName = oldPictureUrl.substring(oldPictureUrl.lastIndexOf("/"));
+        String targetPath = req.getSession().getServletContext().getRealPath("/static/article/image/");
+
+        File deleteFile = new File(targetPath + pictureName);
+        if (deleteFile.exists()) {
+            deleteFile.delete();
         }
     }
 }

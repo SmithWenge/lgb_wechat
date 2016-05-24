@@ -38,4 +38,14 @@ public class ArticleServiceImpl implements ArticleService {
     public boolean delete(String articleType, String id) {
         return articleRepository.update(articleType, id);
     }
+
+    @Override
+    public Document getArticleImage(String articleType, String id) {
+        return articleRepository.selectImage(articleType, id);
+    }
+
+    @Override
+    public boolean updateImage(Article article) {
+        return articleRepository.updateImage(article);
+    }
 }

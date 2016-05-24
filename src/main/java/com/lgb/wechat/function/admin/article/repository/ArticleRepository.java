@@ -11,4 +11,6 @@ public interface ArticleRepository {
     Document select(String artilceType, String id);
     boolean update(Article article);
     boolean update(String articleType, String id);
+    Document selectImage(String articleType, String id);
+    boolean updateImage(Article article);
 }
