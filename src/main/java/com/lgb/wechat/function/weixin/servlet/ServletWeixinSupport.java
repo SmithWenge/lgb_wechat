@@ -60,7 +60,7 @@ public class ServletWeixinSupport extends WeixinSupport {
             String userCardNum = bindService.isBind(userWeixinId);
 
             if (null == userCardNum || userCardNum.isEmpty()) {
-                return new TextMsg("请先绑定学员卡号,发送信息(BD:学号卡号)");
+                return new TextMsg("请先绑定学员卡号,发送信息(4:学号卡号)");
             } else {
                 List<RestNowStudentCourseInfo> infos = KCHttpRequest.getManageKC(userCardNum);
 
@@ -84,7 +84,7 @@ public class ServletWeixinSupport extends WeixinSupport {
             TQSummary tqSummary = TQHttpRequest.getBaiduTQ(list.get(1));
 
             if (tqSummary.getError() > 0) {
-                return new TextMsg("请填写正确的查询格式,TQ:地点(默认为:大连)");
+                return new TextMsg("请填写正确的查询格式,3:地点(默认为:大连)");
             }
 
             return new TextMsg(tqSummary.toString());
@@ -113,7 +113,7 @@ public class ServletWeixinSupport extends WeixinSupport {
             RQSummary summary = RQHttpRequest.getDateInfo(queryDate);
 
             if (!summary.getError_code().equals("0") || summary.getError_code().length() > 1) {
-                return new TextMsg("请输入正确是查询格式,如 RQ:20150503");
+                return new TextMsg("请输入正确是查询格式,如 5:20150503");
             } else {
                 return new TextMsg(summary.toString());
             }
@@ -140,13 +140,13 @@ public class ServletWeixinSupport extends WeixinSupport {
         } else if (eventKey.equals(ConstantsCollection.MENU_LSZK_KEY)) {
             return getArticleMsg(ConstantsCollection.MENU_LSZK_KEY);
         } else if (eventKey.equals(ConstantsCollection.MENU_JRKC_KEY)) {
-            return new TextMsg("请输入KC查询今日的个人课程");
+            return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复2查询今日的个人课程");
         } else if (eventKey.equals(ConstantsCollection.MENU_CJCX_KEY)) {
-            return new TextMsg("请输入CJ查询个人相关的成绩");
+            return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复1查询个人相关的成绩");
         } else if (eventKey.equals(ConstantsCollection.MENU_CXBZ_KEY)) {
-            return new TextMsg("1. 登陆平台的时候请先绑定 回复BD:0123456789(卡号);\n 2. 回复TQ:地点(默认为:大连)查看当前天气;\n");
+            return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复3:地点(默认为:大连)查看当前天气;\n");
         } else if (eventKey.equals(ConstantsCollection.MENU_RQCX_KEY)) {
-            return new TextMsg("请输入RQ查询今天的日期信息,或者输入RQ:20150523(要查询的日期)查询对应的日期信息");
+            return new TextMsg("请输入5查询今天的日期信息,或者输入5:20150523(要查询的日期)查询对应的日期信息");
         }
 
         return new TextMsg("请选择正确的菜单");

@@ -54,16 +54,6 @@
     <url-pattern>*.action</url-pattern>
   </servlet-mapping>
 
-  <!-- 微信Servlet -->
-  <servlet>
-    <servlet-name>weixin</servlet-name>
-    <servlet-class>com.lgb.wechat.function.weixin.servlet.WeixinServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>weixin</servlet-name>
-    <url-pattern>/weixin</url-pattern>
-  </servlet-mapping>
-
   <!-- To see Logback status, optionally add the following Logback Status servlet. -->
   <servlet>
     <servlet-name>ViewStatusMessages</servlet-name>
@@ -75,6 +65,15 @@
     <url-pattern>/logbackStatus</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>weixin</servlet-name>
+    <servlet-class>com.lgb.wechat.function.weixin.servlet.WeixinServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>weixin</servlet-name>
+    <url-pattern>/weixin</url-pattern>
+  </servlet-mapping>
   <!-- Config Taglib uri -->
   <jsp-config>
     <taglib>
