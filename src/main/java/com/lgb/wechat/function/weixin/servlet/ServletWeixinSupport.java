@@ -93,8 +93,7 @@ public class ServletWeixinSupport extends WeixinSupport {
                 return new TextMsg("请在绑定的时候输入正确的学员卡号");
             }
 
-//            String userWeixinId = msg.getFromUserName();
-            String userWeixinId = "19808493291";
+            String userWeixinId = msg.getFromUserName();
             String userCardNum = list.get(1);
 
             if (bindService.bind(userCardNum, userWeixinId)) {
