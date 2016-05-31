@@ -5,4 +5,5 @@ public interface BindDao {
     boolean insert(String userCardNum, String userWeixinId);
     String selectIsBind(String userWeixinId);
     boolean selectWeixinId(String userWeixinId);
+    boolean selectCardNum(String userCardNum);
 }

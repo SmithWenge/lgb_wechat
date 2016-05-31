@@ -104,3 +104,197 @@ Caused by: java.net.ConnectException: Connection refused: connect
 19:18:09.122 [main] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
 19:18:09.290 [cluster-ClusterId{value='574d72f1f604fd47a0215389', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:1, serverValue:2}] to 127.0.0.1:27017
 19:18:09.292 [cluster-ClusterId{value='574d72f1f604fd47a0215389', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 6]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=1120966}
+20:18:21.561 [main] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+20:18:51.725 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+20:18:51.885 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Tue May 31 20:18:51 CST 2016]; root of context hierarchy
+20:18:52.019 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/root-context.xml]
+20:18:52.378 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [D:\workspace\lgbwechat\target\classes\db\db.properties]
+20:18:52.379 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [D:\workspace\lgbwechat\target\classes\db\mongodb.properties]
+20:18:53.308 [localhost-startStop-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+20:18:53.342 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 1609 ms
+20:18:53.382 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:484] FrameworkServlet 'springServlet': initialization started
+20:18:53.386 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue May 31 20:18:53 CST 2016]; parent: Root WebApplicationContext
+20:18:53.387 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/servlet-context.xml]
+20:18:53.875 [localhost-startStop-1] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+20:18:54.216 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/edit],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(com.lgb.wechat.function.admin.article.Article)
+20:18:54.216 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/delete/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.deleteArticle(java.lang.String,java.lang.String)
+20:18:54.217 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/view/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.viewArticle(java.lang.String,java.lang.String)
+20:18:54.217 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list/{articleType}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticle(java.lang.String)
+20:18:54.217 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/edit/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.routeEdit(java.lang.String,java.lang.String)
+20:18:54.217 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.addArticle(com.lgb.wechat.function.admin.article.Article,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+20:18:54.218 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/image/edit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.imageEdit(com.lgb.wechat.function.admin.article.Article,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,java.lang.String)
+20:18:54.218 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.route2Add()
+20:18:54.218 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/image/modify/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.routeImageModify(java.lang.String,java.lang.String)
+20:18:54.219 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticleByType(java.lang.String)
+20:18:54.220 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/weixin/article/view/{colName}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.weixin.article.controller.WeixinArticleController.weixinViewArticle(java.lang.String,java.lang.String)
+20:18:54.705 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue May 31 20:18:53 CST 2016]; parent: Root WebApplicationContext
+20:18:54.782 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue May 31 20:18:53 CST 2016]; parent: Root WebApplicationContext
+20:18:54.943 [localhost-startStop-1] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+20:18:54.991 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue May 31 20:18:53 CST 2016]; parent: Root WebApplicationContext
+20:18:55.394 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:503] FrameworkServlet 'springServlet': initialization completed in 2012 ms
+20:19:13.392 [cluster-ClusterId{value='574d812d17dde56018e221c4', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:76] Exception in monitor thread while connecting to server localhost:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:474)
+	at com.mongodb.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:225)
+	at com.mongodb.connection.CommandHelper.receiveReply(CommandHelper.java:134)
+	at com.mongodb.connection.CommandHelper.receiveCommandResult(CommandHelper.java:121)
+	at com.mongodb.connection.CommandHelper.executeCommand(CommandHelper.java:32)
+	at com.mongodb.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:83)
+	at com.mongodb.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:43)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:115)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:152)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at com.mongodb.connection.SocketStream.read(SocketStream.java:85)
+	at com.mongodb.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:491)
+	at com.mongodb.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:221)
+	... 8 common frames omitted
+20:19:36.208 [cluster-ClusterId{value='574d812d17dde56018e221c4', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:2, serverValue:3}] to localhost:27017
+20:19:36.212 [cluster-ClusterId{value='574d812d17dde56018e221c4', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 6]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=2869388}
+20:22:30.370 [main] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+20:22:30.926 [main] INFO  c.l.w.f.w.s.ServletWeixinSupport [ServletWeixinSupport.java:101] [OK] {} 绑定卡号成功
+20:24:06.906 [main] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+20:25:16.767 [cluster-ClusterId{value='574d8266f604fdb13c8bea40', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:76] Exception in monitor thread while connecting to server 127.0.0.1:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:114)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50)
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58)
+	... 3 common frames omitted
+20:25:17.226 [main] INFO  c.l.w.f.w.s.ServletWeixinSupport [ServletWeixinSupport.java:101] [OK] {} 绑定卡号成功
+20:26:40.049 [main] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+20:26:48.177 [cluster-ClusterId{value='574d8300f604fd48fcd21f65', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:76] Exception in monitor thread while connecting to server 127.0.0.1:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:114)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50)
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58)
+	... 3 common frames omitted
+20:26:59.357 [main] INFO  c.l.w.f.w.s.ServletWeixinSupport [ServletWeixinSupport.java:102] [OK] {} 绑定卡号成功
+20:28:45.231 [main] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+20:28:45.783 [main] INFO  c.l.w.f.w.s.ServletWeixinSupport [ServletWeixinSupport.java:102] [OK] {} 绑定卡号成功
+20:29:19.598 [main] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+20:29:22.142 [cluster-ClusterId{value='574d839ff604fdd2c466bacb', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:76] Exception in monitor thread while connecting to server 127.0.0.1:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:114)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50)
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58)
+	... 3 common frames omitted
+20:29:25.486 [main] INFO  c.l.w.f.w.s.ServletWeixinSupport [ServletWeixinSupport.java:102] [OK] {} 绑定卡号成功
+21:55:34.761 [main] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:55:44.340 [cluster-ClusterId{value='574d97d6f604fda8f4029624', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:76] Exception in monitor thread while connecting to server 127.0.0.1:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:114)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50)
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58)
+	... 3 common frames omitted
+21:56:34.408 [main] INFO  c.l.w.f.w.s.ServletWeixinSupport [ServletWeixinSupport.java:102] [OK] {} 绑定卡号成功
+22:00:20.255 [main] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:00:20.824 [main] INFO  c.l.w.f.w.s.ServletWeixinSupport [ServletWeixinSupport.java:102] [OK] {} 绑定卡号成功
+22:00:47.862 [main] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:00:52.904 [cluster-ClusterId{value='574d990ff604fdb184b7fbcc', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:76] Exception in monitor thread while connecting to server 127.0.0.1:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:114)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50)
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58)
+	... 3 common frames omitted
+22:13:05.865 [main] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:13:11.192 [cluster-ClusterId{value='574d9bf1f604fd9f684aac3f', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:76] Exception in monitor thread while connecting to server 127.0.0.1:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:114)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50)
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58)
+	... 3 common frames omitted
+22:17:01.990 [main] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:17:06.268 [cluster-ClusterId{value='574d9cddf604fdc09c2499a6', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:76] Exception in monitor thread while connecting to server 127.0.0.1:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:63)
+	at com.mongodb.connection.InternalStreamConnection.open(InternalStreamConnection.java:114)
+	at com.mongodb.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:128)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:339)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:200)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:182)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:579)
+	at com.mongodb.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:50)
+	at com.mongodb.connection.SocketStream.open(SocketStream.java:58)
+	... 3 common frames omitted
+22:17:13.302 [main] INFO  c.l.w.f.w.s.ServletWeixinSupport [ServletWeixinSupport.java:102] [OK] {} 绑定卡号成功

@@ -93,7 +93,8 @@ public class ServletWeixinSupport extends WeixinSupport {
                 return new TextMsg("请在绑定的时候输入正确的学员卡号");
             }
 
-            String userWeixinId = msg.getFromUserName();
+//            String userWeixinId = msg.getFromUserName();
+            String userWeixinId = "19808493291";
             String userCardNum = list.get(1);
 
             if (bindService.bind(userCardNum, userWeixinId)) {
@@ -101,7 +102,7 @@ public class ServletWeixinSupport extends WeixinSupport {
                     LOG.info("[OK] {} 绑定卡号成功");
                 return new TextMsg("绑定卡号成功" + userCardNum);
             } else {
-                return new TextMsg("您已经绑定了,如绑定信息错误请联系管理员.");
+                return new TextMsg("您已经绑定了,微信号与卡号一一对应,如绑定信息错误请联系管理员.");
             }
         } else if (list.get(0).equals(ConstantsCollection.RQ_REQUEST)) {
             String queryDate = DateUtils.now4Y2M2D();
@@ -122,7 +123,7 @@ public class ServletWeixinSupport extends WeixinSupport {
         if (LOG.isDebugEnabled())
             LOG.debug("用户发送到服务器的内容:{}", content);
 
-        return new TextMsg("服务器回复用户消息!");
+        return new TextMsg("请输入正确的信息！");
     }
 
     @Override
@@ -144,7 +145,7 @@ public class ServletWeixinSupport extends WeixinSupport {
         } else if (eventKey.equals(ConstantsCollection.MENU_CJCX_KEY)) {
             return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复1查询个人相关的成绩");
         } else if (eventKey.equals(ConstantsCollection.MENU_CXBZ_KEY)) {
-            return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复3:地点(默认为:大连)查看当前天气;\n");
+            return new TextMsg("回复3:地点(默认为:大连)查看当前天气;");
         } else if (eventKey.equals(ConstantsCollection.MENU_RQCX_KEY)) {
             return new TextMsg("请输入5查询今天的日期信息,或者输入5:20150523(要查询的日期)查询对应的日期信息");
         }
