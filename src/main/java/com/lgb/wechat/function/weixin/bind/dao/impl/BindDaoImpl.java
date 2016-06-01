@@ -64,7 +64,7 @@ public class BindDaoImpl implements BindDao {
         };
 
         try {
-            return jdbcTemplate.queryForObject(sql, args, Integer.class) == 1;
+            return jdbcTemplate.queryForObject(sql, args, Integer.class) >= 1;
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -110,7 +110,7 @@ public class BindDaoImpl implements BindDao {
         };
 
         try {
-            return jdbcTemplate.queryForObject(sql, args, Integer.class) == 1;
+            return jdbcTemplate.queryForObject(sql, args, Integer.class) >= 1;
         } catch (Exception e) {
             e.printStackTrace();
             return false;
@@ -125,7 +125,7 @@ public class BindDaoImpl implements BindDao {
         };
 
         try {
-            return jdbcTemplate.queryForObject(sql, args, Integer.class) == 1;
+            return jdbcTemplate.queryForObject(sql, args, Integer.class) >= 1;
         } catch (Exception e) {
             e.printStackTrace();
             return false;

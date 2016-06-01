@@ -98,7 +98,7 @@ public class ServletWeixinSupport extends WeixinSupport {
 
             if (bindService.bind(userCardNum, userWeixinId)) {
                 if (LOG.isInfoEnabled())
-                    LOG.info("[OK] {} 绑定卡号成功");
+                    LOG.info("[OK] {} 绑定卡号成功", userCardNum);
                 return new TextMsg("绑定卡号成功" + userCardNum);
             } else {
                 return new TextMsg("您已经绑定了,微信号与卡号一一对应,如绑定信息错误请联系管理员.");
