@@ -40,7 +40,6 @@ public class ServletWeixinSupport extends WeixinSupport {
         return ConstantsCollection.TOKEN;
     }
 
-
     @Override
     public BaseMsg handleTextMsg(TextReqMsg msg) {
         String content = msg.getContent().trim().toUpperCase();
@@ -51,7 +50,6 @@ public class ServletWeixinSupport extends WeixinSupport {
         } else {
             list = Arrays.asList(content);
         }
-
 
         if (list.get(0).equals(ConstantsCollection.CJ_REQUEDT)) {
             LOG.info("#########################################" + msg.getFromUserName());
