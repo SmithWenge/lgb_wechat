@@ -1,12 +1,13 @@
-package com.lgb.wechat.function.login.service;
+package com.lgb.wechat.function.admin.login.service.impl;
 
-import com.lgb.wechat.function.login.AdminUser;
-import com.lgb.wechat.function.login.repository.LoginRepositoryI;
+import com.lgb.wechat.function.admin.login.AdminUser;
+import com.lgb.wechat.function.admin.login.repository.LoginRepositoryI;
+import com.lgb.wechat.function.admin.login.service.LoginServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LoginService implements LoginServiceI{
+public class LoginService implements LoginServiceI {
 
     @Autowired
     private LoginRepositoryI loginRepository;

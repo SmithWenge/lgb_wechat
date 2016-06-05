@@ -1,11 +1,19 @@
-package com.lgb.wechat.function.login;
+package com.lgb.wechat.function.admin.login;
 
 public class AdminUser {
 
     private String userName;
     private String userPass;
-    private String uesrPassNew;
+    private String userPassNew;
     private String userPassNewRe;
+
+    public String getUserPassNew() {
+        return userPassNew;
+    }
+
+    public void setUserPassNew(String userPassNew) {
+        this.userPassNew = userPassNew;
+    }
 
     public String getUserPassNewRe() {
         return userPassNewRe;
@@ -13,14 +21,6 @@ public class AdminUser {
 
     public void setUserPassNewRe(String userPassNewRe) {
         this.userPassNewRe = userPassNewRe;
-    }
-
-    public String getUesrPassNew() {
-        return uesrPassNew;
-    }
-
-    public void setUesrPassNew(String uesrPassNew) {
-        this.uesrPassNew = uesrPassNew;
     }
 
     public String getUserName() {

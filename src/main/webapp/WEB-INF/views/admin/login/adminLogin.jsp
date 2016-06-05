@@ -15,49 +15,77 @@
     <link rel="stylesheet" href="${contextPath}/static/plugins/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="${contextPath}/static/plugins/bootstrap/css/bootstrap-theme.css" />
     <title>老干部大学微信后台</title>
-    <style>
-        .content{
-            margin: 200px auto 0;
-            width: 420px;
-            background: #fff;
-            height: 255px;
-            opacity: 0.8;
-            padding:10px ;
-        }
-
-        .right_div{
-            width: 400px;
-            padding: 16px 40px;
-            margin: 0 auto;
-        }
-        #userName,#userName{
-            width: 270px;
-            height: 40px;
-            margin-top: 10px;
-            opacity: 0.9;
-        }
-        #sub{
-            width: 270px;
-            height: 35px;
-            margin: 15px 20px 0;
-        }
-    </style>
 </head>
 
 
 <body>
-<form action="${contextPath}/weinxin/admin/login.action" method="post" id="adminLoginForm">
-    <div class="content">
-        <div class="right_div">
-            <label for="userName"><span class="glyphicon glyphicon-user"></span><span>&nbsp;</span><span>&nbsp;</span></label>
-            <input type="text" id="userName" name="userName" placeholder="admin" /><br />
-            <label for="userPass"><span class="glyphicon glyphicon-lock"></span><span>&nbsp;</span><span>&nbsp;</span></label>
-            <input type="password" id="userPass" name="userPass" placeholder="密码" /><br />
-            <span>&nbsp;</span><button class="btn btn-info" type="submit" id="sub">登录</button>
-        </div>
+    <div id="inquire_box" style="width:500px;margin: 100px 300px">
+        <form name="search-form" id="search-form" action="${contextPath}/admin/login.action" method="post" class="form-horizontal col-sm-offset-3">
+            <div class="form-group">
+                <label for="userName" class="col-sm-4 control-label" style="padding: 0;font-weight: 800;">用户名</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="userName" name="userName" />
+                </div>
+            </div><br/>
+            <div class="form-group">
+                <label for="userPass" class="col-sm-4 control-label" style="padding: 0;font-weight: 800;">密码</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control" id="userPass" name="userPass" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="authCode" class="col-sm-4 control-label" style="padding: 0;font-weight: 800;">验证码</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" id="authCode" name="authCode" placeholder="验证码不区分大小写">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-4"></div>
+                <div class="col-md-8">
+                    <a id="change" href="#">
+                        <img id="authCodeImg" src="${contextPath}/admin/captchaImage.action"/>
+                        <span style="line-height: 40px;"><em> &nbsp;换一张</em></span>
+                    </a>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-8 col-sm-offset-4">
+                    <button type="submit" class="btn btn-primary" value="登录" style="width: 300px">登录</button>
+                </div>
+            </div>
+        </form>
     </div>
-</form>
-
 <%@include file="/WEB-INF/include/javascript.jsp"%>
 
+    <script type="text/javascript">
+        $(function() {
+            $("#change").on('click', function() {
+                $("#authCodeImg").attr("src", "${contextPath}/admin/captchaImage.action?ran=" + new Date() / 100);
+            });
+
+            $("#search-form").validate({
+                rules : {
+                    authCode : {
+                        required : true,
+                        remote: {
+                            url : "${contextPath}/admin/validateCode.action",
+                            type : "post",
+                            dataType : "json",
+                            data : {
+                                authCode : function() {
+                                    return $("#authCode").val();
+                                }
+                            }
+                        }
+                    }
+                },
+                messages : {
+                    authCode : {
+                        required : "请填写验证码",
+                        remote: "请输入正确的验证码"
+                    }
+                }
+            });
+        });
+    </script>
 <%@include file="/WEB-INF/include/footer.jsp"%>

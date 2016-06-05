@@ -40,4 +40,21 @@
 		<constructor-arg name="mongodbHost" value="${mongodb.host}" />
 		<constructor-arg name="port" value="${mongodb.port}" />
 	</bean>
+
+	<bean id="captchaProducer"
+		  class="com.google.code.kaptcha.impl.DefaultKaptcha">
+		<property name="config">
+			<bean class="com.google.code.kaptcha.util.Config">
+				<constructor-arg type="java.util.Properties">
+					<props>
+						<prop key="kaptcha.image.width">150</prop>
+						<prop key="kaptcha.image.height">45</prop>
+						<prop key="kaptcha.textproducer.char.string">abcdefgrstuvw0123456789hijklmnopqxyz</prop>
+						<prop key="kaptcha.textproducer.char.length">4</prop>
+						<prop key="kaptcha.session.key">KAPTCHA_SESSION_KEY</prop>
+					</props>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
 </beans>

@@ -1,12 +1,13 @@
-package com.lgb.wechat.function.login.repository;
+package com.lgb.wechat.function.admin.login.repository.impl;
 
-import com.lgb.wechat.function.login.AdminUser;
+import com.lgb.wechat.function.admin.login.AdminUser;
+import com.lgb.wechat.function.admin.login.repository.LoginRepositoryI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class LoginRepository implements LoginRepositoryI{
+public class LoginRepository implements LoginRepositoryI {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -29,9 +30,9 @@ public class LoginRepository implements LoginRepositoryI{
 
     @Override
     public boolean resetPassword(AdminUser adminUser) {
-        String sql = "UPDATE lgb_adminUser SET userPass = ? WHERE userName = ? AND uesrPass = ? ";
+        String sql = "UPDATE wechat_user SET userPass = ? WHERE userName = ? AND userPass = ? ";
         Object[] args = {
-                adminUser.getUesrPassNew(),
+                adminUser.getUserPassNew(),
                 adminUser.getUserName(),
                 adminUser.getUserPass()
 

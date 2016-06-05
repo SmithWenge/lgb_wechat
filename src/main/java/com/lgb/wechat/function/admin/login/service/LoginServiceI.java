@@ -1,6 +1,6 @@
-package com.lgb.wechat.function.login.service;
+package com.lgb.wechat.function.admin.login.service;
 
-import com.lgb.wechat.function.login.AdminUser;
+import com.lgb.wechat.function.admin.login.AdminUser;
 
 public interface LoginServiceI {
     boolean isLogin(AdminUser adminUser);

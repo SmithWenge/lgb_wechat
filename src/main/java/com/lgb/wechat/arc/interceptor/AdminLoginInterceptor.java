@@ -2,7 +2,7 @@ package com.lgb.wechat.arc.interceptor;
 
 import com.google.common.base.Optional;
 import com.lgb.wechat.arc.util.constants.ConstantsCollection;
-import com.lgb.wechat.function.login.AdminUser;
+import com.lgb.wechat.function.admin.login.AdminUser;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -39,7 +39,7 @@ public class AdminLoginInterceptor implements HandlerInterceptor {
         Optional<AdminUser> optional = Optional.fromNullable(adminUser);
 
         if (!optional.isPresent()) {
-            String redirectLocation = httpServletRequest.getContextPath() + "/weixin/admin/routeLogin.action";
+            String redirectLocation = httpServletRequest.getContextPath() + "/admin/routeLogin.action";
             httpServletResponse.sendRedirect(redirectLocation);
             return false;
             /* 用exceptionMapping中确定重定向 */
