@@ -233,26 +233,12 @@
       <version>2.6.2</version>
     </dependency>
     <!-- kaptcha -->
-    <dependency>
-      <groupId>fakepath</groupId>
-      <artifactId>kaptcha</artifactId>
-      <version>2.3.2</version>
-    </dependency>
+    <!--<dependency>-->
+      <!--<groupId>fakepath</groupId>-->
+      <!--<artifactId>kaptcha</artifactId>-->
+      <!--<version>2.3.2</version>-->
+    <!--</dependency>-->
   </dependencies>
-
-  <repositories>
-    <repository>
-      <id>dev</id>
-      <name>nexus</name>
-      <url>http://222.26.224.232:8088/nexus/content/groups/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
 
   <build>
     <finalName>wechat</finalName>
