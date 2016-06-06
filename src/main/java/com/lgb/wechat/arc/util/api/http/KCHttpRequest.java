@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class KCHttpRequest {
-    private static final String MANAGE_QUERY_KC_PREFIX = "http://139.129.6.189:8080/manage/api/course/";
+    private static final String MANAGE_QUERY_KC_PREFIX = "http://www.56team.com:8080/manage/api/course/";
     private static final String MANAGE_QUERY_KC_SUFFIX = ".action";
 
     public static List<RestNowStudentCourseInfo> getManageKC(String stuCardNum) {
