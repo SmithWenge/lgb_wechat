@@ -4,9 +4,11 @@ import com.github.sd4324530.fastweixin.message.*;
 import com.github.sd4324530.fastweixin.message.req.MenuEvent;
 import com.github.sd4324530.fastweixin.message.req.TextReqMsg;
 import com.github.sd4324530.fastweixin.servlet.WeixinSupport;
+import com.lgb.wechat.arc.util.api.http.CJHttpRequest;
 import com.lgb.wechat.arc.util.api.http.KCHttpRequest;
 import com.lgb.wechat.arc.util.api.http.RQHttpRequest;
 import com.lgb.wechat.arc.util.api.http.TQHttpRequest;
+import com.lgb.wechat.arc.util.api.json.cj.RestStudentScoreInfo;
 import com.lgb.wechat.arc.util.api.json.kc.RestNowStudentCourseInfo;
 import com.lgb.wechat.arc.util.api.json.rq.RQSummary;
 import com.lgb.wechat.arc.util.api.json.tq.TQSummary;
@@ -52,7 +54,26 @@ public class ServletWeixinSupport extends WeixinSupport {
         }
 
         if (list.get(0).equals(ConstantsCollection.CJ_REQUEDT)) {
-            LOG.info("#########################################" + msg.getFromUserName());
+            String userWeixinId = msg.getFromUserName();
+            String userCardNum = bindService.isBind(userWeixinId);
+
+            if (null == userCardNum || userCardNum.isEmpty()) {
+                return new TextMsg("请先绑定学员卡号,发送信息(4:学号卡号)");
+            } else {
+                List<RestStudentScoreInfo> infos = CJHttpRequest.getManageCJ(userCardNum);
+
+                if (infos.size() < 1) {
+                    return new TextMsg("成绩暂时还没有公布");
+                }
+
+                TextMsg textMsg = new TextMsg();
+
+                for (RestStudentScoreInfo info : infos) {
+                    textMsg.add(info.toString());
+                }
+
+                return textMsg;
+            }
         } else if (list.get(0).equals(ConstantsCollection.KC_REQUEST)) {
             String userWeixinId = msg.getFromUserName();
             String userCardNum = bindService.isBind(userWeixinId);
