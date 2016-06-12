@@ -15,7 +15,7 @@ public class ConstantsCollection {
 //    public final static String MENU_CJCX_KEY = "cjcx"; //成绩查询
     public final static String MENU_SHZS_KEY = "shzs"; //生活助手
     public final static String MENU_WYJ_KEY = "wyj"; //外语角
-    public final static String MENU_CXBZ_KEY = "cxbz"; //查询帮助
+    public final static String MENU_TQCX_KEY = "cxbz"; //天气查询
     public final static String MENU_RQCX_KEY = "rqcx"; //日期查询
     public final static String MENU_DCXY_KEY = "dcxy"; //多彩校园
     public final static String MENU_JQHD_KEY = "jqhd"; //近期活动
