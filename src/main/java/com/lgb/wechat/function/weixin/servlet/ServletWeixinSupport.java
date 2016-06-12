@@ -136,9 +136,27 @@ public class ServletWeixinSupport extends WeixinSupport {
             } else {
                 return new TextMsg(summary.toString());
             }
+        }else if (list.get(0).equals(ConstantsCollection.JW_REQUEST)) {
+            String userWeixinId = msg.getFromUserName();
+            String userCardNum = bindService.isBind(userWeixinId);
+
+            if (null == userCardNum || userCardNum.isEmpty()) {
+                return new TextMsg("请先绑定学员卡号,发送信息(4:学号卡号)");
+            }else {
+                return getArticleMsg(ConstantsCollection.MENU_JWGG_KEY);
+            }
+        }else if (list.get(0).equals(ConstantsCollection.ZX_REQUEST)) {
+            String userWeixinId = msg.getFromUserName();
+            String userCardNum = bindService.isBind(userWeixinId);
+
+            if (null == userCardNum || userCardNum.isEmpty()) {
+                return new TextMsg("请先绑定学员卡号,发送信息(4:学号卡号)");
+            } else {
+                return getArticleMsg(ConstantsCollection.MENU_ZXJY_KEY);
+            }
         }
 
-        if (LOG.isDebugEnabled())
+            if (LOG.isDebugEnabled())
             LOG.debug("用户发送到服务器的内容:{}", content);
 
         return new TextMsg("请输入正确的信息！");
@@ -148,20 +166,27 @@ public class ServletWeixinSupport extends WeixinSupport {
     protected BaseMsg handleMenuClickEvent(MenuEvent event) {
         String eventKey = event.getEventKey();
 
-        if (eventKey.equals(ConstantsCollection.MENU_ZXJY_KEY)) {
-            return getArticleMsg(ConstantsCollection.MENU_ZXJY_KEY);
-        } else if (eventKey.equals(ConstantsCollection.MENU_JWGG_KEY)) {
-            return getArticleMsg(ConstantsCollection.MENU_JWGG_KEY);
-        } else if (eventKey.equals(ConstantsCollection.MENU_WYJ_KEY)) {
+
+        if (eventKey.equals(ConstantsCollection.MENU_WYJ_KEY)) {
             return getArticleMsg(ConstantsCollection.MENU_WYJ_KEY);
+//        } else if (eventKey.equals(ConstantsCollection.MENU_JWGG_KEY)) {
+//            return getArticleMsg(ConstantsCollection.MENU_JWGG_KEY);
+//        } else if (eventKey.equals(ConstantsCollection.MENU_ZXJY_KEY)) {
+//            return getArticleMsg(ConstantsCollection.MENU_ZXJY_KEY);
         } else if (eventKey.equals(ConstantsCollection.MENU_JQHD_KEY)) {
             return getArticleMsg(ConstantsCollection.MENU_JQHD_KEY);
         } else if (eventKey.equals(ConstantsCollection.MENU_LSZK_KEY)) {
             return getArticleMsg(ConstantsCollection.MENU_LSZK_KEY);
-        } else if (eventKey.equals(ConstantsCollection.MENU_JRKC_KEY)) {
-            return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复2查询今日的个人课程");
-        } else if (eventKey.equals(ConstantsCollection.MENU_CJCX_KEY)) {
-            return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复1查询个人相关的成绩");
+        } else if (eventKey.equals(ConstantsCollection.MENU_XNFU_KEY)) {
+            return new TextMsg("1. 回复1查询个人相关的成绩;\n " +
+                    "2. 回复2查询今日的个人课程;\n " +
+                    "3. 回复4绑定卡号 例如4:0123456789(卡号);\n " +
+                    "4. 回复6查看教务公告;\n " +
+                    "5. 回复7在线教育");
+//        } else if (eventKey.equals(ConstantsCollection.MENU_JRKC_KEY)) {
+//            return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复2查询今日的个人课程");
+//        } else if (eventKey.equals(ConstantsCollection.MENU_CJCX_KEY)) {
+//            return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复1查询个人相关的成绩");
         } else if (eventKey.equals(ConstantsCollection.MENU_CXBZ_KEY)) {
             return new TextMsg("回复3:地点(默认为:大连)查看当前天气;");
         } else if (eventKey.equals(ConstantsCollection.MENU_RQCX_KEY)) {

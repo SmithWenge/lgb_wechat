@@ -9,10 +9,10 @@ public class ConstantsCollection {
 
     // 微信菜单
     public final static String MENU_XNFU_KEY = "xnfw"; //校内服务
-    public final static String MENU_JRKC_KEY = "jrkc"; //今日课表
+//    public final static String MENU_JRKC_KEY = "jrkc"; //今日课表
     public final static String MENU_JWGG_KEY = "jwgg"; //教务公告
     public final static String MENU_ZXJY_KEY = "zxjy"; //在线教育
-    public final static String MENU_CJCX_KEY = "cjcx"; //成绩查询
+//    public final static String MENU_CJCX_KEY = "cjcx"; //成绩查询
     public final static String MENU_SHZS_KEY = "shzs"; //生活助手
     public final static String MENU_WYJ_KEY = "wyj"; //外语角
     public final static String MENU_CXBZ_KEY = "cxbz"; //查询帮助
@@ -39,6 +39,8 @@ public class ConstantsCollection {
     public final static String TQ_REQUEST = "3"; //天气查询
     public final static String BD_REQUEST = "4"; //学员绑定
     public final static String RQ_REQUEST = "5"; //日期查询
+    public final static String JW_REQUEST = "6"; //教务公告
+    public final static String ZX_REQUEST = "7"; //在线教育
 
     // 默认天气地点
     public final static String DEFAULT_TQ_QUERY_LOCATION = "大连";
