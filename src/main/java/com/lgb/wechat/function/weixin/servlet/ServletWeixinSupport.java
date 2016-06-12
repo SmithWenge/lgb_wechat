@@ -109,7 +109,8 @@ public class ServletWeixinSupport extends WeixinSupport {
             return new TextMsg(tqSummary.toString());
         } else if (list.get(0).equals(ConstantsCollection.BD_REQUEST)) {
             if (list.size() <= 1) {
-                return new TextMsg("请在绑定的时候输入正确的学员卡号");
+                return new TextMsg("请注意绑定的格式为 4:学生卡号 \n" +
+                        "数字4与学生卡号用英文格式的冒号隔开 ");
             }
 
             String userWeixinId = msg.getFromUserName();
@@ -141,7 +142,7 @@ public class ServletWeixinSupport extends WeixinSupport {
             String userCardNum = bindService.isBind(userWeixinId);
 
             if (null == userCardNum || userCardNum.isEmpty()) {
-                return new TextMsg("请先绑定学员卡号,发送信息(4:学号卡号)");
+                return new TextMsg("请先绑定学员卡号,发送信息(4:学生卡号)");
             }else {
                 return getArticleMsg(ConstantsCollection.MENU_JWGG_KEY);
             }
@@ -150,7 +151,7 @@ public class ServletWeixinSupport extends WeixinSupport {
             String userCardNum = bindService.isBind(userWeixinId);
 
             if (null == userCardNum || userCardNum.isEmpty()) {
-                return new TextMsg("请先绑定学员卡号,发送信息(4:学号卡号)");
+                return new TextMsg("请先绑定学员卡号,发送信息(4:学生卡号)");
             } else {
                 return getArticleMsg(ConstantsCollection.MENU_ZXJY_KEY);
             }
@@ -180,7 +181,8 @@ public class ServletWeixinSupport extends WeixinSupport {
         } else if (eventKey.equals(ConstantsCollection.MENU_XNFU_KEY)) {
             return new TextMsg("1. 回复1查询个人相关的成绩;\n " +
                     "2. 回复2查询今日的个人课程;\n " +
-                    "3. 回复4绑定卡号 例如4:0123456789(卡号);\n " +
+                    "3. 回复4绑定卡号 \n" +
+                    "例如4:0123456789(学生卡号);\n " +
                     "4. 回复6查看教务公告;\n " +
                     "5. 回复7在线教育");
 //        } else if (eventKey.equals(ConstantsCollection.MENU_JRKC_KEY)) {
