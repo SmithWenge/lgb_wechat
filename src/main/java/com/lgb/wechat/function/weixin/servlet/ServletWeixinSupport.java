@@ -58,7 +58,7 @@ public class ServletWeixinSupport extends WeixinSupport {
             String userCardNum = bindService.isBind(userWeixinId);
 
             if (null == userCardNum || userCardNum.isEmpty()) {
-                return new TextMsg("请先绑定学员卡号,发送信息(4:学号卡号)");
+                return new TextMsg("请先绑定学员卡号,发送信息(3:学号卡号)");
             } else {
                 List<RestStudentScoreInfo> infos = CJHttpRequest.getManageCJ(userCardNum);
 
@@ -79,7 +79,7 @@ public class ServletWeixinSupport extends WeixinSupport {
             String userCardNum = bindService.isBind(userWeixinId);
 
             if (null == userCardNum || userCardNum.isEmpty()) {
-                return new TextMsg("请先绑定学员卡号,发送信息(4:学号卡号)");
+                return new TextMsg("请先绑定学员卡号,发送信息(3:学号卡号)");
             } else {
                 List<RestNowStudentCourseInfo> infos = KCHttpRequest.getManageKC(userCardNum);
 
@@ -103,14 +103,14 @@ public class ServletWeixinSupport extends WeixinSupport {
             TQSummary tqSummary = TQHttpRequest.getBaiduTQ(list.get(1));
 
             if (tqSummary.getError() > 0) {
-                return new TextMsg("请填写正确的查询格式,3:地点(默认为:大连)");
+                return new TextMsg("请填写正确的查询格式,4:地点(默认为:大连)");
             }
 
             return new TextMsg(tqSummary.toString());
         } else if (list.get(0).equals(ConstantsCollection.BD_REQUEST)) {
             if (list.size() <= 1) {
-                return new TextMsg("请注意绑定的格式为 4:学生卡号 \n" +
-                        "数字4与学生卡号用英文格式的冒号隔开 ");
+                return new TextMsg("请注意绑定的格式为 3:学生卡号 \n" +
+                        "数字3与学生卡号用英文格式的冒号隔开 ");
             }
 
             String userWeixinId = msg.getFromUserName();
@@ -137,24 +137,6 @@ public class ServletWeixinSupport extends WeixinSupport {
             } else {
                 return new TextMsg(summary.toString());
             }
-        }else if (list.get(0).equals(ConstantsCollection.JW_REQUEST)) {
-            String userWeixinId = msg.getFromUserName();
-            String userCardNum = bindService.isBind(userWeixinId);
-
-            if (null == userCardNum || userCardNum.isEmpty()) {
-                return new TextMsg("请先绑定学员卡号,发送信息(4:学生卡号)");
-            }else {
-                return getArticleMsg(ConstantsCollection.MENU_JWGG_KEY);
-            }
-        }else if (list.get(0).equals(ConstantsCollection.ZX_REQUEST)) {
-            String userWeixinId = msg.getFromUserName();
-            String userCardNum = bindService.isBind(userWeixinId);
-
-            if (null == userCardNum || userCardNum.isEmpty()) {
-                return new TextMsg("请先绑定学员卡号,发送信息(4:学生卡号)");
-            } else {
-                return getArticleMsg(ConstantsCollection.MENU_ZXJY_KEY);
-            }
         }
 
             if (LOG.isDebugEnabled())
@@ -170,27 +152,25 @@ public class ServletWeixinSupport extends WeixinSupport {
 
         if (eventKey.equals(ConstantsCollection.MENU_WYJ_KEY)) {
             return getArticleMsg(ConstantsCollection.MENU_WYJ_KEY);
-//        } else if (eventKey.equals(ConstantsCollection.MENU_JWGG_KEY)) {
-//            return getArticleMsg(ConstantsCollection.MENU_JWGG_KEY);
-//        } else if (eventKey.equals(ConstantsCollection.MENU_ZXJY_KEY)) {
-//            return getArticleMsg(ConstantsCollection.MENU_ZXJY_KEY);
+        } else if (eventKey.equals(ConstantsCollection.MENU_JWGG_KEY)) {
+            return getArticleMsg(ConstantsCollection.MENU_JWGG_KEY);
+        } else if (eventKey.equals(ConstantsCollection.MENU_ZXJY_KEY)) {
+            return getArticleMsg(ConstantsCollection.MENU_ZXJY_KEY);
         } else if (eventKey.equals(ConstantsCollection.MENU_JQHD_KEY)) {
             return getArticleMsg(ConstantsCollection.MENU_JQHD_KEY);
         } else if (eventKey.equals(ConstantsCollection.MENU_LSZK_KEY)) {
             return getArticleMsg(ConstantsCollection.MENU_LSZK_KEY);
         } else if (eventKey.equals(ConstantsCollection.MENU_XNFU_KEY)) {
-            return new TextMsg("1. 回复1查询个人相关的成绩;\n " +
+            return new TextMsg(" 1. 回复1查询个人相关的成绩;\n " +
                     "2. 回复2查询今日的个人课程;\n " +
-                    "3. 回复4绑定卡号 \n" +
-                    "例如4:0123456789(学生卡号);\n " +
-                    "4. 回复6查看教务公告;\n " +
-                    "5. 回复7在线教育");
+                    "3. 回复3绑定卡号 \n " +
+                    "例如4:0123456789(学生卡号); ");
 //        } else if (eventKey.equals(ConstantsCollection.MENU_JRKC_KEY)) {
 //            return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复2查询今日的个人课程");
 //        } else if (eventKey.equals(ConstantsCollection.MENU_CJCX_KEY)) {
 //            return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复1查询个人相关的成绩");
         } else if (eventKey.equals(ConstantsCollection.MENU_CXBZ_KEY)) {
-            return new TextMsg("回复3:地点(默认为:大连)查看当前天气;");
+            return new TextMsg("回复4:地点(默认为:大连)查看当前天气;");
         } else if (eventKey.equals(ConstantsCollection.MENU_RQCX_KEY)) {
             return new TextMsg("请输入5查询今天的日期信息,或者输入5:20150523(要查询的日期)查询对应的日期信息");
         }

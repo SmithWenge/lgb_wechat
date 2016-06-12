@@ -36,11 +36,11 @@ public class ConstantsCollection {
     // 查询使用关键字
     public final static String CJ_REQUEDT = "1"; //成绩查询
     public final static String KC_REQUEST = "2"; //课程查询
-    public final static String TQ_REQUEST = "3"; //天气查询
-    public final static String BD_REQUEST = "4"; //学员绑定
+    public final static String TQ_REQUEST = "4"; //天气查询
+    public final static String BD_REQUEST = "3"; //学员绑定
     public final static String RQ_REQUEST = "5"; //日期查询
-    public final static String JW_REQUEST = "6"; //教务公告
-    public final static String ZX_REQUEST = "7"; //在线教育
+//    public final static String JW_REQUEST = "6"; //教务公告
+//    public final static String ZX_REQUEST = "7"; //在线教育
 
     // 默认天气地点
     public final static String DEFAULT_TQ_QUERY_LOCATION = "大连";

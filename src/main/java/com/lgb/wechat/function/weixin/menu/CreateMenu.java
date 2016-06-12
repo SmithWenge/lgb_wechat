@@ -36,29 +36,29 @@ public class CreateMenu {
 //        jrkc.setName("今日课程");
 //        jrkc.setType(MenuType.CLICK);
 //
-//        MenuButton jwgg = new MenuButton();
-//        jwgg.setKey(ConstantsCollection.MENU_JWGG_KEY);
-//        jwgg.setName("教务公告");
-//        jwgg.setType(MenuType.CLICK);
-//
+        MenuButton jwgg = new MenuButton();
+        jwgg.setKey(ConstantsCollection.MENU_JWGG_KEY);
+        jwgg.setName("教务公告");
+        jwgg.setType(MenuType.CLICK);
+
 //        MenuButton cjcx = new MenuButton();
 //        cjcx.setKey(ConstantsCollection.MENU_CJCX_KEY);
 //        cjcx.setName("成绩查询");
 //        cjcx.setType(MenuType.CLICK);
 ////        cjcx.setUrl("http://www.56team.com");
 //
-//        MenuButton zxjy = new MenuButton();
-//        zxjy.setKey(ConstantsCollection.MENU_ZXJY_KEY);
-//        zxjy.setName("在线教育");
-//        zxjy.setType(MenuType.CLICK);
-//
-//        List<MenuButton> xnfwSub = new ArrayList<MenuButton>();
+        MenuButton zxjy = new MenuButton();
+        zxjy.setKey(ConstantsCollection.MENU_ZXJY_KEY);
+        zxjy.setName("在线教育");
+        zxjy.setType(MenuType.CLICK);
+
+        List<MenuButton> xnfwSub = new ArrayList<MenuButton>();
 //        xnfwSub.add(jrkc);
-//        xnfwSub.add(jwgg);
+        xnfwSub.add(jwgg);
 //        xnfwSub.add(cjcx);
-//        xnfwSub.add(zxjy);
+        xnfwSub.add(zxjy);
 //
-//        xnfw.setSubButton(xnfwSub);
+        xnfw.setSubButton(xnfwSub);
 
         MenuButton shzs = new MenuButton();
         shzs.setType(MenuType.CLICK);
