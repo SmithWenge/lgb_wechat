@@ -53,6 +53,11 @@ public class CreateMenu {
         shzs.setName("生活助手");
         shzs.setKey(ConstantsCollection.MENU_SHZS_KEY);
 
+        MenuButton zxjy = new MenuButton();
+        zxjy.setKey(ConstantsCollection.MENU_ZXJY_KEY);
+        zxjy.setName("在线教育");
+        zxjy.setType(MenuType.CLICK);
+
         MenuButton wyj = new MenuButton();
         wyj.setKey(ConstantsCollection.MENU_WYJ_KEY);
         wyj.setType(MenuType.CLICK);
@@ -74,6 +79,7 @@ public class CreateMenu {
         shzsSub.add(wyj);
         shzsSub.add(cxbz);
         shzsSub.add(rqcx);
+        shzsSub.add(zxjy);
 
         shzs.setSubButton(shzsSub);
 
@@ -81,11 +87,6 @@ public class CreateMenu {
         dcxy.setKey(ConstantsCollection.MENU_DCXY_KEY);
         dcxy.setType(MenuType.CLICK);
         dcxy.setName("多彩校园");
-
-        MenuButton zxjy = new MenuButton();
-        zxjy.setKey(ConstantsCollection.MENU_ZXJY_KEY);
-        zxjy.setName("在线教育");
-        zxjy.setType(MenuType.CLICK);
 
         MenuButton jwgg = new MenuButton();
         jwgg.setKey(ConstantsCollection.MENU_JWGG_KEY);
@@ -119,7 +120,6 @@ public class CreateMenu {
         dcxySub.add(lszk);
         dcxySub.add(xxjj);
         dcxySub.add(dxwz);
-        dcxySub.add(zxjy);
         dcxySub.add(jwgg);
 
         dcxy.setSubButton(dcxySub);
