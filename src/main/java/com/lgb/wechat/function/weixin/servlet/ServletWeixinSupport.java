@@ -161,11 +161,11 @@ public class ServletWeixinSupport extends WeixinSupport {
         } else if (eventKey.equals(ConstantsCollection.MENU_LSZK_KEY)) {
             return getArticleMsg(ConstantsCollection.MENU_LSZK_KEY);
         } else if (eventKey.equals(ConstantsCollection.MENU_XNFU_KEY)) {
-            return new TextMsg(" 输入对应数字进行相关操作:\n " +
-                    "1. 回复1查询个人相关的成绩;\n " +
-                    "2. 回复2查询今日的个人课程;\n " +
-                    "3. 回复3绑定卡号 \n " +
-                    "例如4:0123456789(学生卡号); ");
+            return new TextMsg("输入对应数字进行相关操作:\n" +
+                    "1. 回复1查询个人相关的成绩;\n" +
+                    "2. 回复2查询今日的个人课程;\n" +
+                    "3. 回复3绑定卡号\n" +
+                    "例如3:0123456789(学生卡号);");
 //        } else if (eventKey.equals(ConstantsCollection.MENU_JRKC_KEY)) {
 //            return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复2查询今日的个人课程");
 //        } else if (eventKey.equals(ConstantsCollection.MENU_CJCX_KEY)) {
