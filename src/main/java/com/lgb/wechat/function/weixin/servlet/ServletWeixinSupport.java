@@ -109,9 +109,9 @@ public class ServletWeixinSupport extends WeixinSupport {
             return new TextMsg(tqSummary.toString());
         } else if (list.get(0).equals(ConstantsCollection.BD_REQUEST)) {
             if (list.size() <= 1) {
-                return new TextMsg("请注意绑定的格式为\n  " +
-                        "3:学生卡号\n" +
-                        "数字3与学生卡号用英文冒号隔开");
+                return new TextMsg("请注意绑定的格式为:\n " +
+                        "3:0123456789(学生卡号)\n" +
+                        "数字3与卡号用英文冒号隔开");
             }
 
             String userWeixinId = msg.getFromUserName();
