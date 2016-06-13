@@ -107,20 +107,20 @@ public class CreateMenu {
         xxjj.setKey(ConstantsCollection.MENU_XXJJ_KEY);
         xxjj.setType(MenuType.VIEW);
         xxjj.setName("学校简介");
-        xxjj.setUrl("http://www.56team.com:82/web/school/introduction.php");
+        xxjj.setUrl("http://www.56team.com:82/website/school/introduction.php");
 
         MenuButton dxwz = new MenuButton();
         dxwz.setKey(ConstantsCollection.MENU_DXWZ_KEY);
         dxwz.setType(MenuType.VIEW);
         dxwz.setName("大学网站");
-        dxwz.setUrl("http://www.56team.com:82/web/");
+        dxwz.setUrl("http://www.56team.com:82/website/test1.php");
 
         List<MenuButton> dcxySub = new ArrayList<MenuButton>();
         dcxySub.add(jqhd);
         dcxySub.add(lszk);
+        dcxySub.add(jwgg);
         dcxySub.add(xxjj);
         dcxySub.add(dxwz);
-        dcxySub.add(jwgg);
 
         dcxy.setSubButton(dcxySub);
 
