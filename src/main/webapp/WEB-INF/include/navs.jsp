@@ -7,6 +7,7 @@
         <ul class="nav nav-pills">
             <li role="presentation"><a href="${contextPath}/admin/routePass.action">修改密码</a></li>
             <li role="presentation"><a href="${contextPath}/admin/article/list/zxjy.action">文章管理</a></li>
+            <li role="presentation" style="float: right"><a>管理员: ${sessionScope.adminLogin.userName}</a></li>
         </ul>
     </div>
 </div>
