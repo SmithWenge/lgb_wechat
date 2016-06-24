@@ -30,6 +30,20 @@ public class CreateMenu {
         xnfw.setName("校内服务");
         xnfw.setKey(ConstantsCollection.MENU_XNFU_KEY);
 
+        MenuButton zxjy = new MenuButton();
+        zxjy.setKey(ConstantsCollection.MENU_ZXJY_KEY);
+        zxjy.setName("在线教育");
+        zxjy.setType(MenuType.CLICK);
+
+        MenuButton jwgg = new MenuButton();
+        jwgg.setKey(ConstantsCollection.MENU_JWGG_KEY);
+        jwgg.setName("教务公告");
+        jwgg.setType(MenuType.CLICK);
+
+        MenuButton xncx = new MenuButton();
+        xncx.setKey(ConstantsCollection.MENU_XNCX_KEY);
+        xncx.setName("校内查询");
+        xncx.setType(MenuType.CLICK);
         //添加子菜单
 //        MenuButton jrkc = new MenuButton();
 //        jrkc.setKey(ConstantsCollection.MENU_JRKC_KEY);
@@ -42,21 +56,17 @@ public class CreateMenu {
 //        cjcx.setType(MenuType.CLICK);
 ////        cjcx.setUrl("http://www.56team.com");
 
-//        List<MenuButton> xnfwSub = new ArrayList<MenuButton>();
-//        xnfwSub.add(jrkc);
-//        xnfwSub.add(cjcx);
+        List<MenuButton> xnfwSub = new ArrayList<MenuButton>();
+        xnfwSub.add(xncx);
+        xnfwSub.add(zxjy);
+        xnfwSub.add(jwgg);
 
-//        xnfw.setSubButton(xnfwSub);
+        xnfw.setSubButton(xnfwSub);
 
         MenuButton shzs = new MenuButton();
         shzs.setType(MenuType.CLICK);
         shzs.setName("生活助手");
         shzs.setKey(ConstantsCollection.MENU_SHZS_KEY);
-
-        MenuButton zxjy = new MenuButton();
-        zxjy.setKey(ConstantsCollection.MENU_ZXJY_KEY);
-        zxjy.setName("在线教育");
-        zxjy.setType(MenuType.CLICK);
 
         MenuButton wyj = new MenuButton();
         wyj.setKey(ConstantsCollection.MENU_WYJ_KEY);
@@ -79,7 +89,6 @@ public class CreateMenu {
         shzsSub.add(wyj);
         shzsSub.add(cxbz);
         shzsSub.add(rqcx);
-        shzsSub.add(zxjy);
 
         shzs.setSubButton(shzsSub);
 
@@ -87,11 +96,6 @@ public class CreateMenu {
         dcxy.setKey(ConstantsCollection.MENU_DCXY_KEY);
         dcxy.setType(MenuType.CLICK);
         dcxy.setName("多彩校园");
-
-        MenuButton jwgg = new MenuButton();
-        jwgg.setKey(ConstantsCollection.MENU_JWGG_KEY);
-        jwgg.setName("教务公告");
-        jwgg.setType(MenuType.CLICK);
 
         MenuButton jqhd = new MenuButton();
         jqhd.setKey(ConstantsCollection.MENU_JQHD_KEY);
@@ -118,7 +122,6 @@ public class CreateMenu {
         List<MenuButton> dcxySub = new ArrayList<MenuButton>();
         dcxySub.add(jqhd);
         dcxySub.add(lszk);
-        dcxySub.add(jwgg);
         dcxySub.add(xxjj);
         dcxySub.add(dxwz);
 

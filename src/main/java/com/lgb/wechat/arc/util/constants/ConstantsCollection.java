@@ -22,6 +22,7 @@ public class ConstantsCollection {
     public final static String MENU_LSZK_KEY = "lszk"; //历史周刊
     public final static String MENU_XXJJ_KEY = "xxjj"; //学校简介
     public final static String MENU_DXWZ_KEY = "dxwz"; //大学网站
+    public final static String MENU_XNCX_KEY = "xncx"; //校内查询
 
     // 平台配置常量
     public final static String APPID = "wx8be799b6065e36ff";

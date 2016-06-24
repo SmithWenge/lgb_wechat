@@ -161,7 +161,7 @@ public class ServletWeixinSupport extends WeixinSupport {
             return getArticleMsg(ConstantsCollection.MENU_JQHD_KEY);
         } else if (eventKey.equals(ConstantsCollection.MENU_LSZK_KEY)) {
             return getArticleMsg(ConstantsCollection.MENU_LSZK_KEY);
-        } else if (eventKey.equals(ConstantsCollection.MENU_XNFU_KEY)) {
+        } else if (eventKey.equals(ConstantsCollection.MENU_XNCX_KEY)) {
             return new TextMsg("输入对应数字进行相关操作:\n" +
                     "1. 回复1查询个人相关的成绩;\n" +
                     "2. 回复2查询今日的个人课程;\n" +
