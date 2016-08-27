@@ -2,7 +2,7 @@
 //
 //import com.google.code.kaptcha.Constants;
 //import com.google.code.kaptcha.Producer;
-//import com.lgb.wechat.arc.util.constants.ConstantsCollection;
+//import com.lgb.wechat.arc.util.constants.Constants;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.beans.factory.annotation.Qualifier;
 //import org.springframework.stereotype.Controller;

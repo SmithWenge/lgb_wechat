@@ -12,7 +12,7 @@ import com.lgb.wechat.arc.util.api.json.cj.RestStudentScoreInfo;
 import com.lgb.wechat.arc.util.api.json.kc.RestNowStudentCourseInfo;
 import com.lgb.wechat.arc.util.api.json.rq.RQSummary;
 import com.lgb.wechat.arc.util.api.json.tq.TQSummary;
-import com.lgb.wechat.arc.util.constants.ConstantsCollection;
+import com.lgb.wechat.arc.util.constants.Constants;
 import com.lgb.wechat.arc.util.date.DateUtils;
 import com.lgb.wechat.function.weixin.article.service.WeixinArticleService;
 import com.lgb.wechat.function.weixin.article.service.impl.WeixinArticleServiceImpl;
@@ -39,7 +39,7 @@ public class ServletWeixinSupport extends WeixinSupport {
 
     @Override
     protected String getToken() {
-        return ConstantsCollection.TOKEN;
+        return Constants.TOKEN;
     }
 
     @Override
@@ -53,7 +53,7 @@ public class ServletWeixinSupport extends WeixinSupport {
             list = Arrays.asList(content);
         }
 
-        if (list.get(0).equals(ConstantsCollection.CJ_REQUEDT)) {
+        if (list.get(0).equals(Constants.CJ_REQUEDT)) {
             String userWeixinId = msg.getFromUserName();
             String userCardNum = bindService.isBind(userWeixinId);
 
@@ -74,7 +74,7 @@ public class ServletWeixinSupport extends WeixinSupport {
 
                 return textMsg;
             }
-        } else if (list.get(0).equals(ConstantsCollection.KC_REQUEST)) {
+        } else if (list.get(0).equals(Constants.KC_REQUEST)) {
             String userWeixinId = msg.getFromUserName();
             String userCardNum = bindService.isBind(userWeixinId);
 
@@ -95,9 +95,9 @@ public class ServletWeixinSupport extends WeixinSupport {
 
                 return textMsg;
             }
-        } else if (list.get(0).equals(ConstantsCollection.TQ_REQUEST)) {
+        } else if (list.get(0).equals(Constants.TQ_REQUEST)) {
             if (list.size() <= 1) {
-                list = Arrays.asList(content, ConstantsCollection.DEFAULT_TQ_QUERY_LOCATION);
+                list = Arrays.asList(content, Constants.DEFAULT_TQ_QUERY_LOCATION);
             }
 
             TQSummary tqSummary = TQHttpRequest.getBaiduTQ(list.get(1));
@@ -107,7 +107,7 @@ public class ServletWeixinSupport extends WeixinSupport {
             }
 
             return new TextMsg(tqSummary.toString());
-        } else if (list.get(0).equals(ConstantsCollection.BD_REQUEST)) {
+        } else if (list.get(0).equals(Constants.BD_REQUEST)) {
             if (list.size() <= 1) {
                 return new TextMsg("请注意绑定的格式为:\n " +
                         "3:0123456789(学生卡号)\n" +
@@ -124,7 +124,7 @@ public class ServletWeixinSupport extends WeixinSupport {
             } else {
                 return new TextMsg("您已经绑定了,微信号与卡号一一对应,如绑定信息错误请联系管理员.");
             }
-        } else if (list.get(0).equals(ConstantsCollection.RQ_REQUEST)) {
+        } else if (list.get(0).equals(Constants.RQ_REQUEST)) {
             String queryDate = DateUtils.now4Y2M2D();
 
             if (list.size() > 1) {
@@ -151,29 +151,29 @@ public class ServletWeixinSupport extends WeixinSupport {
         String eventKey = event.getEventKey();
 
 
-        if (eventKey.equals(ConstantsCollection.MENU_WYJ_KEY)) {
-            return getArticleMsg(ConstantsCollection.MENU_WYJ_KEY);
-        } else if (eventKey.equals(ConstantsCollection.MENU_JWGG_KEY)) {
-            return getArticleMsg(ConstantsCollection.MENU_JWGG_KEY);
-        } else if (eventKey.equals(ConstantsCollection.MENU_ZXJY_KEY)) {
-            return getArticleMsg(ConstantsCollection.MENU_ZXJY_KEY);
-        } else if (eventKey.equals(ConstantsCollection.MENU_JQHD_KEY)) {
-            return getArticleMsg(ConstantsCollection.MENU_JQHD_KEY);
-        } else if (eventKey.equals(ConstantsCollection.MENU_LSZK_KEY)) {
-            return getArticleMsg(ConstantsCollection.MENU_LSZK_KEY);
-        } else if (eventKey.equals(ConstantsCollection.MENU_XNCX_KEY)) {
+        if (eventKey.equals(Constants.MENU_WYJ_KEY)) {
+            return getArticleMsg(Constants.MENU_WYJ_KEY);
+        } else if (eventKey.equals(Constants.MENU_JWGG_KEY)) {
+            return getArticleMsg(Constants.MENU_JWGG_KEY);
+        } else if (eventKey.equals(Constants.MENU_ZXJY_KEY)) {
+            return getArticleMsg(Constants.MENU_ZXJY_KEY);
+        } else if (eventKey.equals(Constants.MENU_JQHD_KEY)) {
+            return getArticleMsg(Constants.MENU_JQHD_KEY);
+        } else if (eventKey.equals(Constants.MENU_LSZK_KEY)) {
+            return getArticleMsg(Constants.MENU_LSZK_KEY);
+        } else if (eventKey.equals(Constants.MENU_XNCX_KEY)) {
             return new TextMsg("输入对应数字进行相关操作:\n" +
                     "1. 回复1查询个人相关的成绩;\n" +
                     "2. 回复2查询今日的个人课程;\n" +
                     "3. 回复3绑定卡号\n" +
                     "例如3:0123456789(学生卡号);");
-//        } else if (eventKey.equals(ConstantsCollection.MENU_JRKC_KEY)) {
+//        } else if (eventKey.equals(Constants.MENU_JRKC_KEY)) {
 //            return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复2查询今日的个人课程");
-//        } else if (eventKey.equals(ConstantsCollection.MENU_CJCX_KEY)) {
+//        } else if (eventKey.equals(Constants.MENU_CJCX_KEY)) {
 //            return new TextMsg("1. 登陆平台的时候请先绑定 回复4:0123456789(卡号);\n 2. 回复1查询个人相关的成绩");
-        } else if (eventKey.equals(ConstantsCollection.MENU_TQCX_KEY)) {
+        } else if (eventKey.equals(Constants.MENU_TQCX_KEY)) {
             return new TextMsg("回复4:地点(默认为:大连)查看当前天气;");
-        } else if (eventKey.equals(ConstantsCollection.MENU_RQCX_KEY)) {
+        } else if (eventKey.equals(Constants.MENU_RQCX_KEY)) {
             return new TextMsg("请输入5查询今天的日期信息,或者输入5:20150523(要查询的日期)查询对应的日期信息");
         }
 
@@ -192,14 +192,14 @@ public class ServletWeixinSupport extends WeixinSupport {
     }
 
 //    private void sendCJCXMessage() {
-//        MediaAPI mediaAPI = new MediaAPI(ConstantsCollection.APPCONFIG);
+//        MediaAPI mediaAPI = new MediaAPI(Constants.APPCONFIG);
 //        UploadMediaResponse response = mediaAPI.uploadMedia(MediaType.IMAGE, new File("/Users/liunaidi/Documents/tmp.png"));
 //        String media_id = response.getMediaId();
 //        Article article = new Article(media_id, "测试用户", "群发测试", "http://www.baidu.com", "群发测试", "群发测试", Article.ShowConverPic.NO);
 //        UploadMediaResponse uploadMediaResponse = mediaAPI.uploadNews(Arrays.asList(article));
 //        MpNewsMsg mpNewsMsg = new MpNewsMsg();
 //        mpNewsMsg.setMediaId(uploadMediaResponse.getMediaId());
-//        MessageAPI messageAPI = new MessageAPI(ConstantsCollection.APPCONFIG);
+//        MessageAPI messageAPI = new MessageAPI(Constants.APPCONFIG);
 //        GetSendMessageResponse messageResponse = messageAPI.sendMessageToUser(mpNewsMsg, true, "0", null);
 //        LOG.info("Send Message Id is " + messageResponse.getMsgId());
 //    }

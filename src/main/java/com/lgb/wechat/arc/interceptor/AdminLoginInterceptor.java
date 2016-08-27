@@ -1,7 +1,7 @@
 package com.lgb.wechat.arc.interceptor;
 
 import com.google.common.base.Optional;
-import com.lgb.wechat.arc.util.constants.ConstantsCollection;
+import com.lgb.wechat.arc.util.constants.Constants;
 import com.lgb.wechat.function.admin.login.AdminUser;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -35,7 +35,7 @@ public class AdminLoginInterceptor implements HandlerInterceptor {
         }
 
         HttpSession session = httpServletRequest.getSession();
-        AdminUser adminUser = (AdminUser) session.getAttribute(ConstantsCollection.SESSION_ADMIN_KEY);
+        AdminUser adminUser = (AdminUser) session.getAttribute(Constants.SESSION_ADMIN_KEY);
         Optional<AdminUser> optional = Optional.fromNullable(adminUser);
 
         if (!optional.isPresent()) {

@@ -1,6 +1,6 @@
 package com.lgb.wechat.function.weixin.article.repository.impl;
 
-import com.lgb.wechat.arc.util.constants.ConstantsCollection;
+import com.lgb.wechat.arc.util.constants.Constants;
 import com.lgb.wechat.function.support.mongodb.MongoTemplate;
 import com.lgb.wechat.function.weixin.article.repository.WeixinArticleRepository;
 import org.bson.Document;
@@ -19,7 +19,7 @@ public class WeixinArticleRepositoryImpl implements WeixinArticleRepository {
         Document sortDocument = new Document("articleTime", 1);
 
         List<Document> documents = mongodbTemplate.findSort(collectionName,
-                new Document().append("articleDelete", ConstantsCollection.DEFAULT_RECORD_NOT_DELETE),
+                new Document().append("articleDelete", Constants.DEFAULT_RECORD_NOT_DELETE),
                 sortDocument);
 
         return documents;

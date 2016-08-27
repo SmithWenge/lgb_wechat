@@ -2,7 +2,7 @@ package com.lgb.wechat.function.admin.login.controller;
 
 
 import com.google.common.base.Optional;
-import com.lgb.wechat.arc.util.constants.ConstantsCollection;
+import com.lgb.wechat.arc.util.constants.Constants;
 import com.lgb.wechat.function.admin.login.AdminUser;
 import com.lgb.wechat.function.admin.login.service.LoginServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class LoginController {
 
     @RequestMapping(value = "/routeLogin", method = RequestMethod.GET)
     public String routeLogin(HttpSession session) {
-        if (null != session.getAttribute(ConstantsCollection.SESSION_ADMIN_KEY)) {
+        if (null != session.getAttribute(Constants.SESSION_ADMIN_KEY)) {
             return "index";
         }
 
@@ -44,7 +44,7 @@ public class LoginController {
 //            return new ModelAndView("redirect:/admin/routeLogin.action");
 //        session.removeAttribute(Constants.KAPTCHA_SESSION_KEY);
 
-        AdminUser user = (AdminUser) session.getAttribute(ConstantsCollection.SESSION_ADMIN_KEY);
+        AdminUser user = (AdminUser) session.getAttribute(Constants.SESSION_ADMIN_KEY);
         Optional<AdminUser> optionalUser = Optional.fromNullable(user);
         if (optionalUser.isPresent()) {
             return new ModelAndView("redirect:/admin/routeHome.action");
@@ -52,7 +52,7 @@ public class LoginController {
         ModelAndView mav = new ModelAndView();
         if(loginService.isLogin(adminUser)) {
             mav.setViewName("redirect:/admin/routeHome.action");
-            session.setAttribute(ConstantsCollection.SESSION_ADMIN_KEY, adminUser);
+            session.setAttribute(Constants.SESSION_ADMIN_KEY, adminUser);
         }else {
             mav.setViewName("redirect:/admin/routeLogin.action");
         }
@@ -77,7 +77,7 @@ public class LoginController {
 
         ModelAndView mav = new ModelAndView("redirect:/admin/routeLogin.action");
         if (loginService.resetPassword(adminUser)) {
-            session.removeAttribute(ConstantsCollection.SESSION_ADMIN_KEY);
+            session.removeAttribute(Constants.SESSION_ADMIN_KEY);
             return mav;
         }
 

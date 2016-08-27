@@ -1,7 +1,7 @@
 package com.lgb.wechat.function.support.mongodb;
 
 import com.google.common.base.Optional;
-import com.lgb.wechat.arc.util.constants.ConstantsCollection;
+import com.lgb.wechat.arc.util.constants.Constants;
 import com.mongodb.Block;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
@@ -51,7 +51,7 @@ public class MongoTemplate {
 
         final List<Document> documents = new ArrayList<>();
 
-        FindIterable<Document> iterable = db.getCollection(collectionName).find(new Document("articleDelete", ConstantsCollection.DEFAULT_RECORD_NOT_DELETE));
+        FindIterable<Document> iterable = db.getCollection(collectionName).find(new Document("articleDelete", Constants.DEFAULT_RECORD_NOT_DELETE));
         iterable.forEach(new Block<Document>() {
             @Override
             public void apply(Document document) {
@@ -89,7 +89,7 @@ public class MongoTemplate {
         FindIterable<Document> iterable = db.getCollection(collectionName)
                 .find(condition)
                 .sort(sortDocument)
-                .limit(ConstantsCollection.DEFAULT_WEIXIN_RETURN_ARTICLE_NUM);
+                .limit(Constants.DEFAULT_WEIXIN_RETURN_ARTICLE_NUM);
 
         iterable.forEach(new Block<Document>() {
             @Override

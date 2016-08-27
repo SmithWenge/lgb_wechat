@@ -1,6 +1,6 @@
 package com.lgb.wechat.function.admin.article.repository.impl;
 
-import com.lgb.wechat.arc.util.constants.ConstantsCollection;
+import com.lgb.wechat.arc.util.constants.Constants;
 import com.lgb.wechat.arc.util.date.DateUtils;
 import com.lgb.wechat.function.admin.article.Article;
 import com.lgb.wechat.function.admin.article.repository.ArticleRepository;
@@ -24,7 +24,7 @@ public class ArticleRepositoryImpl implements ArticleRepository {
                 .append("articleContent", article.getArticleContent())
                 .append("articleTime", DateUtils.nowYMD())
                 .append("articleType", article.getArticleType())
-                .append("articleDelete", ConstantsCollection.DEFAULT_RECORD_NOT_DELETE)
+                .append("articleDelete", Constants.DEFAULT_RECORD_NOT_DELETE)
                 .append("_id", new ObjectId(article.getId()))
                 .append("pictureUrl", article.getPictureUrl())
                 .append("articleUrl", article.getArticleUrl());
@@ -41,7 +41,7 @@ public class ArticleRepositoryImpl implements ArticleRepository {
     @Override
     public Document select(String artilceType, String id) {
         Document document = new Document("_id", new ObjectId(id))
-                .append("articleDelete", ConstantsCollection.DEFAULT_RECORD_NOT_DELETE);
+                .append("articleDelete", Constants.DEFAULT_RECORD_NOT_DELETE);
 
         List<Document> documents = mongodbTemplate.find(artilceType, document);
 
@@ -76,7 +76,7 @@ public class ArticleRepositoryImpl implements ArticleRepository {
     @Override
     public Document selectImage(String articleType, String id) {
         Document condition = new Document("_id", new ObjectId(id))
-                .append("articleDelete", ConstantsCollection.DEFAULT_RECORD_NOT_DELETE);
+                .append("articleDelete", Constants.DEFAULT_RECORD_NOT_DELETE);
 
         List<Document> documents = mongodbTemplate.find(articleType, condition);
 

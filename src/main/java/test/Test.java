@@ -60,7 +60,7 @@ public class Test {
 
 //        System.out.println(DateUtils.nowYMD());
 
-//        MediaAPI mediaAPI = new MediaAPI(ConstantsCollection.APPCONFIG);
+//        MediaAPI mediaAPI = new MediaAPI(Constants.APPCONFIG);
 //        UploadMediaResponse response = mediaAPI.uploadMedia(MediaType.IMAGE, new File("/Users/liunaidi/Documents/1.png"));
 //        String media_id = response.getMediaId();
 //        Article article = new Article(media_id, "测试用户", "群发测试", "http://www.baidu.com", "群发测试", "群发测试", Article.ShowConverPic.NO);
@@ -71,7 +71,7 @@ public class Test {
 //        UploadMediaResponse uploadMediaResponse = mediaAPI.uploadNews(Arrays.asList(article));
 //        MpNewsMsg mpNewsMsg = new MpNewsMsg();
 //        mpNewsMsg.setMediaId(uploadMediaResponse.getMediaId());
-//        MessageAPI messageAPI = new MessageAPI(ConstantsCollection.APPCONFIG);
+//        MessageAPI messageAPI = new MessageAPI(Constants.APPCONFIG);
 //        GetSendMessageResponse messageResponse = messageAPI.sendMessageToUser(mpNewsMsg, true, "0", null);
 //        System.out.println("Send Message Id is " + messageResponse.getMsgId());
 

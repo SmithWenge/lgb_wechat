@@ -6,15 +6,14 @@ import com.github.sd4324530.fastweixin.api.entity.Menu;
 import com.github.sd4324530.fastweixin.api.entity.MenuButton;
 import com.github.sd4324530.fastweixin.api.enums.MenuType;
 import com.github.sd4324530.fastweixin.api.enums.ResultType;
-import com.lgb.wechat.arc.util.constants.ConstantsCollection;
+import com.lgb.wechat.arc.util.constants.Constants;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class CreateMenu {
     public static void main(String[] args) {
-        createMenu(ConstantsCollection.APPCONFIG);
+        createMenu(Constants.APPCONFIG);
     }
 
     private static void createMenu(ApiConfig config) {
@@ -28,30 +27,30 @@ public class CreateMenu {
         MenuButton xnfw = new MenuButton();
         xnfw.setType(MenuType.CLICK);
         xnfw.setName("校内服务");
-        xnfw.setKey(ConstantsCollection.MENU_XNFU_KEY);
+        xnfw.setKey(Constants.MENU_XNFU_KEY);
 
         MenuButton zxjy = new MenuButton();
-        zxjy.setKey(ConstantsCollection.MENU_ZXJY_KEY);
+        zxjy.setKey(Constants.MENU_ZXJY_KEY);
         zxjy.setName("在线教育");
         zxjy.setType(MenuType.CLICK);
 
         MenuButton jwgg = new MenuButton();
-        jwgg.setKey(ConstantsCollection.MENU_JWGG_KEY);
+        jwgg.setKey(Constants.MENU_JWGG_KEY);
         jwgg.setName("教务公告");
         jwgg.setType(MenuType.CLICK);
 
         MenuButton xncx = new MenuButton();
-        xncx.setKey(ConstantsCollection.MENU_XNCX_KEY);
+        xncx.setKey(Constants.MENU_XNCX_KEY);
         xncx.setName("校内查询");
         xncx.setType(MenuType.CLICK);
         //添加子菜单
 //        MenuButton jrkc = new MenuButton();
-//        jrkc.setKey(ConstantsCollection.MENU_JRKC_KEY);
+//        jrkc.setKey(Constants.MENU_JRKC_KEY);
 //        jrkc.setName("今日课程");
 //        jrkc.setType(MenuType.CLICK);
 
 //        MenuButton cjcx = new MenuButton();
-//        cjcx.setKey(ConstantsCollection.MENU_CJCX_KEY);
+//        cjcx.setKey(Constants.MENU_CJCX_KEY);
 //        cjcx.setName("成绩查询");
 //        cjcx.setType(MenuType.CLICK);
 ////        cjcx.setUrl("http://www.56team.com");
@@ -66,21 +65,21 @@ public class CreateMenu {
         MenuButton shzs = new MenuButton();
         shzs.setType(MenuType.CLICK);
         shzs.setName("生活助手");
-        shzs.setKey(ConstantsCollection.MENU_SHZS_KEY);
+        shzs.setKey(Constants.MENU_SHZS_KEY);
 
         MenuButton wyj = new MenuButton();
-        wyj.setKey(ConstantsCollection.MENU_WYJ_KEY);
+        wyj.setKey(Constants.MENU_WYJ_KEY);
         wyj.setType(MenuType.CLICK);
         wyj.setName("外语角");
 
         MenuButton cxbz = new MenuButton();
         cxbz.setType(MenuType.CLICK);
         cxbz.setName("天气查询");
-        cxbz.setKey(ConstantsCollection.MENU_TQCX_KEY);
+        cxbz.setKey(Constants.MENU_TQCX_KEY);
 //        cxbz.setUrl("http://www.56team.com");
 
         MenuButton rqcx = new MenuButton();
-        rqcx.setKey(ConstantsCollection.MENU_RQCX_KEY);
+        rqcx.setKey(Constants.MENU_RQCX_KEY);
         rqcx.setName("日期查询");
         rqcx.setType(MenuType.CLICK);
 //        rqcx.setUrl("http://www.56team.com");
@@ -93,36 +92,36 @@ public class CreateMenu {
         shzs.setSubButton(shzsSub);
 
         MenuButton dcxy = new MenuButton();
-        dcxy.setKey(ConstantsCollection.MENU_DCXY_KEY);
+        dcxy.setKey(Constants.MENU_DCXY_KEY);
         dcxy.setType(MenuType.CLICK);
         dcxy.setName("多彩校园");
 
         MenuButton jqhd = new MenuButton();
-        jqhd.setKey(ConstantsCollection.MENU_JQHD_KEY);
+        jqhd.setKey(Constants.MENU_JQHD_KEY);
         jqhd.setType(MenuType.CLICK);
         jqhd.setName("近期活动");
 
         MenuButton lszk = new MenuButton();
-        lszk.setKey(ConstantsCollection.MENU_LSZK_KEY);
+        lszk.setKey(Constants.MENU_LSZK_KEY);
         lszk.setType(MenuType.CLICK);
         lszk.setName("历史周刊");
 
-        MenuButton xxjj = new MenuButton();
-        xxjj.setKey(ConstantsCollection.MENU_XXJJ_KEY);
-        xxjj.setType(MenuType.VIEW);
-        xxjj.setName("学校简介");
-        xxjj.setUrl("http://www.56team.com:82/website/school/introduction.php");
+//        MenuButton xxjj = new MenuButton();
+//        xxjj.setKey(Constants.MENU_XXJJ_KEY);
+//        xxjj.setType(MenuType.VIEW);
+//        xxjj.setName("学校简介");
+//        xxjj.setUrl("http://www.56team.com:82/website/school/introduction.php");
 
         MenuButton dxwz = new MenuButton();
-        dxwz.setKey(ConstantsCollection.MENU_DXWZ_KEY);
+        dxwz.setKey(Constants.MENU_DXWZ_KEY);
         dxwz.setType(MenuType.VIEW);
-        dxwz.setName("大学网站");
-        dxwz.setUrl("http://www.56team.com:82/website/test1.php");
+        dxwz.setName("学校网站");
+        dxwz.setUrl("http://www.dllgbdx.com");
 
         List<MenuButton> dcxySub = new ArrayList<MenuButton>();
         dcxySub.add(jqhd);
         dcxySub.add(lszk);
-        dcxySub.add(xxjj);
+//        dcxySub.add(xxjj);
         dcxySub.add(dxwz);
 
         dcxy.setSubButton(dcxySub);

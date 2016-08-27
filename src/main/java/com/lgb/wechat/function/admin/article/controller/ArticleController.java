@@ -1,7 +1,7 @@
 package com.lgb.wechat.function.admin.article.controller;
 
 import com.google.common.base.Optional;
-import com.lgb.wechat.arc.util.constants.ConstantsCollection;
+import com.lgb.wechat.arc.util.constants.Constants;
 import com.lgb.wechat.function.admin.article.Article;
 import com.lgb.wechat.function.admin.article.service.ArticleService;
 import org.bson.Document;
@@ -107,7 +107,7 @@ public class ArticleController {
     private ModelAndView listArticles(String articleType) {
         String type = articleType;
         if (null == type || type.length() == 0) {
-            type = ConstantsCollection.DEFAULT_ARTICLE_COLLECTION_NAME;
+            type = Constants.DEFAULT_ARTICLE_COLLECTION_NAME;
         }
 
         List<Document> documents = articleService.list(type);
