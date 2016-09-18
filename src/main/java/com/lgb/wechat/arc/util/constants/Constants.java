@@ -9,12 +9,15 @@ public class Constants {
 
     // 微信菜单
     public static final String MENU_XNFU_KEY = "xnfw"; //校内服务
+    public static final String MENU_XINWEN_KEY = "xinwen"; //一级导航栏新闻
 //    public final static String MENU_JRKC_KEY = "jrkc"; //今日课表
     public static final String MENU_JWGG_KEY = "jwgg"; //教务公告
     public static final String MENU_ZXJY_KEY = "zxjy"; //在线教育
 //    public final static String MENU_CJCX_KEY = "cjcx"; //成绩查询
     public static final String MENU_SHZS_KEY = "shzs"; //生活助手
     public static final String MENU_WYJ_KEY = "wyj"; //外语角
+    public static final String MENU_CJCX_KEY = "cjcx"; //成绩
+    public static final String MENU_JRKC_KEY = "jrkc"; //今日课程
     public static final String MENU_TQCX_KEY = "cxbz"; //天气查询
     public static final String MENU_RQCX_KEY = "rqcx"; //日期查询
     public static final String MENU_DCXY_KEY = "dcxy"; //多彩校园
@@ -23,6 +26,7 @@ public class Constants {
     public static final String MENU_XXJJ_KEY = "xxjj"; //学校简介
     public static final String MENU_DXWZ_KEY = "dxwz"; //大学网站
     public static final String MENU_XNCX_KEY = "xncx"; //校内查询
+    public static final String MENU_KWXX_KEY = "kwxx"; //课外学习
 
     // 平台配置常量
     public static final String APPID = "wx02c623958c0e1e3a";
