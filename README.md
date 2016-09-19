@@ -16,3 +16,8 @@ mvn clean tomcat7:run
 ```
 mvn clean
 ```
+
+### 微信接口账号
+```
+samuelbean@163/xiao5622498B
+```
