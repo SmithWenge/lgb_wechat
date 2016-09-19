@@ -15,7 +15,7 @@ public class WeixinArticleServiceImpl implements WeixinArticleService {
     }
 
     @Override
-    public List<Document> firstThreeArticles(String collectionName) {
+    public List<Document> first5Articles(String collectionName) {
         return weixinArticleRepository.selectRecentThree(collectionName);
     }
 }

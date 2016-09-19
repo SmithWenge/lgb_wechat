@@ -5,5 +5,5 @@ import org.bson.Document;
 import java.util.List;
 
 public interface WeixinArticleService {
-    List<Document> firstThreeArticles(String collectionName);
+    List<Document> first5Articles(String collectionName);
 }

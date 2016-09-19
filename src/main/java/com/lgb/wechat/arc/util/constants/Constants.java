@@ -27,6 +27,8 @@ public class Constants {
     public static final String MENU_DXWZ_KEY = "dxwz"; //大学网站
     public static final String MENU_XNCX_KEY = "xncx"; //校内查询
     public static final String MENU_KWXX_KEY = "kwxx"; //课外学习
+    public static final String MENU_BD_KEY = "bd"; //账号绑定
+    public static final String MENU_FZCX_KEY = "fzcx"; //辅助查询
 
     // 平台配置常量
     public static final String APPID = "wx02c623958c0e1e3a";
@@ -49,4 +51,7 @@ public class Constants {
 
     // 默认天气地点
     public static final String DEFAULT_TQ_QUERY_LOCATION = "大连";
+
+    // 帮助图片media ID
+    public static final String WECHAT_HELP_IMAGE_MEDIA_ID = "gmiIqhrNfK7n_9UlDO1aoz9VMIT17PGyFQbq6BJ3HiRx9aSKfC05usagLWFPqOjk";
 }
