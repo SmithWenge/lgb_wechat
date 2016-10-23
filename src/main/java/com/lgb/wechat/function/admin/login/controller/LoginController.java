@@ -13,6 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 
+/**
+ *  管理员登录路由器
+ */
 @Controller
 @RequestMapping("/admin")
 public class LoginController {
@@ -20,32 +23,43 @@ public class LoginController {
     @Autowired
     private LoginServiceI loginService;
 
-    @RequestMapping(value = "/routeHome", method = RequestMethod.GET)
+    /**
+     * 路由到登录后管理员首页
+     *
+     * @return
+     */
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String routeHome() {
         return "index";
     }
 
-    @RequestMapping(value = "/routeLogin", method = RequestMethod.GET)
+    /**
+     * 路由到登录页面
+     *
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "/route/login", method = RequestMethod.GET)
     public String routeLogin(HttpSession session) {
         if (null != session.getAttribute(Constants.SESSION_ADMIN_KEY)) {
-            return "index";
+            return "redirect:/admin/home.action";
         }
 
         return "admin/login/adminLogin";
     }
 
+    /**
+     * 管理员登录系统
+     *
+     * @param adminUser
+     * @param session
+     * @return
+     */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView login(AdminUser adminUser, HttpSession session) {
-//        Object sessionCode = session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
-//        if (sessionCode == null ) {
-//            return new ModelAndView("redirect:/admin/routeLogin.action");
-//        }
-//        if (!authCode.equals(sessionCode.toString()))
-//            return new ModelAndView("redirect:/admin/routeLogin.action");
-//        session.removeAttribute(Constants.KAPTCHA_SESSION_KEY);
-
         AdminUser user = (AdminUser) session.getAttribute(Constants.SESSION_ADMIN_KEY);
         Optional<AdminUser> optionalUser = Optional.fromNullable(user);
+
         if (optionalUser.isPresent()) {
             return new ModelAndView("redirect:/admin/routeHome.action");
         }
@@ -54,7 +68,7 @@ public class LoginController {
             mav.setViewName("redirect:/admin/routeHome.action");
             session.setAttribute(Constants.SESSION_ADMIN_KEY, adminUser);
         }else {
-            mav.setViewName("redirect:/admin/routeLogin.action");
+            mav.setViewName("redirect:/admin/route/login.action");
         }
 
         return mav;
@@ -69,13 +83,13 @@ public class LoginController {
     public ModelAndView resetPass(AdminUser adminUser,HttpSession session) {
 //        Object sessionCode = session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
 //        if (sessionCode == null ) {
-//            return new ModelAndView("redirect:/admin/routeLogin.action");
+//            return new ModelAndView("redirect:/admin/route/login.action");
 //        }
 //        if (!authCode.equals(sessionCode.toString()))
-//            return new ModelAndView("redirect:/admin/routeLogin.action");
+//            return new ModelAndView("redirect:/admin/route/login.action");
 //        session.removeAttribute(Constants.KAPTCHA_SESSION_KEY);
 
-        ModelAndView mav = new ModelAndView("redirect:/admin/routeLogin.action");
+        ModelAndView mav = new ModelAndView("redirect:/admin/route/login.action");
         if (loginService.resetPassword(adminUser)) {
             session.removeAttribute(Constants.SESSION_ADMIN_KEY);
             return mav;

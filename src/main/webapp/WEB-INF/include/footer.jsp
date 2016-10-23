@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<script type="text/javascript" src="${contextPath}/static/plugins/bootstrap/js/bootstrap.js" ></script>
+<%--<script type="text/javascript" src="${contextPath}/static/plugins/bootstrap/js/bootstrap.js" ></script>--%>
+<script type="text/javascript" src="${contextPath}/static/plugins/semantic/semantic.js" ></script>
 <script type="text/javascript" src="${contextPath}/static/support/jquery.placeholder.js" ></script>
 <script type="text/javascript">
     $(function () {
