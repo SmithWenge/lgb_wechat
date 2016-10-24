@@ -118,7 +118,7 @@
             <beans:bean class="com.lgb.wechat.arc.interceptor.AdminLoginInterceptor">
                 <beans:property name="excludedUris">
                     <beans:list>
-                        <beans:value>/admin/routeLogin.action</beans:value>
+                        <beans:value>/admin/route/login.action</beans:value>
                         <beans:value>/admin/login.action</beans:value>
                         <beans:value>/admin/captchaImage.action</beans:value>
                         <beans:value>/admin/validateCode.action</beans:value>

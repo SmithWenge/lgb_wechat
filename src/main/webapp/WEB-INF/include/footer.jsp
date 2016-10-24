@@ -7,6 +7,13 @@
     $(function () {
         // Invoke the plugin
         $('input, textarea').placeholder();
+
+        /**
+         * 导航栏中的dropdown下拉出现
+         */
+        $('.ui.dropdown')
+                .dropdown()
+        ;
     });
 </script>
 

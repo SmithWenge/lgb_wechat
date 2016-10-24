@@ -39,7 +39,7 @@ public class AdminLoginInterceptor implements HandlerInterceptor {
         Optional<AdminUser> optional = Optional.fromNullable(adminUser);
 
         if (!optional.isPresent()) {
-            String redirectLocation = httpServletRequest.getContextPath() + "/admin/routeLogin.action";
+            String redirectLocation = httpServletRequest.getContextPath() + "/admin/route/login.action";
             httpServletResponse.sendRedirect(redirectLocation);
             return false;
             /* 用exceptionMapping中确定重定向 */

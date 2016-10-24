@@ -61,11 +61,12 @@ public class LoginController {
         Optional<AdminUser> optionalUser = Optional.fromNullable(user);
 
         if (optionalUser.isPresent()) {
-            return new ModelAndView("redirect:/admin/routeHome.action");
+            return new ModelAndView("redirect:/admin/home.action");
         }
         ModelAndView mav = new ModelAndView();
         if(loginService.isLogin(adminUser)) {
-            mav.setViewName("redirect:/admin/routeHome.action");
+            mav.setViewName("redirect:/admin/home.action");
+
             session.setAttribute(Constants.SESSION_ADMIN_KEY, adminUser);
         }else {
             mav.setViewName("redirect:/admin/route/login.action");
@@ -74,28 +75,27 @@ public class LoginController {
         return mav;
     }
 
-    @RequestMapping(value = "/routePass", method = RequestMethod.GET)
+    @RequestMapping(value = "/route/pass", method = RequestMethod.GET)
     public String routePass() {
         return "admin/login/resetPass";
     }
 
-    @RequestMapping(value = "/resetPass", method = RequestMethod.POST)
+    @RequestMapping(value = "/reset/pass", method = RequestMethod.POST)
     public ModelAndView resetPass(AdminUser adminUser,HttpSession session) {
-//        Object sessionCode = session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
-//        if (sessionCode == null ) {
-//            return new ModelAndView("redirect:/admin/route/login.action");
-//        }
-//        if (!authCode.equals(sessionCode.toString()))
-//            return new ModelAndView("redirect:/admin/route/login.action");
-//        session.removeAttribute(Constants.KAPTCHA_SESSION_KEY);
-
         ModelAndView mav = new ModelAndView("redirect:/admin/route/login.action");
+
         if (loginService.resetPassword(adminUser)) {
             session.removeAttribute(Constants.SESSION_ADMIN_KEY);
             return mav;
         }
 
-        return new ModelAndView("redirect:/admin/routePass.action");
+        return new ModelAndView("redirect:/admin/route/pass.action");
     }
 
+    @RequestMapping("/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute(Constants.SESSION_ADMIN_KEY);
+
+        return "redirect:/admin/route/login.action";
+    }
 }
