@@ -7,7 +7,7 @@
 <div class="ui vertical segment">
     <form class="ui form" action="${contextPath}/admin/article/list.action" method="post">
         <div class="inline fields">
-            <div class="three wide field">
+            <div class="field">
                 <label>文章类型</label>
                 <select class="ui search dropdown" name="articleType">
                     <option value="jwgg">教务公告</option>

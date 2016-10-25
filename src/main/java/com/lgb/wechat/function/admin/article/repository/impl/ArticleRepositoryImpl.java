@@ -27,7 +27,8 @@ public class ArticleRepositoryImpl implements ArticleRepository {
                 .append("articleDelete", Constants.DEFAULT_RECORD_NOT_DELETE)
                 .append("_id", new ObjectId(article.getId()))
                 .append("pictureUrl", article.getPictureUrl())
-                .append("articleUrl", article.getArticleUrl());
+                .append("articleUrl", article.getArticleUrl())
+                .append("articleDescription", article.getArticleDescription());
 
         mongodbTemplate.insertOne(article.getArticleType(), document);
     }
@@ -60,7 +61,8 @@ public class ArticleRepositoryImpl implements ArticleRepository {
                 .append("articleAuthor", article.getArticleAuthor())
                 .append("articleContent", article.getArticleContent())
                 .append("articleTime", DateUtils.nowYMD())
-                .append("articleType", article.getArticleType()));
+                .append("articleType", article.getArticleType())
+                .append("articleDescription", article.getArticleDescription()));
 
         return mongodbTemplate.updateOne(collectionName, condition, document) == 1;
     }

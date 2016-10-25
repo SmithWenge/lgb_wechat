@@ -7,7 +7,7 @@
 <form class="ui form" action="${contextPath}/admin/article/add.action" method="post" enctype="multipart/form-data">
 
     <h3 class="ui top attached header">
-        <div class="ui twelve column grid">
+        <div class="ui ten column grid">
             <div class="row">
                 <%--<div class="column">--%>
                     <%--<a href="${contextPath}/admin/article/route/add.action">--%>
@@ -39,8 +39,7 @@
                 <div class="two fields">
                     <div class="field">
                         <label>文章类别</label>
-                        <select class="form-control" name="articleType" id="articleType">
-                            <option value="0">--请选择--</option>
+                        <select class="ui fluid dropdown" name="articleType" id="articleType">
                             <option value="jwgg">教务公告</option>
                             <option value="zxjy">在线教育</option>
                             <option value="cjcx">成绩查询</option>
@@ -60,7 +59,7 @@
         </div>
         <div class="field">
             <label>文章简短描述</label>
-            <textarea rows="2"></textarea>
+            <textarea rows="1" name="articleDescription"></textarea>
         </div>
         <div class="field">
             <script>window.PROJECT_CONTEXT="${contextPath}"</script>

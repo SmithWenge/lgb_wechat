@@ -18,7 +18,7 @@
     request.setAttribute("tagName", tagName);
 %>
 
-<select class="form-control" id="${tagId}" name="${name}">
+<select class="ui fluid dropdown" id="${tagId}" name="${name}">
 	<c:forEach items="${dict:list(key)}" var="dict" varStatus="status">
 		<c:choose>
 		 	<c:when test="${status.first eq true}">

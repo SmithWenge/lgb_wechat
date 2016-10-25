@@ -8,6 +8,7 @@ public class Article {
     private String articleTitle;
     private String pictureUrl;
     private String articleUrl;
+    private String articleDescription;
 
     public void setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
@@ -64,5 +65,14 @@ public class Article {
 
     public String getId() {
         return id;
+    }
+
+    public void setArticleDescription(String articleDescription) {
+        this.articleDescription = articleDescription;
+    }
+
+    public String getArticleDescription() {
+
+        return articleDescription;
     }
 }
