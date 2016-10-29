@@ -3,7 +3,7 @@
 <%@ include file="/WEB-INF/include/header.jsp"%>
 <%@ include file="/WEB-INF/include/navs.jsp"%>
 
-<div class="ui vertical segment">
+<div class="ui center segment">
     <div class="ui form">
         <div class="inline fields">
             <div class="five wide field">
@@ -19,7 +19,7 @@
         </div>
     </div>
 </div>
-<div class="ui vertical segment">
+<div class="ui center segment">
     <table class="ui very basic collapsing celled table" id="articleTable">
         <thead>
             <tr>

@@ -54,4 +54,6 @@ public class Constants {
 
     // 帮助图片media ID
     public static final String WECHAT_HELP_IMAGE_MEDIA_ID = "gmiIqhrNfK7n_9UlDO1aoz9VMIT17PGyFQbq6BJ3HiRx9aSKfC05usagLWFPqOjk";
+    public static final String PUSH_ARTICLE_COLLECTION_NAME = "push";
+    public static final String PUSH_ARTICLE_TYPE = "push";
 }

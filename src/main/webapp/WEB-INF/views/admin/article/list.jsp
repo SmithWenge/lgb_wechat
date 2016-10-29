@@ -4,7 +4,7 @@
 
 <%@include file="/WEB-INF/include/navs.jsp"%>
 
-<div class="ui vertical segment">
+<div class="ui center segment">
     <form class="ui form" action="${contextPath}/admin/article/list.action" method="post">
         <div class="inline fields">
             <div class="field">
@@ -36,8 +36,8 @@
     </form>
 </div>
 
-<div class="ui vertical segment">
-    <table class="ui very basic collapsing celled table" id="articleTable" style="margin-left: 2px;">
+<div class="ui center segment">
+    <table class="ui very basic collapsing celled table" id="articleTable">
         <thead>
             <tr>
                 <th>序号</th>

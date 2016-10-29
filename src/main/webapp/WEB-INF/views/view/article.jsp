@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>大连老干部大学文章</title>
 </head>
 <body>
     ${requestScope.document.articleContent}

@@ -9,6 +9,9 @@
     <a class="item" href="${contextPath}/admin/article/list.action" id="article">
         <i class="book icon"></i> 文章
     </a>
+    <a class="item" href="${contextPath}/admin/article/push/list.action" id="push">
+        <i class="book icon"></i> 推送文章
+    </a>
     <div class="right menu">
         <div class="ui pointing dropdown link item">
             <span class="text">管理员: &nbsp; ${sessionScope.adminLogin.userName}</span>

@@ -137,4 +137,31 @@ public class MongoTemplate {
     public String getMongodbDb() {
         return mongodbDb;
     }
+
+    /**
+     * 查看所有推送文章
+     *
+     * @return
+     */
+    public List<Document> selectPushArticles() {
+        init();
+
+        final List<Document> documents = new ArrayList<>();
+
+        // 根据时间排序
+        FindIterable<Document> iterable = db.getCollection(Constants.PUSH_ARTICLE_COLLECTION_NAME)
+                .find()
+                .sort(new Document("articleTime", 1));
+
+        iterable.forEach(new Block<Document>() {
+            @Override
+            public void apply(Document document) {
+                documents.add(document);
+            }
+        });
+
+        client.close();
+        client = null;
+        return documents;
+    }
 }

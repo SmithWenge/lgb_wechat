@@ -1,0 +1,997 @@
+21:39:57.192 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+21:39:57.431 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Tue Oct 25 21:39:57 CST 2016]; root of context hierarchy
+21:39:57.493 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/root-context.xml]
+21:39:57.961 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/db.properties]
+21:39:57.962 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/mongodb.properties]
+21:39:58.343 [localhost-startStop-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:39:58.403 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 1206 ms
+21:39:58.459 [cluster-ClusterId{value='580f60ae18c72f031efe94aa', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:1, serverValue:1}] to localhost:27017
+21:39:58.462 [cluster-ClusterId{value='580f60ae18c72f031efe94aa', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=855000}
+21:39:58.483 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:484] FrameworkServlet 'springServlet': initialization started
+21:39:58.487 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue Oct 25 21:39:58 CST 2016]; parent: Root WebApplicationContext
+21:39:58.488 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/servlet-context.xml]
+21:39:59.133 [localhost-startStop-1] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+21:39:59.481 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.route2Add()
+21:39:59.481 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.addArticle(com.lgb.wechat.function.admin.article.Article,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+21:39:59.481 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list/{articleType}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticle(java.lang.String)
+21:39:59.482 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticleByType(java.lang.String)
+21:39:59.482 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/view/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.viewArticle(java.lang.String,java.lang.String)
+21:39:59.482 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/edit/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.routeEdit(java.lang.String,java.lang.String)
+21:39:59.482 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/edit],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(com.lgb.wechat.function.admin.article.Article)
+21:39:59.483 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/delete/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.deleteArticle(java.lang.String,java.lang.String)
+21:39:59.483 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/image/modify/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.routeImageModify(java.lang.String,java.lang.String)
+21:39:59.483 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/image/edit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.imageEdit(com.lgb.wechat.function.admin.article.Article,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,java.lang.String)
+21:39:59.483 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/ajax/list],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.util.List<org.bson.Document>> com.lgb.wechat.function.admin.article.controller.ArticleController.ajaxList(java.lang.String)
+21:39:59.485 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.login.controller.LoginController.login(com.lgb.wechat.function.admin.login.AdminUser,javax.servlet.http.HttpSession)
+21:39:59.485 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.login.controller.LoginController.logout(javax.servlet.http.HttpSession)
+21:39:59.485 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/home],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.login.controller.LoginController.routeHome()
+21:39:59.486 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/route/login],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.login.controller.LoginController.routeLogin(javax.servlet.http.HttpSession)
+21:39:59.486 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/route/pass],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.login.controller.LoginController.routePass()
+21:39:59.486 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/reset/pass],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.login.controller.LoginController.resetPass(com.lgb.wechat.function.admin.login.AdminUser,javax.servlet.http.HttpSession)
+21:39:59.487 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/user/route/bind],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.user.bind.controller.UserBindingController.routeBind()
+21:39:59.488 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/weixin/article/view/{colName}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.weixin.article.controller.WeixinArticleController.weixinViewArticle(java.lang.String,java.lang.String)
+21:40:00.093 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue Oct 25 21:39:58 CST 2016]; parent: Root WebApplicationContext
+21:40:00.241 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue Oct 25 21:39:58 CST 2016]; parent: Root WebApplicationContext
+21:40:00.526 [localhost-startStop-1] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+21:40:00.573 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue Oct 25 21:39:58 CST 2016]; parent: Root WebApplicationContext
+21:40:00.977 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:503] FrameworkServlet 'springServlet': initialization completed in 2494 ms
+21:41:42.885 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:2, serverValue:6}] to localhost:27017
+21:41:42.922 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:2, serverValue:6}] to localhost:27017 because the pool has been closed.
+21:41:49.545 [http-bio-8080-exec-2] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:41:49.548 [http-bio-8080-exec-2] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+21:41:49.552 [cluster-ClusterId{value='580f611d18c72f031efe94ab', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:3, serverValue:7}] to 127.0.0.1:27017
+21:41:49.553 [cluster-ClusterId{value='580f611d18c72f031efe94ab', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=968000}
+21:41:49.556 [http-bio-8080-exec-2] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:4, serverValue:8}] to 127.0.0.1:27017
+21:41:49.559 [http-bio-8080-exec-2] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:4, serverValue:8}] to 127.0.0.1:27017 because the pool has been closed.
+21:41:58.977 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:41:58.979 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+21:41:58.981 [cluster-ClusterId{value='580f612618c72f031efe94ac', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:5, serverValue:9}] to 127.0.0.1:27017
+21:41:58.982 [cluster-ClusterId{value='580f612618c72f031efe94ac', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=493000}
+21:41:58.985 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:6, serverValue:10}] to 127.0.0.1:27017
+21:41:58.992 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:6, serverValue:10}] to 127.0.0.1:27017 because the pool has been closed.
+21:42:03.747 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:42:03.748 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+21:42:03.751 [cluster-ClusterId{value='580f612b18c72f031efe94ad', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:7, serverValue:11}] to 127.0.0.1:27017
+21:42:03.752 [cluster-ClusterId{value='580f612b18c72f031efe94ad', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=701000}
+21:42:03.760 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:8, serverValue:12}] to 127.0.0.1:27017
+21:42:03.761 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:8, serverValue:12}] to 127.0.0.1:27017 because the pool has been closed.
+21:42:08.046 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:42:08.048 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+21:42:08.050 [cluster-ClusterId{value='580f613018c72f031efe94ae', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:9, serverValue:13}] to 127.0.0.1:27017
+21:42:08.051 [cluster-ClusterId{value='580f613018c72f031efe94ae', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=518000}
+21:42:08.054 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:10, serverValue:14}] to 127.0.0.1:27017
+21:42:08.056 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:10, serverValue:14}] to 127.0.0.1:27017 because the pool has been closed.
+21:44:45.670 [http-bio-8080-exec-10] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:44:45.673 [http-bio-8080-exec-10] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+21:44:45.676 [cluster-ClusterId{value='580f61cd18c72f031efe94af', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:11, serverValue:15}] to 127.0.0.1:27017
+21:44:45.677 [cluster-ClusterId{value='580f61cd18c72f031efe94af', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=493000}
+21:44:45.679 [http-bio-8080-exec-10] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:12, serverValue:16}] to 127.0.0.1:27017
+21:44:45.681 [http-bio-8080-exec-10] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:12, serverValue:16}] to 127.0.0.1:27017 because the pool has been closed.
+21:53:07.214 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:53:07.216 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+21:53:07.218 [cluster-ClusterId{value='580f63c318c72f031efe94b0', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:13, serverValue:17}] to 127.0.0.1:27017
+21:53:07.219 [cluster-ClusterId{value='580f63c318c72f031efe94b0', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=690000}
+21:53:07.225 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:14, serverValue:18}] to 127.0.0.1:27017
+21:53:07.228 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:14, serverValue:18}] to 127.0.0.1:27017 because the pool has been closed.
+21:53:40.640 [http-bio-8080-exec-10] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:53:40.641 [http-bio-8080-exec-10] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+21:53:40.643 [cluster-ClusterId{value='580f63e418c72f031efe94b1', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:15, serverValue:19}] to 127.0.0.1:27017
+21:53:40.644 [cluster-ClusterId{value='580f63e418c72f031efe94b1', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=746000}
+21:53:40.652 [http-bio-8080-exec-10] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:16, serverValue:20}] to 127.0.0.1:27017
+21:53:40.654 [http-bio-8080-exec-10] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:16, serverValue:20}] to 127.0.0.1:27017 because the pool has been closed.
+21:54:06.165 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:54:06.168 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+21:54:06.170 [cluster-ClusterId{value='580f63fe18c72f031efe94b2', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:17, serverValue:21}] to 127.0.0.1:27017
+21:54:06.171 [cluster-ClusterId{value='580f63fe18c72f031efe94b2', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=735000}
+21:54:06.184 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:18, serverValue:22}] to 127.0.0.1:27017
+21:54:06.188 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:18, serverValue:22}] to 127.0.0.1:27017 because the pool has been closed.
+21:55:03.186 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:55:03.188 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+21:55:03.191 [cluster-ClusterId{value='580f643718c72f031efe94b3', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:19, serverValue:23}] to 127.0.0.1:27017
+21:55:03.193 [cluster-ClusterId{value='580f643718c72f031efe94b3', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=688000}
+21:55:03.197 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:20, serverValue:24}] to 127.0.0.1:27017
+21:55:03.198 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:20, serverValue:24}] to 127.0.0.1:27017 because the pool has been closed.
+21:59:18.155 [http-bio-8080-exec-10] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:59:18.156 [http-bio-8080-exec-10] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+21:59:18.158 [cluster-ClusterId{value='580f653618c72f031efe94b4', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:21, serverValue:25}] to 127.0.0.1:27017
+21:59:18.159 [cluster-ClusterId{value='580f653618c72f031efe94b4', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=655000}
+21:59:18.164 [http-bio-8080-exec-10] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:22, serverValue:26}] to 127.0.0.1:27017
+21:59:18.166 [http-bio-8080-exec-10] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:22, serverValue:26}] to 127.0.0.1:27017 because the pool has been closed.
+21:59:33.954 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:59:33.957 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+21:59:33.959 [cluster-ClusterId{value='580f654518c72f031efe94b5', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:23, serverValue:27}] to 127.0.0.1:27017
+21:59:33.960 [cluster-ClusterId{value='580f654518c72f031efe94b5', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=668000}
+21:59:33.964 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:24, serverValue:28}] to 127.0.0.1:27017
+21:59:33.966 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:24, serverValue:28}] to 127.0.0.1:27017 because the pool has been closed.
+21:59:39.445 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+21:59:39.447 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+21:59:39.450 [cluster-ClusterId{value='580f654b18c72f031efe94b6', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:25, serverValue:29}] to 127.0.0.1:27017
+21:59:39.451 [cluster-ClusterId{value='580f654b18c72f031efe94b6', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=413000}
+21:59:39.453 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:26, serverValue:30}] to 127.0.0.1:27017
+21:59:39.456 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:26, serverValue:30}] to 127.0.0.1:27017 because the pool has been closed.
+22:00:01.130 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:00:01.131 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:00:01.133 [cluster-ClusterId{value='580f656118c72f031efe94b7', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:27, serverValue:31}] to 127.0.0.1:27017
+22:00:01.134 [cluster-ClusterId{value='580f656118c72f031efe94b7', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=836000}
+22:00:01.140 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:28, serverValue:32}] to 127.0.0.1:27017
+22:00:01.144 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:28, serverValue:32}] to 127.0.0.1:27017 because the pool has been closed.
+22:01:19.844 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:01:19.845 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:01:19.847 [cluster-ClusterId{value='580f65af18c72f031efe94b8', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:29, serverValue:33}] to 127.0.0.1:27017
+22:01:19.848 [cluster-ClusterId{value='580f65af18c72f031efe94b8', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=379000}
+22:01:19.850 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:30, serverValue:34}] to 127.0.0.1:27017
+22:01:19.852 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:30, serverValue:34}] to 127.0.0.1:27017 because the pool has been closed.
+22:01:22.035 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:01:22.036 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:01:22.039 [cluster-ClusterId{value='580f65b218c72f031efe94b9', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:31, serverValue:35}] to 127.0.0.1:27017
+22:01:22.042 [cluster-ClusterId{value='580f65b218c72f031efe94b9', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=1475000}
+22:01:22.047 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:32, serverValue:36}] to 127.0.0.1:27017
+22:01:22.048 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:32, serverValue:36}] to 127.0.0.1:27017 because the pool has been closed.
+22:04:52.763 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:04:52.780 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:04:52.784 [cluster-ClusterId{value='580f668418c72f031efe94ba', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:33, serverValue:37}] to 127.0.0.1:27017
+22:04:52.786 [cluster-ClusterId{value='580f668418c72f031efe94ba', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=623000}
+22:04:52.790 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:34, serverValue:38}] to 127.0.0.1:27017
+22:04:52.818 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:34, serverValue:38}] to 127.0.0.1:27017 because the pool has been closed.
+22:04:52.833 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:04:52.836 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:04:52.838 [cluster-ClusterId{value='580f668418c72f031efe94bb', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:35, serverValue:39}] to 127.0.0.1:27017
+22:04:52.839 [cluster-ClusterId{value='580f668418c72f031efe94bb', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=454000}
+22:04:52.841 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:36, serverValue:40}] to 127.0.0.1:27017
+22:04:52.845 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:36, serverValue:40}] to 127.0.0.1:27017 because the pool has been closed.
+22:04:57.079 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:04:57.082 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:04:57.085 [cluster-ClusterId{value='580f668918c72f031efe94bc', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:37, serverValue:41}] to 127.0.0.1:27017
+22:04:57.087 [cluster-ClusterId{value='580f668918c72f031efe94bc', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=1318000}
+22:04:57.094 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:38, serverValue:42}] to 127.0.0.1:27017
+22:04:57.095 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:38, serverValue:42}] to 127.0.0.1:27017 because the pool has been closed.
+22:05:01.618 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:05:01.621 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:05:01.626 [cluster-ClusterId{value='580f668d18c72f031efe94bd', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:39, serverValue:43}] to 127.0.0.1:27017
+22:05:01.627 [cluster-ClusterId{value='580f668d18c72f031efe94bd', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=498000}
+22:05:01.635 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:40, serverValue:44}] to 127.0.0.1:27017
+22:05:01.637 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:40, serverValue:44}] to 127.0.0.1:27017 because the pool has been closed.
+22:05:17.699 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:05:17.702 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:05:17.704 [cluster-ClusterId{value='580f669d18c72f031efe94be', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:41, serverValue:45}] to 127.0.0.1:27017
+22:05:17.705 [cluster-ClusterId{value='580f669d18c72f031efe94be', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=759000}
+22:05:17.723 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:42, serverValue:46}] to 127.0.0.1:27017
+22:05:17.726 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:42, serverValue:46}] to 127.0.0.1:27017 because the pool has been closed.
+22:05:23.730 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:05:23.731 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:05:23.734 [cluster-ClusterId{value='580f66a318c72f031efe94bf', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:43, serverValue:47}] to 127.0.0.1:27017
+22:05:23.735 [cluster-ClusterId{value='580f66a318c72f031efe94bf', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=844000}
+22:05:23.744 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:44, serverValue:48}] to 127.0.0.1:27017
+22:05:23.745 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:44, serverValue:48}] to 127.0.0.1:27017 because the pool has been closed.
+22:06:17.780 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:06:17.784 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:06:17.786 [cluster-ClusterId{value='580f66d918c72f031efe94c0', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:45, serverValue:49}] to 127.0.0.1:27017
+22:06:17.787 [cluster-ClusterId{value='580f66d918c72f031efe94c0', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=391000}
+22:06:17.793 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:46, serverValue:50}] to 127.0.0.1:27017
+22:06:17.794 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:46, serverValue:50}] to 127.0.0.1:27017 because the pool has been closed.
+22:12:07.874 [http-bio-8080-exec-2] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:12:07.876 [http-bio-8080-exec-2] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:12:07.878 [cluster-ClusterId{value='580f683718c72f031efe94c1', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:47, serverValue:51}] to 127.0.0.1:27017
+22:12:07.879 [cluster-ClusterId{value='580f683718c72f031efe94c1', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=486000}
+22:12:07.885 [http-bio-8080-exec-2] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:48, serverValue:52}] to 127.0.0.1:27017
+22:12:07.887 [http-bio-8080-exec-2] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:48, serverValue:52}] to 127.0.0.1:27017 because the pool has been closed.
+22:12:32.324 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:12:32.326 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:12:32.329 [cluster-ClusterId{value='580f685018c72f031efe94c2', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:49, serverValue:53}] to 127.0.0.1:27017
+22:12:32.331 [cluster-ClusterId{value='580f685018c72f031efe94c2', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=770000}
+22:12:32.335 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:50, serverValue:54}] to 127.0.0.1:27017
+22:12:32.337 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:50, serverValue:54}] to 127.0.0.1:27017 because the pool has been closed.
+22:13:11.303 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:13:11.305 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:13:11.307 [cluster-ClusterId{value='580f687718c72f031efe94c3', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:51, serverValue:55}] to 127.0.0.1:27017
+22:13:11.308 [cluster-ClusterId{value='580f687718c72f031efe94c3', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=546000}
+22:13:11.318 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:52, serverValue:56}] to 127.0.0.1:27017
+22:13:11.323 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:52, serverValue:56}] to 127.0.0.1:27017 because the pool has been closed.
+22:13:51.498 [http-bio-8080-exec-6] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:13:51.499 [http-bio-8080-exec-6] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:13:51.502 [cluster-ClusterId{value='580f689f18c72f031efe94c4', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:53, serverValue:57}] to 127.0.0.1:27017
+22:13:51.504 [cluster-ClusterId{value='580f689f18c72f031efe94c4', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=780000}
+22:13:51.513 [http-bio-8080-exec-6] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:54, serverValue:58}] to 127.0.0.1:27017
+22:13:51.515 [http-bio-8080-exec-6] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:54, serverValue:58}] to 127.0.0.1:27017 because the pool has been closed.
+22:14:02.674 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:14:02.675 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:14:02.677 [cluster-ClusterId{value='580f68aa18c72f031efe94c5', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:55, serverValue:59}] to 127.0.0.1:27017
+22:14:02.679 [cluster-ClusterId{value='580f68aa18c72f031efe94c5', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=379000}
+22:14:02.689 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:56, serverValue:60}] to 127.0.0.1:27017
+22:14:02.691 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:56, serverValue:60}] to 127.0.0.1:27017 because the pool has been closed.
+22:14:10.961 [http-bio-8080-exec-10] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:14:10.963 [http-bio-8080-exec-10] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:14:10.969 [cluster-ClusterId{value='580f68b218c72f031efe94c6', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:57, serverValue:61}] to 127.0.0.1:27017
+22:14:10.973 [cluster-ClusterId{value='580f68b218c72f031efe94c6', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=3398000}
+22:14:10.983 [http-bio-8080-exec-10] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:58, serverValue:62}] to 127.0.0.1:27017
+22:14:10.986 [http-bio-8080-exec-10] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:58, serverValue:62}] to 127.0.0.1:27017 because the pool has been closed.
+22:14:47.782 [http-bio-8080-exec-10] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:14:47.785 [http-bio-8080-exec-10] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:14:47.788 [cluster-ClusterId{value='580f68d718c72f031efe94c7', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:59, serverValue:63}] to 127.0.0.1:27017
+22:14:47.790 [cluster-ClusterId{value='580f68d718c72f031efe94c7', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=745000}
+22:14:47.797 [http-bio-8080-exec-10] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:60, serverValue:64}] to 127.0.0.1:27017
+22:14:47.799 [http-bio-8080-exec-10] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:60, serverValue:64}] to 127.0.0.1:27017 because the pool has been closed.
+22:15:11.792 [http-bio-8080-exec-2] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:15:11.794 [http-bio-8080-exec-2] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:15:11.799 [cluster-ClusterId{value='580f68ef18c72f031efe94c8', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:61, serverValue:65}] to 127.0.0.1:27017
+22:15:11.801 [cluster-ClusterId{value='580f68ef18c72f031efe94c8', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=825000}
+22:15:11.806 [http-bio-8080-exec-2] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:62, serverValue:66}] to 127.0.0.1:27017
+22:15:11.807 [http-bio-8080-exec-2] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:62, serverValue:66}] to 127.0.0.1:27017 because the pool has been closed.
+22:15:21.729 [http-bio-8080-exec-10] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:15:21.731 [http-bio-8080-exec-10] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:15:21.734 [cluster-ClusterId{value='580f68f918c72f031efe94c9', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:63, serverValue:67}] to 127.0.0.1:27017
+22:15:21.734 [cluster-ClusterId{value='580f68f918c72f031efe94c9', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=440000}
+22:15:21.739 [http-bio-8080-exec-10] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:64, serverValue:68}] to 127.0.0.1:27017
+22:15:21.740 [http-bio-8080-exec-10] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:64, serverValue:68}] to 127.0.0.1:27017 because the pool has been closed.
+22:15:39.779 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:15:39.783 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:15:39.786 [cluster-ClusterId{value='580f690b18c72f031efe94ca', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:65, serverValue:69}] to 127.0.0.1:27017
+22:15:39.787 [cluster-ClusterId{value='580f690b18c72f031efe94ca', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=616000}
+22:15:39.797 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:66, serverValue:70}] to 127.0.0.1:27017
+22:15:39.801 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:66, serverValue:70}] to 127.0.0.1:27017 because the pool has been closed.
+22:16:01.416 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:16:01.422 [http-bio-8080-exec-9] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:16:01.427 [cluster-ClusterId{value='580f692118c72f031efe94cb', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:67, serverValue:71}] to 127.0.0.1:27017
+22:16:01.431 [cluster-ClusterId{value='580f692118c72f031efe94cb', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=3076000}
+22:16:01.442 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:68, serverValue:72}] to 127.0.0.1:27017
+22:16:01.447 [http-bio-8080-exec-9] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:68, serverValue:72}] to 127.0.0.1:27017 because the pool has been closed.
+22:16:28.172 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:16:28.176 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:16:28.180 [cluster-ClusterId{value='580f693c18c72f031efe94cc', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:69, serverValue:73}] to 127.0.0.1:27017
+22:16:28.180 [cluster-ClusterId{value='580f693c18c72f031efe94cc', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=382000}
+22:16:28.182 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:70, serverValue:74}] to 127.0.0.1:27017
+22:16:28.184 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:70, serverValue:74}] to 127.0.0.1:27017 because the pool has been closed.
+22:16:28.200 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:16:28.202 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:16:28.205 [cluster-ClusterId{value='580f693c18c72f031efe94cd', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:71, serverValue:75}] to 127.0.0.1:27017
+22:16:28.207 [cluster-ClusterId{value='580f693c18c72f031efe94cd', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=742000}
+22:16:28.213 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:72, serverValue:76}] to 127.0.0.1:27017
+22:16:28.215 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:72, serverValue:76}] to 127.0.0.1:27017 because the pool has been closed.
+22:16:38.275 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:16:38.276 [http-bio-8080-exec-5] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:16:38.279 [cluster-ClusterId{value='580f694618c72f031efe94ce', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:73, serverValue:77}] to 127.0.0.1:27017
+22:16:38.280 [cluster-ClusterId{value='580f694618c72f031efe94ce', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=462000}
+22:16:38.285 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:74, serverValue:78}] to 127.0.0.1:27017
+22:16:38.287 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:74, serverValue:78}] to 127.0.0.1:27017 because the pool has been closed.
+22:18:10.610 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+22:18:10.702 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Tue Oct 25 22:18:10 CST 2016]; root of context hierarchy
+22:18:10.765 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/root-context.xml]
+22:18:11.034 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/db.properties]
+22:18:11.035 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/mongodb.properties]
+22:18:11.316 [localhost-startStop-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:18:11.359 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 743 ms
+22:18:11.403 [cluster-ClusterId{value='580f69a318c72f04c283d747', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:1, serverValue:79}] to localhost:27017
+22:18:11.408 [cluster-ClusterId{value='580f69a318c72f04c283d747', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=742000}
+22:18:11.424 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:484] FrameworkServlet 'springServlet': initialization started
+22:18:11.428 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue Oct 25 22:18:11 CST 2016]; parent: Root WebApplicationContext
+22:18:11.429 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/servlet-context.xml]
+22:18:11.949 [localhost-startStop-1] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+22:18:12.347 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.route2Add()
+22:18:12.347 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.addArticle(com.lgb.wechat.function.admin.article.Article,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+22:18:12.348 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list/{articleType}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticle(java.lang.String)
+22:18:12.348 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticleByType(java.lang.String)
+22:18:12.348 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/view/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.viewArticle(java.lang.String,java.lang.String)
+22:18:12.349 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/edit/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.routeEdit(java.lang.String,java.lang.String)
+22:18:12.349 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/edit],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(com.lgb.wechat.function.admin.article.Article)
+22:18:12.349 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/delete/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.deleteArticle(java.lang.String,java.lang.String)
+22:18:12.349 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/image/modify/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.routeImageModify(java.lang.String,java.lang.String)
+22:18:12.349 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/image/edit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.imageEdit(com.lgb.wechat.function.admin.article.Article,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,java.lang.String)
+22:18:12.350 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/ajax/list],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.util.List<org.bson.Document>> com.lgb.wechat.function.admin.article.controller.ArticleController.ajaxList(java.lang.String)
+22:18:12.351 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.login.controller.LoginController.login(com.lgb.wechat.function.admin.login.AdminUser,javax.servlet.http.HttpSession)
+22:18:12.352 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.login.controller.LoginController.logout(javax.servlet.http.HttpSession)
+22:18:12.352 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/home],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.login.controller.LoginController.routeHome()
+22:18:12.352 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/route/login],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.login.controller.LoginController.routeLogin(javax.servlet.http.HttpSession)
+22:18:12.352 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/route/pass],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.login.controller.LoginController.routePass()
+22:18:12.353 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/reset/pass],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.login.controller.LoginController.resetPass(com.lgb.wechat.function.admin.login.AdminUser,javax.servlet.http.HttpSession)
+22:18:12.353 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/user/route/bind],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.user.bind.controller.UserBindingController.routeBind()
+22:18:12.354 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/weixin/article/view/{colName}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.weixin.article.controller.WeixinArticleController.weixinViewArticle(java.lang.String,java.lang.String)
+22:18:12.905 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue Oct 25 22:18:11 CST 2016]; parent: Root WebApplicationContext
+22:18:12.981 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue Oct 25 22:18:11 CST 2016]; parent: Root WebApplicationContext
+22:18:13.217 [localhost-startStop-1] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+22:18:13.269 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue Oct 25 22:18:11 CST 2016]; parent: Root WebApplicationContext
+22:18:13.700 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:503] FrameworkServlet 'springServlet': initialization completed in 2275 ms
+22:18:28.059 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:2, serverValue:80}] to localhost:27017
+22:18:28.138 [http-bio-8080-exec-5] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:2, serverValue:80}] to localhost:27017 because the pool has been closed.
+22:18:30.381 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:18:30.383 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:18:30.385 [cluster-ClusterId{value='580f69b618c72f04c283d748', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:3, serverValue:81}] to 127.0.0.1:27017
+22:18:30.386 [cluster-ClusterId{value='580f69b618c72f04c283d748', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=525000}
+22:18:30.389 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:4, serverValue:82}] to 127.0.0.1:27017
+22:18:30.392 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:4, serverValue:82}] to 127.0.0.1:27017 because the pool has been closed.
+22:18:35.634 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:18:35.635 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:18:35.637 [cluster-ClusterId{value='580f69bb18c72f04c283d749', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:5, serverValue:83}] to 127.0.0.1:27017
+22:18:35.638 [cluster-ClusterId{value='580f69bb18c72f04c283d749', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=469000}
+22:18:35.642 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:6, serverValue:84}] to 127.0.0.1:27017
+22:18:35.649 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:6, serverValue:84}] to 127.0.0.1:27017 because the pool has been closed.
+22:18:39.070 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:18:39.072 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:18:39.074 [cluster-ClusterId{value='580f69bf18c72f04c283d74a', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:7, serverValue:85}] to 127.0.0.1:27017
+22:18:39.074 [cluster-ClusterId{value='580f69bf18c72f04c283d74a', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=508000}
+22:18:39.079 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:8, serverValue:86}] to 127.0.0.1:27017
+22:18:39.082 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:8, serverValue:86}] to 127.0.0.1:27017 because the pool has been closed.
+22:18:49.000 [http-bio-8080-exec-2] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:18:49.009 [cluster-ClusterId{value='580f69c918c72f04c283d74b', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:9, serverValue:87}] to 127.0.0.1:27017
+22:18:49.010 [http-bio-8080-exec-2] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:18:49.010 [cluster-ClusterId{value='580f69c918c72f04c283d74b', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=584000}
+22:18:49.014 [http-bio-8080-exec-2] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:10, serverValue:88}] to 127.0.0.1:27017
+22:18:49.035 [http-bio-8080-exec-2] WARN  WARN [AbstractHandlerExceptionResolver.java:187] Handler execution resulted in exception
+java.lang.IllegalArgumentException: Invalid BSON field name articleDescription
+	at org.bson.AbstractBsonWriter.writeName(AbstractBsonWriter.java:494)
+	at org.bson.codecs.DocumentCodec.writeMap(DocumentCodec.java:188)
+	at org.bson.codecs.DocumentCodec.encode(DocumentCodec.java:131)
+	at org.bson.codecs.DocumentCodec.encode(DocumentCodec.java:45)
+	at org.bson.codecs.BsonDocumentWrapperCodec.encode(BsonDocumentWrapperCodec.java:63)
+	at org.bson.codecs.BsonDocumentWrapperCodec.encode(BsonDocumentWrapperCodec.java:29)
+	at com.mongodb.connection.UpdateCommandMessage.writeTheWrites(UpdateCommandMessage.java:84)
+	at com.mongodb.connection.UpdateCommandMessage.writeTheWrites(UpdateCommandMessage.java:42)
+	at com.mongodb.connection.BaseWriteCommandMessage.encodeMessageBodyWithMetadata(BaseWriteCommandMessage.java:129)
+	at com.mongodb.connection.RequestMessage.encodeWithMetadata(RequestMessage.java:160)
+	at com.mongodb.connection.WriteCommandProtocol.sendMessage(WriteCommandProtocol.java:212)
+	at com.mongodb.connection.WriteCommandProtocol.execute(WriteCommandProtocol.java:101)
+	at com.mongodb.connection.UpdateCommandProtocol.execute(UpdateCommandProtocol.java:64)
+	at com.mongodb.connection.UpdateCommandProtocol.execute(UpdateCommandProtocol.java:37)
+	at com.mongodb.connection.DefaultServer$DefaultServerProtocolExecutor.execute(DefaultServer.java:159)
+	at com.mongodb.connection.DefaultServerConnection.executeProtocol(DefaultServerConnection.java:286)
+	at com.mongodb.connection.DefaultServerConnection.updateCommand(DefaultServerConnection.java:140)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run$3.executeWriteCommandProtocol(MixedBulkWriteOperation.java:480)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run$RunExecutor.execute(MixedBulkWriteOperation.java:646)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run.execute(MixedBulkWriteOperation.java:399)
+	at com.mongodb.operation.MixedBulkWriteOperation$1.call(MixedBulkWriteOperation.java:179)
+	at com.mongodb.operation.MixedBulkWriteOperation$1.call(MixedBulkWriteOperation.java:168)
+	at com.mongodb.operation.OperationHelper.withConnectionSource(OperationHelper.java:230)
+	at com.mongodb.operation.OperationHelper.withConnection(OperationHelper.java:221)
+	at com.mongodb.operation.MixedBulkWriteOperation.execute(MixedBulkWriteOperation.java:168)
+	at com.mongodb.operation.MixedBulkWriteOperation.execute(MixedBulkWriteOperation.java:74)
+	at com.mongodb.Mongo.execute(Mongo.java:781)
+	at com.mongodb.Mongo$2.execute(Mongo.java:764)
+	at com.mongodb.MongoCollectionImpl.executeSingleWriteRequest(MongoCollectionImpl.java:515)
+	at com.mongodb.MongoCollectionImpl.update(MongoCollectionImpl.java:508)
+	at com.mongodb.MongoCollectionImpl.updateOne(MongoCollectionImpl.java:355)
+	at com.mongodb.MongoCollectionImpl.updateOne(MongoCollectionImpl.java:350)
+	at com.lgb.wechat.function.support.mongodb.MongoTemplate.updateOne(MongoTemplate.java:109)
+	at com.lgb.wechat.function.admin.article.repository.impl.ArticleRepositoryImpl.update(ArticleRepositoryImpl.java:67)
+	at com.lgb.wechat.function.admin.article.service.impl.ArticleServiceImpl.edit(ArticleServiceImpl.java:34)
+	at com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(ArticleController.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:776)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:705)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1002)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+22:20:36.043 [http-bio-8080-exec-4] WARN  WARN [AbstractHandlerExceptionResolver.java:187] Handler execution resulted in exception
+java.lang.IllegalArgumentException: Invalid BSON field name articleDescription
+	at org.bson.AbstractBsonWriter.writeName(AbstractBsonWriter.java:494)
+	at org.bson.codecs.DocumentCodec.writeMap(DocumentCodec.java:188)
+	at org.bson.codecs.DocumentCodec.encode(DocumentCodec.java:131)
+	at org.bson.codecs.DocumentCodec.encode(DocumentCodec.java:45)
+	at org.bson.codecs.BsonDocumentWrapperCodec.encode(BsonDocumentWrapperCodec.java:63)
+	at org.bson.codecs.BsonDocumentWrapperCodec.encode(BsonDocumentWrapperCodec.java:29)
+	at com.mongodb.connection.UpdateCommandMessage.writeTheWrites(UpdateCommandMessage.java:84)
+	at com.mongodb.connection.UpdateCommandMessage.writeTheWrites(UpdateCommandMessage.java:42)
+	at com.mongodb.connection.BaseWriteCommandMessage.encodeMessageBodyWithMetadata(BaseWriteCommandMessage.java:129)
+	at com.mongodb.connection.RequestMessage.encodeWithMetadata(RequestMessage.java:160)
+	at com.mongodb.connection.WriteCommandProtocol.sendMessage(WriteCommandProtocol.java:212)
+	at com.mongodb.connection.WriteCommandProtocol.execute(WriteCommandProtocol.java:101)
+	at com.mongodb.connection.UpdateCommandProtocol.execute(UpdateCommandProtocol.java:64)
+	at com.mongodb.connection.UpdateCommandProtocol.execute(UpdateCommandProtocol.java:37)
+	at com.mongodb.connection.DefaultServer$DefaultServerProtocolExecutor.execute(DefaultServer.java:159)
+	at com.mongodb.connection.DefaultServerConnection.executeProtocol(DefaultServerConnection.java:286)
+	at com.mongodb.connection.DefaultServerConnection.updateCommand(DefaultServerConnection.java:140)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run$3.executeWriteCommandProtocol(MixedBulkWriteOperation.java:480)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run$RunExecutor.execute(MixedBulkWriteOperation.java:646)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run.execute(MixedBulkWriteOperation.java:399)
+	at com.mongodb.operation.MixedBulkWriteOperation$1.call(MixedBulkWriteOperation.java:179)
+	at com.mongodb.operation.MixedBulkWriteOperation$1.call(MixedBulkWriteOperation.java:168)
+	at com.mongodb.operation.OperationHelper.withConnectionSource(OperationHelper.java:230)
+	at com.mongodb.operation.OperationHelper.withConnection(OperationHelper.java:221)
+	at com.mongodb.operation.MixedBulkWriteOperation.execute(MixedBulkWriteOperation.java:168)
+	at com.mongodb.operation.MixedBulkWriteOperation.execute(MixedBulkWriteOperation.java:74)
+	at com.mongodb.Mongo.execute(Mongo.java:781)
+	at com.mongodb.Mongo$2.execute(Mongo.java:764)
+	at com.mongodb.MongoCollectionImpl.executeSingleWriteRequest(MongoCollectionImpl.java:515)
+	at com.mongodb.MongoCollectionImpl.update(MongoCollectionImpl.java:508)
+	at com.mongodb.MongoCollectionImpl.updateOne(MongoCollectionImpl.java:355)
+	at com.mongodb.MongoCollectionImpl.updateOne(MongoCollectionImpl.java:350)
+	at com.lgb.wechat.function.support.mongodb.MongoTemplate.updateOne(MongoTemplate.java:109)
+	at com.lgb.wechat.function.admin.article.repository.impl.ArticleRepositoryImpl.update(ArticleRepositoryImpl.java:67)
+	at com.lgb.wechat.function.admin.article.service.impl.ArticleServiceImpl.edit(ArticleServiceImpl.java:34)
+	at com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(ArticleController.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:776)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:705)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1002)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+22:21:31.040 [http-bio-8080-exec-3] WARN  WARN [AbstractHandlerExceptionResolver.java:187] Handler execution resulted in exception
+java.lang.IllegalArgumentException: Invalid BSON field name articleDescription
+	at org.bson.AbstractBsonWriter.writeName(AbstractBsonWriter.java:494)
+	at org.bson.codecs.DocumentCodec.writeMap(DocumentCodec.java:188)
+	at org.bson.codecs.DocumentCodec.encode(DocumentCodec.java:131)
+	at org.bson.codecs.DocumentCodec.encode(DocumentCodec.java:45)
+	at org.bson.codecs.BsonDocumentWrapperCodec.encode(BsonDocumentWrapperCodec.java:63)
+	at org.bson.codecs.BsonDocumentWrapperCodec.encode(BsonDocumentWrapperCodec.java:29)
+	at com.mongodb.connection.UpdateCommandMessage.writeTheWrites(UpdateCommandMessage.java:84)
+	at com.mongodb.connection.UpdateCommandMessage.writeTheWrites(UpdateCommandMessage.java:42)
+	at com.mongodb.connection.BaseWriteCommandMessage.encodeMessageBodyWithMetadata(BaseWriteCommandMessage.java:129)
+	at com.mongodb.connection.RequestMessage.encodeWithMetadata(RequestMessage.java:160)
+	at com.mongodb.connection.WriteCommandProtocol.sendMessage(WriteCommandProtocol.java:212)
+	at com.mongodb.connection.WriteCommandProtocol.execute(WriteCommandProtocol.java:101)
+	at com.mongodb.connection.UpdateCommandProtocol.execute(UpdateCommandProtocol.java:64)
+	at com.mongodb.connection.UpdateCommandProtocol.execute(UpdateCommandProtocol.java:37)
+	at com.mongodb.connection.DefaultServer$DefaultServerProtocolExecutor.execute(DefaultServer.java:159)
+	at com.mongodb.connection.DefaultServerConnection.executeProtocol(DefaultServerConnection.java:286)
+	at com.mongodb.connection.DefaultServerConnection.updateCommand(DefaultServerConnection.java:140)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run$3.executeWriteCommandProtocol(MixedBulkWriteOperation.java:480)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run$RunExecutor.execute(MixedBulkWriteOperation.java:646)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run.execute(MixedBulkWriteOperation.java:399)
+	at com.mongodb.operation.MixedBulkWriteOperation$1.call(MixedBulkWriteOperation.java:179)
+	at com.mongodb.operation.MixedBulkWriteOperation$1.call(MixedBulkWriteOperation.java:168)
+	at com.mongodb.operation.OperationHelper.withConnectionSource(OperationHelper.java:230)
+	at com.mongodb.operation.OperationHelper.withConnection(OperationHelper.java:221)
+	at com.mongodb.operation.MixedBulkWriteOperation.execute(MixedBulkWriteOperation.java:168)
+	at com.mongodb.operation.MixedBulkWriteOperation.execute(MixedBulkWriteOperation.java:74)
+	at com.mongodb.Mongo.execute(Mongo.java:781)
+	at com.mongodb.Mongo$2.execute(Mongo.java:764)
+	at com.mongodb.MongoCollectionImpl.executeSingleWriteRequest(MongoCollectionImpl.java:515)
+	at com.mongodb.MongoCollectionImpl.update(MongoCollectionImpl.java:508)
+	at com.mongodb.MongoCollectionImpl.updateOne(MongoCollectionImpl.java:355)
+	at com.mongodb.MongoCollectionImpl.updateOne(MongoCollectionImpl.java:350)
+	at com.lgb.wechat.function.support.mongodb.MongoTemplate.updateOne(MongoTemplate.java:109)
+	at com.lgb.wechat.function.admin.article.repository.impl.ArticleRepositoryImpl.update(ArticleRepositoryImpl.java:67)
+	at com.lgb.wechat.function.admin.article.service.impl.ArticleServiceImpl.edit(ArticleServiceImpl.java:34)
+	at com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(ArticleController.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:776)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:705)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1002)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+22:22:31.629 [http-bio-8080-exec-7] WARN  WARN [AbstractHandlerExceptionResolver.java:187] Handler execution resulted in exception
+java.lang.IllegalArgumentException: Invalid BSON field name articleDescription
+	at org.bson.AbstractBsonWriter.writeName(AbstractBsonWriter.java:494)
+	at org.bson.codecs.DocumentCodec.writeMap(DocumentCodec.java:188)
+	at org.bson.codecs.DocumentCodec.encode(DocumentCodec.java:131)
+	at org.bson.codecs.DocumentCodec.encode(DocumentCodec.java:45)
+	at org.bson.codecs.BsonDocumentWrapperCodec.encode(BsonDocumentWrapperCodec.java:63)
+	at org.bson.codecs.BsonDocumentWrapperCodec.encode(BsonDocumentWrapperCodec.java:29)
+	at com.mongodb.connection.UpdateCommandMessage.writeTheWrites(UpdateCommandMessage.java:84)
+	at com.mongodb.connection.UpdateCommandMessage.writeTheWrites(UpdateCommandMessage.java:42)
+	at com.mongodb.connection.BaseWriteCommandMessage.encodeMessageBodyWithMetadata(BaseWriteCommandMessage.java:129)
+	at com.mongodb.connection.RequestMessage.encodeWithMetadata(RequestMessage.java:160)
+	at com.mongodb.connection.WriteCommandProtocol.sendMessage(WriteCommandProtocol.java:212)
+	at com.mongodb.connection.WriteCommandProtocol.execute(WriteCommandProtocol.java:101)
+	at com.mongodb.connection.UpdateCommandProtocol.execute(UpdateCommandProtocol.java:64)
+	at com.mongodb.connection.UpdateCommandProtocol.execute(UpdateCommandProtocol.java:37)
+	at com.mongodb.connection.DefaultServer$DefaultServerProtocolExecutor.execute(DefaultServer.java:159)
+	at com.mongodb.connection.DefaultServerConnection.executeProtocol(DefaultServerConnection.java:286)
+	at com.mongodb.connection.DefaultServerConnection.updateCommand(DefaultServerConnection.java:140)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run$3.executeWriteCommandProtocol(MixedBulkWriteOperation.java:480)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run$RunExecutor.execute(MixedBulkWriteOperation.java:646)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run.execute(MixedBulkWriteOperation.java:399)
+	at com.mongodb.operation.MixedBulkWriteOperation$1.call(MixedBulkWriteOperation.java:179)
+	at com.mongodb.operation.MixedBulkWriteOperation$1.call(MixedBulkWriteOperation.java:168)
+	at com.mongodb.operation.OperationHelper.withConnectionSource(OperationHelper.java:230)
+	at com.mongodb.operation.OperationHelper.withConnection(OperationHelper.java:221)
+	at com.mongodb.operation.MixedBulkWriteOperation.execute(MixedBulkWriteOperation.java:168)
+	at com.mongodb.operation.MixedBulkWriteOperation.execute(MixedBulkWriteOperation.java:74)
+	at com.mongodb.Mongo.execute(Mongo.java:781)
+	at com.mongodb.Mongo$2.execute(Mongo.java:764)
+	at com.mongodb.MongoCollectionImpl.executeSingleWriteRequest(MongoCollectionImpl.java:515)
+	at com.mongodb.MongoCollectionImpl.update(MongoCollectionImpl.java:508)
+	at com.mongodb.MongoCollectionImpl.updateOne(MongoCollectionImpl.java:355)
+	at com.mongodb.MongoCollectionImpl.updateOne(MongoCollectionImpl.java:350)
+	at com.lgb.wechat.function.support.mongodb.MongoTemplate.updateOne(MongoTemplate.java:109)
+	at com.lgb.wechat.function.admin.article.repository.impl.ArticleRepositoryImpl.update(ArticleRepositoryImpl.java:67)
+	at com.lgb.wechat.function.admin.article.service.impl.ArticleServiceImpl.edit(ArticleServiceImpl.java:34)
+	at com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(ArticleController.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:776)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:705)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1002)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:310)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+22:22:59.975 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:10, serverValue:88}] to 127.0.0.1:27017 because the pool has been closed.
+22:23:04.944 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:23:04.945 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:23:04.949 [cluster-ClusterId{value='580f6ac818c72f04c283d74c', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:11, serverValue:89}] to 127.0.0.1:27017
+22:23:04.951 [cluster-ClusterId{value='580f6ac818c72f04c283d74c', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=1159000}
+22:23:04.955 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:12, serverValue:90}] to 127.0.0.1:27017
+22:23:04.957 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:12, serverValue:90}] to 127.0.0.1:27017 because the pool has been closed.
+22:23:07.396 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:23:07.398 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:23:07.404 [cluster-ClusterId{value='580f6acb18c72f04c283d74d', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:13, serverValue:91}] to 127.0.0.1:27017
+22:23:07.405 [cluster-ClusterId{value='580f6acb18c72f04c283d74d', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=1090000}
+22:23:07.408 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:14, serverValue:92}] to 127.0.0.1:27017
+22:23:07.410 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:14, serverValue:92}] to 127.0.0.1:27017 because the pool has been closed.
+22:23:10.425 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:23:10.426 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:23:10.428 [cluster-ClusterId{value='580f6ace18c72f04c283d74e', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:15, serverValue:93}] to 127.0.0.1:27017
+22:23:10.428 [cluster-ClusterId{value='580f6ace18c72f04c283d74e', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=321000}
+22:23:10.431 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:16, serverValue:94}] to 127.0.0.1:27017
+22:23:10.434 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:16, serverValue:94}] to 127.0.0.1:27017 because the pool has been closed.
+22:23:34.291 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:23:34.356 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:23:34.359 [cluster-ClusterId{value='580f6ae618c72f04c283d74f', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:17, serverValue:95}] to 127.0.0.1:27017
+22:23:34.360 [cluster-ClusterId{value='580f6ae618c72f04c283d74f', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=515000}
+22:23:34.373 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:18, serverValue:96}] to 127.0.0.1:27017
+22:23:34.374 [http-bio-8080-exec-4] WARN  WARN [AbstractHandlerExceptionResolver.java:187] Handler execution resulted in exception
+java.lang.IllegalArgumentException: Invalid BSON field name articleDescription
+	at org.bson.AbstractBsonWriter.writeName(AbstractBsonWriter.java:494)
+	at org.bson.codecs.DocumentCodec.writeMap(DocumentCodec.java:188)
+	at org.bson.codecs.DocumentCodec.encode(DocumentCodec.java:131)
+	at org.bson.codecs.DocumentCodec.encode(DocumentCodec.java:45)
+	at org.bson.codecs.BsonDocumentWrapperCodec.encode(BsonDocumentWrapperCodec.java:63)
+	at org.bson.codecs.BsonDocumentWrapperCodec.encode(BsonDocumentWrapperCodec.java:29)
+	at com.mongodb.connection.UpdateCommandMessage.writeTheWrites(UpdateCommandMessage.java:84)
+	at com.mongodb.connection.UpdateCommandMessage.writeTheWrites(UpdateCommandMessage.java:42)
+	at com.mongodb.connection.BaseWriteCommandMessage.encodeMessageBodyWithMetadata(BaseWriteCommandMessage.java:129)
+	at com.mongodb.connection.RequestMessage.encodeWithMetadata(RequestMessage.java:160)
+	at com.mongodb.connection.WriteCommandProtocol.sendMessage(WriteCommandProtocol.java:212)
+	at com.mongodb.connection.WriteCommandProtocol.execute(WriteCommandProtocol.java:101)
+	at com.mongodb.connection.UpdateCommandProtocol.execute(UpdateCommandProtocol.java:64)
+	at com.mongodb.connection.UpdateCommandProtocol.execute(UpdateCommandProtocol.java:37)
+	at com.mongodb.connection.DefaultServer$DefaultServerProtocolExecutor.execute(DefaultServer.java:159)
+	at com.mongodb.connection.DefaultServerConnection.executeProtocol(DefaultServerConnection.java:286)
+	at com.mongodb.connection.DefaultServerConnection.updateCommand(DefaultServerConnection.java:140)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run$3.executeWriteCommandProtocol(MixedBulkWriteOperation.java:480)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run$RunExecutor.execute(MixedBulkWriteOperation.java:646)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run.execute(MixedBulkWriteOperation.java:399)
+	at com.mongodb.operation.MixedBulkWriteOperation$1.call(MixedBulkWriteOperation.java:179)
+	at com.mongodb.operation.MixedBulkWriteOperation$1.call(MixedBulkWriteOperation.java:168)
+	at com.mongodb.operation.OperationHelper.withConnectionSource(OperationHelper.java:230)
+	at com.mongodb.operation.OperationHelper.withConnection(OperationHelper.java:221)
+	at com.mongodb.operation.MixedBulkWriteOperation.execute(MixedBulkWriteOperation.java:168)
+	at com.mongodb.operation.MixedBulkWriteOperation.execute(MixedBulkWriteOperation.java:74)
+	at com.mongodb.Mongo.execute(Mongo.java:781)
+	at com.mongodb.Mongo$2.execute(Mongo.java:764)
+	at com.mongodb.MongoCollectionImpl.executeSingleWriteRequest(MongoCollectionImpl.java:515)
+	at com.mongodb.MongoCollectionImpl.update(MongoCollectionImpl.java:508)
+	at com.mongodb.MongoCollectionImpl.updateOne(MongoCollectionImpl.java:355)
+	at com.mongodb.MongoCollectionImpl.updateOne(MongoCollectionImpl.java:350)
+	at com.lgb.wechat.function.support.mongodb.MongoTemplate.updateOne(MongoTemplate.java:109)
+	at com.lgb.wechat.function.admin.article.repository.impl.ArticleRepositoryImpl.update(ArticleRepositoryImpl.java:67)
+	at com.lgb.wechat.function.admin.article.service.impl.ArticleServiceImpl.edit(ArticleServiceImpl.java:34)
+	at com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(ArticleController.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:776)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:705)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1002)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+22:24:43.949 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:18, serverValue:96}] to 127.0.0.1:27017 because the pool has been closed.
+22:24:51.552 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:24:51.554 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:24:51.556 [cluster-ClusterId{value='580f6b3318c72f04c283d750', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:19, serverValue:99}] to 127.0.0.1:27017
+22:24:51.559 [cluster-ClusterId{value='580f6b3318c72f04c283d750', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=1106000}
+22:24:51.562 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:20, serverValue:100}] to 127.0.0.1:27017
+22:24:51.566 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:20, serverValue:100}] to 127.0.0.1:27017 because the pool has been closed.
+22:25:47.501 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:25:47.504 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:25:47.508 [cluster-ClusterId{value='580f6b6b18c72f04c283d751', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:21, serverValue:101}] to 127.0.0.1:27017
+22:25:47.510 [cluster-ClusterId{value='580f6b6b18c72f04c283d751', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=790000}
+22:25:47.513 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:22, serverValue:102}] to 127.0.0.1:27017
+22:25:47.514 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:22, serverValue:102}] to 127.0.0.1:27017 because the pool has been closed.
+22:25:53.375 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:25:53.377 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:25:53.380 [cluster-ClusterId{value='580f6b7118c72f04c283d752', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:23, serverValue:103}] to 127.0.0.1:27017
+22:25:53.381 [cluster-ClusterId{value='580f6b7118c72f04c283d752', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=443000}
+22:25:53.385 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:24, serverValue:104}] to 127.0.0.1:27017
+22:25:53.388 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:24, serverValue:104}] to 127.0.0.1:27017 because the pool has been closed.
+22:26:07.754 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:26:07.759 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:26:07.761 [cluster-ClusterId{value='580f6b7f18c72f04c283d753', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:25, serverValue:105}] to 127.0.0.1:27017
+22:26:07.761 [cluster-ClusterId{value='580f6b7f18c72f04c283d753', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=299000}
+22:26:07.766 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:26, serverValue:106}] to 127.0.0.1:27017
+22:26:07.768 [http-bio-8080-exec-8] WARN  WARN [AbstractHandlerExceptionResolver.java:187] Handler execution resulted in exception
+java.lang.IllegalArgumentException: Invalid BSON field name articleDescription
+	at org.bson.AbstractBsonWriter.writeName(AbstractBsonWriter.java:494)
+	at org.bson.codecs.DocumentCodec.writeMap(DocumentCodec.java:188)
+	at org.bson.codecs.DocumentCodec.encode(DocumentCodec.java:131)
+	at org.bson.codecs.DocumentCodec.encode(DocumentCodec.java:45)
+	at org.bson.codecs.BsonDocumentWrapperCodec.encode(BsonDocumentWrapperCodec.java:63)
+	at org.bson.codecs.BsonDocumentWrapperCodec.encode(BsonDocumentWrapperCodec.java:29)
+	at com.mongodb.connection.UpdateCommandMessage.writeTheWrites(UpdateCommandMessage.java:84)
+	at com.mongodb.connection.UpdateCommandMessage.writeTheWrites(UpdateCommandMessage.java:42)
+	at com.mongodb.connection.BaseWriteCommandMessage.encodeMessageBodyWithMetadata(BaseWriteCommandMessage.java:129)
+	at com.mongodb.connection.RequestMessage.encodeWithMetadata(RequestMessage.java:160)
+	at com.mongodb.connection.WriteCommandProtocol.sendMessage(WriteCommandProtocol.java:212)
+	at com.mongodb.connection.WriteCommandProtocol.execute(WriteCommandProtocol.java:101)
+	at com.mongodb.connection.UpdateCommandProtocol.execute(UpdateCommandProtocol.java:64)
+	at com.mongodb.connection.UpdateCommandProtocol.execute(UpdateCommandProtocol.java:37)
+	at com.mongodb.connection.DefaultServer$DefaultServerProtocolExecutor.execute(DefaultServer.java:159)
+	at com.mongodb.connection.DefaultServerConnection.executeProtocol(DefaultServerConnection.java:286)
+	at com.mongodb.connection.DefaultServerConnection.updateCommand(DefaultServerConnection.java:140)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run$3.executeWriteCommandProtocol(MixedBulkWriteOperation.java:480)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run$RunExecutor.execute(MixedBulkWriteOperation.java:646)
+	at com.mongodb.operation.MixedBulkWriteOperation$Run.execute(MixedBulkWriteOperation.java:399)
+	at com.mongodb.operation.MixedBulkWriteOperation$1.call(MixedBulkWriteOperation.java:179)
+	at com.mongodb.operation.MixedBulkWriteOperation$1.call(MixedBulkWriteOperation.java:168)
+	at com.mongodb.operation.OperationHelper.withConnectionSource(OperationHelper.java:230)
+	at com.mongodb.operation.OperationHelper.withConnection(OperationHelper.java:221)
+	at com.mongodb.operation.MixedBulkWriteOperation.execute(MixedBulkWriteOperation.java:168)
+	at com.mongodb.operation.MixedBulkWriteOperation.execute(MixedBulkWriteOperation.java:74)
+	at com.mongodb.Mongo.execute(Mongo.java:781)
+	at com.mongodb.Mongo$2.execute(Mongo.java:764)
+	at com.mongodb.MongoCollectionImpl.executeSingleWriteRequest(MongoCollectionImpl.java:515)
+	at com.mongodb.MongoCollectionImpl.update(MongoCollectionImpl.java:508)
+	at com.mongodb.MongoCollectionImpl.updateOne(MongoCollectionImpl.java:355)
+	at com.mongodb.MongoCollectionImpl.updateOne(MongoCollectionImpl.java:350)
+	at com.lgb.wechat.function.support.mongodb.MongoTemplate.updateOne(MongoTemplate.java:109)
+	at com.lgb.wechat.function.admin.article.repository.impl.ArticleRepositoryImpl.update(ArticleRepositoryImpl.java:67)
+	at com.lgb.wechat.function.admin.article.service.impl.ArticleServiceImpl.edit(ArticleServiceImpl.java:34)
+	at com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(ArticleController.java:149)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:221)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:137)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:110)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandleMethod(RequestMappingHandlerAdapter.java:776)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:705)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:959)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:893)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:966)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:868)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:641)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:842)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:85)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:243)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:222)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:123)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:99)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:929)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1002)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:585)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:312)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+22:27:47.593 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+22:27:47.825 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Tue Oct 25 22:27:47 CST 2016]; root of context hierarchy
+22:27:47.960 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/root-context.xml]
+22:27:48.417 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/db.properties]
+22:27:48.419 [localhost-startStop-1] INFO  o.s.c.s.PropertySourcesPlaceholderConfigurer [PropertiesLoaderSupport.java:172] Loading properties file from file [/Users/liunaidi/Workspaces/lgb/lgb-wechat/target/classes/db/mongodb.properties]
+22:27:48.828 [localhost-startStop-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:27:48.874 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 1275 ms
+22:27:48.925 [cluster-ClusterId{value='580f6be418c72f051820f9d3', description='null'}-localhost:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:1, serverValue:107}] to localhost:27017
+22:27:48.928 [cluster-ClusterId{value='580f6be418c72f051820f9d3', description='null'}-localhost:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=731000}
+22:27:48.945 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:484] FrameworkServlet 'springServlet': initialization started
+22:27:48.949 [localhost-startStop-1] INFO  o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue Oct 25 22:27:48 CST 2016]; parent: Root WebApplicationContext
+22:27:48.950 [localhost-startStop-1] INFO  o.s.b.f.xml.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/servlet-context.xml]
+22:27:49.705 [localhost-startStop-1] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor [AutowiredAnnotationBeanPostProcessor.java:153] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+22:27:50.217 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/add],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.route2Add()
+22:27:50.218 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/add],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.addArticle(com.lgb.wechat.function.admin.article.Article,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest)
+22:27:50.219 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list/{articleType}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticle(java.lang.String)
+22:27:50.219 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/list],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.listArticleByType(java.lang.String)
+22:27:50.220 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/view/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.viewArticle(java.lang.String,java.lang.String)
+22:27:50.220 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/edit/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.routeEdit(java.lang.String,java.lang.String)
+22:27:50.221 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/edit],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.editArticle(com.lgb.wechat.function.admin.article.Article)
+22:27:50.221 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/delete/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.deleteArticle(java.lang.String,java.lang.String)
+22:27:50.221 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/route/image/modify/{articleType}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.article.controller.ArticleController.routeImageModify(java.lang.String,java.lang.String)
+22:27:50.222 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/image/edit],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.article.controller.ArticleController.imageEdit(com.lgb.wechat.function.admin.article.Article,org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,java.lang.String)
+22:27:50.222 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/article/ajax/list],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.Map<java.lang.String, java.util.List<org.bson.Document>> com.lgb.wechat.function.admin.article.controller.ArticleController.ajaxList(java.lang.String)
+22:27:50.224 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/login],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.login.controller.LoginController.login(com.lgb.wechat.function.admin.login.AdminUser,javax.servlet.http.HttpSession)
+22:27:50.225 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/logout],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.login.controller.LoginController.logout(javax.servlet.http.HttpSession)
+22:27:50.225 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/home],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.login.controller.LoginController.routeHome()
+22:27:50.225 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/route/login],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.login.controller.LoginController.routeLogin(javax.servlet.http.HttpSession)
+22:27:50.226 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/route/pass],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.admin.login.controller.LoginController.routePass()
+22:27:50.226 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/admin/reset/pass],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.admin.login.controller.LoginController.resetPass(com.lgb.wechat.function.admin.login.AdminUser,javax.servlet.http.HttpSession)
+22:27:50.227 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/user/route/bind],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String com.lgb.wechat.function.user.bind.controller.UserBindingController.routeBind()
+22:27:50.228 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/weixin/article/view/{colName}/{id}],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.web.servlet.ModelAndView com.lgb.wechat.function.weixin.article.controller.WeixinArticleController.weixinViewArticle(java.lang.String,java.lang.String)
+22:27:51.059 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue Oct 25 22:27:48 CST 2016]; parent: Root WebApplicationContext
+22:27:51.146 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue Oct 25 22:27:48 CST 2016]; parent: Root WebApplicationContext
+22:27:51.433 [localhost-startStop-1] INFO  o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/static/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+22:27:51.496 [localhost-startStop-1] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'springServlet-servlet': startup date [Tue Oct 25 22:27:48 CST 2016]; parent: Root WebApplicationContext
+22:27:52.165 [localhost-startStop-1] INFO  o.s.web.servlet.DispatcherServlet [FrameworkServlet.java:503] FrameworkServlet 'springServlet': initialization completed in 3219 ms
+22:28:38.606 [http-bio-8080-exec-2] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:2, serverValue:108}] to localhost:27017
+22:28:38.698 [http-bio-8080-exec-2] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:2, serverValue:108}] to localhost:27017 because the pool has been closed.
+22:28:40.926 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:28:40.929 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:28:40.932 [cluster-ClusterId{value='580f6c1818c72f051820f9d4', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:3, serverValue:109}] to 127.0.0.1:27017
+22:28:40.933 [cluster-ClusterId{value='580f6c1818c72f051820f9d4', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=522000}
+22:28:40.936 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:4, serverValue:110}] to 127.0.0.1:27017
+22:28:40.938 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:4, serverValue:110}] to 127.0.0.1:27017 because the pool has been closed.
+22:28:51.924 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:28:51.928 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:28:51.930 [cluster-ClusterId{value='580f6c2318c72f051820f9d5', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:5, serverValue:111}] to 127.0.0.1:27017
+22:28:51.931 [cluster-ClusterId{value='580f6c2318c72f051820f9d5', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=773000}
+22:28:51.936 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:6, serverValue:112}] to 127.0.0.1:27017
+22:28:51.938 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:6, serverValue:112}] to 127.0.0.1:27017 because the pool has been closed.
+22:29:12.803 [http-bio-8080-exec-2] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:29:12.807 [cluster-ClusterId{value='580f6c3818c72f051820f9d6', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:7, serverValue:113}] to 127.0.0.1:27017
+22:29:12.808 [cluster-ClusterId{value='580f6c3818c72f051820f9d6', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=642000}
+22:29:12.813 [http-bio-8080-exec-2] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:8, serverValue:114}] to 127.0.0.1:27017
+22:29:12.843 [http-bio-8080-exec-2] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:8, serverValue:114}] to 127.0.0.1:27017 because the pool has been closed.
+22:29:12.852 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:29:12.853 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:29:12.856 [cluster-ClusterId{value='580f6c3818c72f051820f9d7', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:9, serverValue:115}] to 127.0.0.1:27017
+22:29:12.857 [cluster-ClusterId{value='580f6c3818c72f051820f9d7', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=646000}
+22:29:12.861 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:10, serverValue:116}] to 127.0.0.1:27017
+22:29:12.864 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:10, serverValue:116}] to 127.0.0.1:27017 because the pool has been closed.
+22:29:16.626 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:29:16.627 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:29:16.630 [cluster-ClusterId{value='580f6c3c18c72f051820f9d8', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:11, serverValue:117}] to 127.0.0.1:27017
+22:29:16.631 [cluster-ClusterId{value='580f6c3c18c72f051820f9d8', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=835000}
+22:29:16.637 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:12, serverValue:118}] to 127.0.0.1:27017
+22:29:16.639 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:12, serverValue:118}] to 127.0.0.1:27017 because the pool has been closed.
+22:29:53.233 [http-bio-8080-exec-6] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:29:53.235 [http-bio-8080-exec-6] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:29:53.238 [cluster-ClusterId{value='580f6c6118c72f051820f9d9', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:13, serverValue:119}] to 127.0.0.1:27017
+22:29:53.240 [cluster-ClusterId{value='580f6c6118c72f051820f9d9', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=784000}
+22:29:53.247 [http-bio-8080-exec-6] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:14, serverValue:120}] to 127.0.0.1:27017
+22:29:53.249 [http-bio-8080-exec-6] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:14, serverValue:120}] to 127.0.0.1:27017 because the pool has been closed.
+22:30:00.434 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:30:00.436 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:30:00.438 [cluster-ClusterId{value='580f6c6818c72f051820f9da', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:15, serverValue:121}] to 127.0.0.1:27017
+22:30:00.439 [cluster-ClusterId{value='580f6c6818c72f051820f9da', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=390000}
+22:30:00.443 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:16, serverValue:122}] to 127.0.0.1:27017
+22:30:00.446 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:16, serverValue:122}] to 127.0.0.1:27017 because the pool has been closed.
+22:30:12.858 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:30:12.859 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:30:12.861 [cluster-ClusterId{value='580f6c7418c72f051820f9db', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:17, serverValue:123}] to 127.0.0.1:27017
+22:30:12.862 [cluster-ClusterId{value='580f6c7418c72f051820f9db', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=404000}
+22:30:12.865 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:18, serverValue:124}] to 127.0.0.1:27017
+22:30:12.868 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:18, serverValue:124}] to 127.0.0.1:27017 because the pool has been closed.
+22:30:17.607 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:30:17.609 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:30:17.610 [cluster-ClusterId{value='580f6c7918c72f051820f9dc', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:19, serverValue:125}] to 127.0.0.1:27017
+22:30:17.612 [cluster-ClusterId{value='580f6c7918c72f051820f9dc', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=575000}
+22:30:17.617 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:20, serverValue:126}] to 127.0.0.1:27017
+22:30:17.618 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:20, serverValue:126}] to 127.0.0.1:27017 because the pool has been closed.
+22:30:42.932 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:30:42.934 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:30:42.936 [cluster-ClusterId{value='580f6c9218c72f051820f9dd', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:21, serverValue:127}] to 127.0.0.1:27017
+22:30:42.937 [cluster-ClusterId{value='580f6c9218c72f051820f9dd', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=373000}
+22:30:42.940 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:22, serverValue:128}] to 127.0.0.1:27017
+22:30:42.941 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:22, serverValue:128}] to 127.0.0.1:27017 because the pool has been closed.
+22:31:04.432 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:31:04.434 [http-bio-8080-exec-4] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:31:04.436 [cluster-ClusterId{value='580f6ca818c72f051820f9de', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:23, serverValue:129}] to 127.0.0.1:27017
+22:31:04.437 [cluster-ClusterId{value='580f6ca818c72f051820f9de', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=752000}
+22:31:04.442 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:24, serverValue:130}] to 127.0.0.1:27017
+22:31:04.443 [http-bio-8080-exec-4] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:24, serverValue:130}] to 127.0.0.1:27017 because the pool has been closed.
+22:32:11.734 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:32:11.735 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:32:11.737 [cluster-ClusterId{value='580f6ceb18c72f051820f9df', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:25, serverValue:131}] to 127.0.0.1:27017
+22:32:11.737 [cluster-ClusterId{value='580f6ceb18c72f051820f9df', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=418000}
+22:32:11.740 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:26, serverValue:132}] to 127.0.0.1:27017
+22:32:11.741 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:26, serverValue:132}] to 127.0.0.1:27017 because the pool has been closed.
+22:32:14.915 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:32:14.917 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:32:14.919 [cluster-ClusterId{value='580f6cee18c72f051820f9e0', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:27, serverValue:133}] to 127.0.0.1:27017
+22:32:14.920 [cluster-ClusterId{value='580f6cee18c72f051820f9e0', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=431000}
+22:32:14.923 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:28, serverValue:134}] to 127.0.0.1:27017
+22:32:14.924 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:28, serverValue:134}] to 127.0.0.1:27017 because the pool has been closed.
+22:32:24.115 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:32:24.117 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:32:24.123 [cluster-ClusterId{value='580f6cf818c72f051820f9e1', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:29, serverValue:135}] to 127.0.0.1:27017
+22:32:24.124 [cluster-ClusterId{value='580f6cf818c72f051820f9e1', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=767000}
+22:32:24.133 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:30, serverValue:136}] to 127.0.0.1:27017
+22:32:24.136 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:30, serverValue:136}] to 127.0.0.1:27017 because the pool has been closed.
+22:32:37.083 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:32:37.084 [http-bio-8080-exec-1] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:32:37.088 [cluster-ClusterId{value='580f6d0518c72f051820f9e2', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:31, serverValue:137}] to 127.0.0.1:27017
+22:32:37.090 [cluster-ClusterId{value='580f6d0518c72f051820f9e2', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=1704000}
+22:32:37.094 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:32, serverValue:138}] to 127.0.0.1:27017
+22:32:37.095 [http-bio-8080-exec-1] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:32, serverValue:138}] to 127.0.0.1:27017 because the pool has been closed.
+22:33:01.005 [http-bio-8080-exec-6] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:33:01.008 [http-bio-8080-exec-6] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:33:01.014 [cluster-ClusterId{value='580f6d1d18c72f051820f9e3', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:33, serverValue:139}] to 127.0.0.1:27017
+22:33:01.016 [cluster-ClusterId{value='580f6d1d18c72f051820f9e3', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=1277000}
+22:33:01.023 [http-bio-8080-exec-6] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:34, serverValue:140}] to 127.0.0.1:27017
+22:33:01.028 [http-bio-8080-exec-6] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:34, serverValue:140}] to 127.0.0.1:27017 because the pool has been closed.
+22:33:55.320 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:33:55.321 [http-bio-8080-exec-8] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:33:55.326 [cluster-ClusterId{value='580f6d5318c72f051820f9e4', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:35, serverValue:141}] to 127.0.0.1:27017
+22:33:55.328 [cluster-ClusterId{value='580f6d5318c72f051820f9e4', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=706000}
+22:33:55.335 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:36, serverValue:142}] to 127.0.0.1:27017
+22:33:55.338 [http-bio-8080-exec-8] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:36, serverValue:142}] to 127.0.0.1:27017 because the pool has been closed.
+22:34:08.186 [http-bio-8080-exec-2] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:34:08.188 [http-bio-8080-exec-2] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:34:08.192 [cluster-ClusterId{value='580f6d6018c72f051820f9e5', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:37, serverValue:143}] to 127.0.0.1:27017
+22:34:08.193 [cluster-ClusterId{value='580f6d6018c72f051820f9e5', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=771000}
+22:34:08.196 [http-bio-8080-exec-2] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:38, serverValue:144}] to 127.0.0.1:27017
+22:34:08.197 [http-bio-8080-exec-2] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:38, serverValue:144}] to 127.0.0.1:27017 because the pool has been closed.
+22:34:33.866 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:34:33.867 [http-bio-8080-exec-3] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:34:33.868 [cluster-ClusterId{value='580f6d7918c72f051820f9e6', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:39, serverValue:145}] to 127.0.0.1:27017
+22:34:33.869 [cluster-ClusterId{value='580f6d7918c72f051820f9e6', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=368000}
+22:34:33.872 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:40, serverValue:146}] to 127.0.0.1:27017
+22:34:33.873 [http-bio-8080-exec-3] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:40, serverValue:146}] to 127.0.0.1:27017 because the pool has been closed.
+22:34:39.316 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:34:39.317 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:34:39.319 [cluster-ClusterId{value='580f6d7f18c72f051820f9e7', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:41, serverValue:147}] to 127.0.0.1:27017
+22:34:39.321 [cluster-ClusterId{value='580f6d7f18c72f051820f9e7', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=637000}
+22:34:39.326 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:42, serverValue:148}] to 127.0.0.1:27017
+22:34:39.328 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:42, serverValue:148}] to 127.0.0.1:27017 because the pool has been closed.
+22:34:49.256 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:34:49.259 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:34:49.264 [cluster-ClusterId{value='580f6d8918c72f051820f9e8', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:43, serverValue:149}] to 127.0.0.1:27017
+22:34:49.265 [cluster-ClusterId{value='580f6d8918c72f051820f9e8', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=671000}
+22:34:49.269 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:44, serverValue:150}] to 127.0.0.1:27017
+22:34:49.270 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:44, serverValue:150}] to 127.0.0.1:27017 because the pool has been closed.
+22:35:31.552 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:35:31.555 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by WritableServerSelector from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:35:31.559 [cluster-ClusterId{value='580f6db318c72f051820f9e9', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:45, serverValue:151}] to 127.0.0.1:27017
+22:35:31.561 [cluster-ClusterId{value='580f6db318c72f051820f9e9', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=545000}
+22:35:31.563 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:46, serverValue:152}] to 127.0.0.1:27017
+22:35:31.565 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:46, serverValue:152}] to 127.0.0.1:27017 because the pool has been closed.
+22:35:31.574 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:35:31.576 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:35:31.578 [cluster-ClusterId{value='580f6db318c72f051820f9ea', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:47, serverValue:153}] to 127.0.0.1:27017
+22:35:31.579 [cluster-ClusterId{value='580f6db318c72f051820f9ea', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=407000}
+22:35:31.581 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:48, serverValue:154}] to 127.0.0.1:27017
+22:35:31.584 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:48, serverValue:154}] to 127.0.0.1:27017 because the pool has been closed.
+22:36:09.721 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Cluster created with settings {hosts=[127.0.0.1:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+22:36:09.726 [http-bio-8080-exec-7] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, all=[ServerDescription{address=127.0.0.1:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+22:36:10.025 [cluster-ClusterId{value='580f6dd918c72f051820f9eb', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:49, serverValue:155}] to 127.0.0.1:27017
+22:36:10.026 [cluster-ClusterId{value='580f6dd918c72f051820f9eb', description='null'}-127.0.0.1:27017] INFO  org.mongodb.driver.cluster [SLF4JLogger.java:71] Monitor thread successfully connected to server with description ServerDescription{address=127.0.0.1:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[3, 2, 4]}, minWireVersion=0, maxWireVersion=4, maxDocumentSize=16777216, roundTripTimeNanos=535000}
+22:36:10.029 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Opened connection [connectionId{localValue:50, serverValue:156}] to 127.0.0.1:27017
+22:36:10.031 [http-bio-8080-exec-7] INFO  org.mongodb.driver.connection [SLF4JLogger.java:71] Closed connection [connectionId{localValue:50, serverValue:156}] to 127.0.0.1:27017 because the pool has been closed.
