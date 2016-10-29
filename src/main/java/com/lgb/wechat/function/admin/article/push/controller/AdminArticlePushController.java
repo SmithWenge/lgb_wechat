@@ -2,9 +2,9 @@ package com.lgb.wechat.function.admin.article.push.controller;
 
 import com.github.sd4324530.fastweixin.api.MediaAPI;
 import com.github.sd4324530.fastweixin.api.MessageAPI;
+import com.github.sd4324530.fastweixin.api.enums.MediaType;
 import com.github.sd4324530.fastweixin.api.response.GetSendMessageResponse;
 import com.github.sd4324530.fastweixin.api.response.UploadMediaResponse;
-import com.github.sd4324530.fastweixin.message.BaseMsg;
 import com.github.sd4324530.fastweixin.message.MpNewsMsg;
 import com.google.common.base.Optional;
 import com.lgb.wechat.arc.util.constants.Constants;
@@ -81,8 +81,9 @@ public class AdminArticlePushController {
         if (optional.isPresent()) {
             String articleId = new ObjectId().toString();
             article.setId(articleId);
-            article.setArticleUrl(serverURL + "/weixin/article/view/" + article.getArticleType() + "/" + articleId + REQUEST_SUFFIX_ACTION);
+            article.setArticleUrl(serverURL + "/weixin/article/view/" + Constants.PUSH_ARTICLE_TYPE + "/" + articleId + REQUEST_SUFFIX_ACTION);
             article.setPictureUrl(serverURL + "/static/article/image/" + uploadImage.getName());
+            article.setArticleLocalPath(uploadImage.getAbsolutePath());
 
             adminArticlePushService.add(article);
 
@@ -190,10 +191,17 @@ public class AdminArticlePushController {
     public void broadcastArticle(@PathVariable("id") String id) {
         Document document = adminArticlePushService.view(Constants.PUSH_ARTICLE_TYPE, id);
 
-        com.github.sd4324530.fastweixin.message.Article article = new com.github.sd4324530.fastweixin.message.Article(document.getString("articleTitle"), document.getString("articleTitle"), document.getString("pictureUrl"), document.getString("articleUrl"));
-
         MediaAPI mediaAPI = new MediaAPI(Constants.APPCONFIG);
-        UploadMediaResponse uploadMediaResponse = mediaAPI.uploadNews(Arrays.asList(new com.github.sd4324530.fastweixin.api.entity.Article(document.getString("pictureUrl"), "文章管理员", document.getString("articleTitle"), document.getString("articleUrl"), document.getString("articleDescription"), "文章推送", com.github.sd4324530.fastweixin.api.entity.Article.ShowConverPic.YES)));
+        UploadMediaResponse response = mediaAPI.uploadMedia(MediaType.IMAGE, new File(document.getString("articleLocalPath")));
+        String media_id = response.getMediaId();
+        com.github.sd4324530.fastweixin.api.entity.Article article = new com.github.sd4324530.fastweixin.api.entity.Article(media_id,
+                "文章管理员",
+                document.getString("articleTitle"),
+                document.getString("articleUrl"),
+                document.getString("articleDescription"),
+                "文章推送",
+                com.github.sd4324530.fastweixin.api.entity.Article.ShowConverPic.YES);
+        UploadMediaResponse uploadMediaResponse = mediaAPI.uploadNews(Arrays.asList(article));
         MpNewsMsg mpNewsMsg = new MpNewsMsg();
         mpNewsMsg.setMediaId(uploadMediaResponse.getMediaId());
         MessageAPI messageAPI = new MessageAPI(Constants.APPCONFIG);

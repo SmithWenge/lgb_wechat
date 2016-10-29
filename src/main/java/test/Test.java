@@ -3,35 +3,16 @@ package test;
 //import com.github.sd4324530.fastweixin.util.JSONUtil;
 import com.github.sd4324530.fastweixin.api.MediaAPI;
 import com.github.sd4324530.fastweixin.api.MessageAPI;
+import com.github.sd4324530.fastweixin.api.entity.Article;
 import com.github.sd4324530.fastweixin.api.enums.MediaType;
 import com.github.sd4324530.fastweixin.api.response.GetSendMessageResponse;
 import com.github.sd4324530.fastweixin.api.response.UploadMediaResponse;
-import com.github.sd4324530.fastweixin.message.Article;
-import com.github.sd4324530.fastweixin.message.ImageMsg;
 import com.github.sd4324530.fastweixin.message.MpNewsMsg;
-import com.github.sd4324530.fastweixin.message.req.MenuEvent;
-import com.github.sd4324530.fastweixin.message.req.TextReqMsg;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
-import com.lgb.wechat.arc.util.api.http.RQHttpRequest;
-import com.lgb.wechat.arc.util.api.json.kc.RestNowStudentCourseInfo;
-import com.lgb.wechat.arc.util.api.json.tq.TQSummary;
-import com.lgb.wechat.arc.util.constants.Constants;
-import com.lgb.wechat.arc.util.date.DateUtils;
-import com.lgb.wechat.function.weixin.servlet.ServletWeixinSupport;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-        import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.joda.time.DateTime;
 
-import java.io.BufferedReader;
+import com.lgb.wechat.arc.util.constants.Constants;
+
 import java.io.File;
-import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.List;
 
 public class Test {
     public static void main(String[] args) throws Exception {
@@ -145,8 +126,42 @@ public class Test {
 //
 //        System.out.println(media_id);
 
-        ImageMsg msg = new ImageMsg("gmiIqhrNfK7n_9UlDO1aoz9VMIT17PGyFQbq6BJ3HiRx9aSKfC05usagLWFPqOjk");
+//        ImageMsg msg = new ImageMsg("gmiIqhrNfK7n_9UlDO1aoz9VMIT17PGyFQbq6BJ3HiRx9aSKfC05usagLWFPqOjk");
+//
+//        System.out.println(msg);
 
-        System.out.println(msg);
+//        Document document = adminArticlePushService.view(Constants.PUSH_ARTICLE_TYPE, id);
+
+//        MediaAPI mediaAPI = new MediaAPI(Constants.APPCONFIG);
+//        UploadMediaResponse uploadMediaResponse = mediaAPI.uploadNews(
+//                Arrays.asList(
+//                        new Article(
+//                                "http://localhost:8080/wechat/static/article/image/test-10-29-2016-12-01-12-049.jpg",
+//                                "文章管理员",
+//                                "articleTitle",
+//                                "articleUrl",
+//                                "articleDescription",
+//                                "文章推送",
+//                                Article.ShowConverPic.YES
+//                        )
+//                ));
+//        MpNewsMsg mpNewsMsg = new MpNewsMsg();
+//        mpNewsMsg.setMediaId(uploadMediaResponse.getMediaId());
+//        MessageAPI messageAPI = new MessageAPI(Constants.APPCONFIG);
+//        GetSendMessageResponse messageResponse = messageAPI.sendMessageToUser(mpNewsMsg, true, "0", null);
+
+//        http://localhost:8080/wechat/static/article/image/test-10-29-2016-12-01-12-049.jpg
+//        /Users/liunaidi/Workspaces/lgb/lgb-wechat/src/main/webapp/static/article/image/test-10-29-2016-16-32-24-210.jpg
+        MediaAPI mediaAPI = new MediaAPI(Constants.APPCONFIG);
+        UploadMediaResponse response = mediaAPI.uploadMedia(MediaType.IMAGE, new File("/Users/liunaidi/Workspaces/lgb/lgb-wechat/src/main/webapp/static/article/image/test-10-29-2016-16-32-24-210.jpg"));
+        String media_id = response.getMediaId();
+//        String media_id = "http://localhost:8080/wechat/static/article/image/test-10-29-2016-12-01-12-049.jpg";
+        Article article = new Article(media_id, "测试用户", "群发测试", "http://www.baidu.com", "群发测试", "群发测试", Article.ShowConverPic.NO);
+        UploadMediaResponse uploadMediaResponse = mediaAPI.uploadNews(Arrays.asList(article));
+        MpNewsMsg mpNewsMsg = new MpNewsMsg();
+        mpNewsMsg.setMediaId(uploadMediaResponse.getMediaId());
+        MessageAPI messageAPI = new MessageAPI(Constants.APPCONFIG);
+        GetSendMessageResponse messageResponse = messageAPI.sendMessageToUser(mpNewsMsg, true, "0", null);
+//        LOG.info("Send Message Id is " + messageResponse.getMsgId());
     }
 }

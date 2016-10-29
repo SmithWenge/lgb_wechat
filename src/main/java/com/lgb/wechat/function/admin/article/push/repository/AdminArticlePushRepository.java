@@ -40,7 +40,8 @@ public class AdminArticlePushRepository implements AdminArticlePushRepositoryI {
                 .append("_id", new ObjectId(article.getId()))
                 .append("pictureUrl", article.getPictureUrl())
                 .append("articleUrl", article.getArticleUrl())
-                .append("articleDescription", article.getArticleDescription());
+                .append("articleDescription", article.getArticleDescription())
+                .append("articleLocalPath", article.getArticleLocalPath());
 
         mongoTemplate.insertOne(Constants.PUSH_ARTICLE_TYPE, document);
     }

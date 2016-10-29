@@ -9,6 +9,7 @@ public class Article {
     private String pictureUrl;
     private String articleUrl;
     private String articleDescription;
+    private String articleLocalPath;
 
     public void setPictureUrl(String pictureUrl) {
         this.pictureUrl = pictureUrl;
@@ -74,5 +75,14 @@ public class Article {
     public String getArticleDescription() {
 
         return articleDescription;
+    }
+
+    public void setArticleLocalPath(String articleLocalPath) {
+        this.articleLocalPath = articleLocalPath;
+    }
+
+    public String getArticleLocalPath() {
+
+        return articleLocalPath;
     }
 }
