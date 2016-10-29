@@ -188,8 +188,9 @@ public class AdminArticlePushController {
      * 推送文章
      */
     @RequestMapping(value = "/broadcast/{id}")
-    public void broadcastArticle(@PathVariable("id") String id) {
+    public String broadcastArticle(@PathVariable("id") String id) {
         Document document = adminArticlePushService.view(Constants.PUSH_ARTICLE_TYPE, id);
+        adminArticlePushService.updateBePushed(id);
 
         MediaAPI mediaAPI = new MediaAPI(Constants.APPCONFIG);
         UploadMediaResponse response = mediaAPI.uploadMedia(MediaType.IMAGE, new File(document.getString("articleLocalPath")));
@@ -207,5 +208,6 @@ public class AdminArticlePushController {
         MessageAPI messageAPI = new MessageAPI(Constants.APPCONFIG);
         GetSendMessageResponse messageResponse = messageAPI.sendMessageToUser(mpNewsMsg, true, "0", null);
 
+        return REDIRECT_ADMIN_PUSH_ARTICLE_LIST;
     }
 }

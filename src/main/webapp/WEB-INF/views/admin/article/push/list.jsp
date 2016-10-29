@@ -50,15 +50,17 @@
                         <a href="${contextPath}/admin/article/push/view/${document.articleType}/${document._id}.action">
                             <button type="button" class="ui green button">查看</button>
                         </a>
-                        <a href="${contextPath}/admin/article/push/route/edit/${document._id}.action">
-                            <button type="button" class="ui yellow button">编 &nbsp; 辑</button>
-                        </a>
                         <%--<a href="${contextPath}/admin/article/push/delete/${document.articleType}/${document._id}.action">--%>
                             <%--<button type="button" class="ui red button">删 &nbsp; 除</button>--%>
                         <%--</a>--%>
-                        <a href="${contextPath}/admin/article/push/broadcast/${document._id}.action">
-                            <button type="button" class="ui primary button">推 &nbsp; 送</button>
-                        </a>
+                        <c:if test="${document.articlePushed == 0}">
+                            <a href="${contextPath}/admin/article/push/route/edit/${document._id}.action">
+                                <button type="button" class="ui yellow button">编 &nbsp; 辑</button>
+                            </a>
+                            <a href="${contextPath}/admin/article/push/broadcast/${document._id}.action">
+                                <button type="button" class="ui primary button">推 &nbsp; 送</button>
+                            </a>
+                        </c:if>
                     </td>
                 </tr>
             </c:forEach>

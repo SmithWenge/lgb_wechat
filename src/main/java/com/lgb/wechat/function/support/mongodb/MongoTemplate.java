@@ -151,7 +151,7 @@ public class MongoTemplate {
         // 根据时间排序
         FindIterable<Document> iterable = db.getCollection(Constants.PUSH_ARTICLE_COLLECTION_NAME)
                 .find()
-                .sort(new Document("articleTime", 1));
+                .sort(new Document("articleTime", -1));
 
         iterable.forEach(new Block<Document>() {
             @Override

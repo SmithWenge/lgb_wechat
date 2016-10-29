@@ -36,6 +36,7 @@ public class AdminArticlePushRepository implements AdminArticlePushRepositoryI {
                 .append("articleContent", article.getArticleContent())
                 .append("articleTime", DateUtils.nowYMD())
                 .append("articleDelete", Constants.DEFAULT_RECORD_NOT_DELETE)
+                .append("articlePushed", Constants.DEFAULT_PUSH_ARTICLE_NOT_PUSHED)
                 .append("articleType", Constants.PUSH_ARTICLE_TYPE)
                 .append("_id", new ObjectId(article.getId()))
                 .append("pictureUrl", article.getPictureUrl())
@@ -77,6 +78,20 @@ public class AdminArticlePushRepository implements AdminArticlePushRepositoryI {
                 .append("articleTime", DateUtils.nowYMD())
                 .append("articleType", Constants.PUSH_ARTICLE_TYPE)
                 .append("articleDescription", article.getArticleDescription()));
+
+        return mongoTemplate.updateOne(collectionName, condition, document) == 1;
+    }
+
+    /**
+     * 更新推送状态为已推送
+     *
+     * @return
+     */
+    @Override
+    public boolean update4Pushed(String id) {
+        String collectionName = Constants.PUSH_ARTICLE_COLLECTION_NAME;
+        Document condition = new Document("_id", new ObjectId(id));
+        Document document = new Document("$set", new Document("articlePushed", 1));
 
         return mongoTemplate.updateOne(collectionName, condition, document) == 1;
     }

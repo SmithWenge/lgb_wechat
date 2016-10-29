@@ -10,4 +10,5 @@ public interface AdminArticlePushRepositoryI {
     void insert(Article article);
     Document select(String pushArticleType, String id);
     boolean update(Article article);
+    boolean update4Pushed(String id);
 }

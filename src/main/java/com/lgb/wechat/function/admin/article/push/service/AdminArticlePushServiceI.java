@@ -10,4 +10,5 @@ public interface AdminArticlePushServiceI {
     void add(Article article);
     Document view(String pushArticleType, String id);
     boolean edit(Article article);
+    boolean updateBePushed(String id);
 }

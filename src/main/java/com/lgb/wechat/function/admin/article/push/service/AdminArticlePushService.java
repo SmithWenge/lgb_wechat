@@ -32,4 +32,9 @@ public class AdminArticlePushService implements AdminArticlePushServiceI {
     public boolean edit(Article article) {
         return adminArticlePushRepository.update(article);
     }
+
+    @Override
+    public boolean updateBePushed(String id) {
+        return adminArticlePushRepository.update4Pushed(id);
+    }
 }

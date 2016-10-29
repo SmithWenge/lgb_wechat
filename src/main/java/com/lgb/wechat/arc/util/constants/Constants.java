@@ -54,6 +54,10 @@ public class Constants {
 
     // 帮助图片media ID
     public static final String WECHAT_HELP_IMAGE_MEDIA_ID = "gmiIqhrNfK7n_9UlDO1aoz9VMIT17PGyFQbq6BJ3HiRx9aSKfC05usagLWFPqOjk";
+    // 推送文章存放的collection名
     public static final String PUSH_ARTICLE_COLLECTION_NAME = "push";
+    // 推送文章的类型
     public static final String PUSH_ARTICLE_TYPE = "push";
+    // 设定为默认非推送状态
+    public static final int DEFAULT_PUSH_ARTICLE_NOT_PUSHED = 0;
 }
