@@ -130,6 +130,48 @@ public class ServletWeixinSupport extends WeixinSupport {
             return new TextMsg(summary.toString());
         } else if (eventKey.equals(Constants.MENU_FZCX_KEY)) {
             return new ImageMsg(Constants.WECHAT_HELP_IMAGE_MEDIA_ID);
+        } else if (eventKey.equals(Constants.MENU_CJCX_KEY)) {
+            String userWeixinId = event.getFromUserName();
+            String userCardNum = bindService.isBind(userWeixinId);
+
+            if (null == userCardNum || userCardNum.isEmpty()) {
+                return new TextMsg("请您先绑定用户信息.");
+            } else {
+                List<RestStudentScoreInfo> infos = CJHttpRequest.getManageCJ(userCardNum);
+
+                if (infos.size() < 1) {
+                    return new TextMsg("您暂时没有成绩录入到系统中.");
+                }
+
+                TextMsg textMsg = new TextMsg();
+
+                for (RestStudentScoreInfo info : infos) {
+                    textMsg.add(info.toString());
+                }
+
+                return textMsg;
+            }
+        } else if (eventKey.equals(Constants.MENU_JRKC_KEY)) {
+            String userWeixinId = event.getFromUserName();
+            String userCardNum = bindService.isBind(userWeixinId);
+
+            if (null == userCardNum || userCardNum.isEmpty()) {
+                return new TextMsg("请您先绑定用户信息.");
+            } else {
+                List<RestNowStudentCourseInfo> infos = KCHttpRequest.getManageKC(userCardNum);
+
+                if (infos.size() < 1) {
+                    return new TextMsg("您今日没有课程.");
+                }
+
+                TextMsg textMsg = new TextMsg();
+
+                for (RestNowStudentCourseInfo info : infos) {
+                    textMsg.add(info.toString());
+                }
+
+                return textMsg;
+            }
         }
 
         return new TextMsg("请选择正确的菜单");
