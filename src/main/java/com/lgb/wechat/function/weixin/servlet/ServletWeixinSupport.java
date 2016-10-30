@@ -19,15 +19,12 @@ import com.lgb.wechat.function.weixin.article.service.impl.WeixinArticleServiceI
 import com.lgb.wechat.function.weixin.bind.service.BindService;
 import com.lgb.wechat.function.weixin.bind.service.impl.BindServiceImpl;
 import org.bson.Document;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ServletWeixinSupport extends WeixinSupport {
-    private static final Logger LOG = LoggerFactory.getLogger(ServletWeixinSupport.class);
+//    private static final Logger LOG = LoggerFactory.getLogger(ServletWeixinSupport.class);
 
     private WeixinArticleService weixinArticleService;
     private BindService bindService;
@@ -44,26 +41,31 @@ public class ServletWeixinSupport extends WeixinSupport {
 
     @Override
     public BaseMsg handleTextMsg(TextReqMsg msg) {
-        String content = msg.getContent().trim().toUpperCase();
+        String message = msg.getContent().trim().toUpperCase();
+        String commandPrefix = message.substring(0, 2);
 
-        List<String> list = null;
-        if (content.contains(":")) {
-            list = Arrays.asList(content.split(":"));
-        } else {
-            list = Arrays.asList(content);
-        }
+        if (commandPrefix.equals(Constants.WEIXIN_MSG_TIANQI_PREFIX)) {
+            String location = message.substring(2);
+            TQSummary tqSummary = TQHttpRequest.getBaiduTQ(location);
 
-        if (list.get(0).equals(Constants.CJ_REQUEDT)) {
+            return new TextMsg(tqSummary.toString());
+        } else if (commandPrefix.equals(Constants.WEINXIN_MSG_RIQI_PREFIX)) {
+            String dateStr = message.substring(2);
+            RQSummary rqSummary = RQHttpRequest.getDateInfo(dateStr);
+
+            return new TextMsg(rqSummary.toString());
+        } else if (commandPrefix.equals(Constants.WEIXIN_MSG_CHENGJI_PREFIX)) {
+            String scoreDate = message.substring(2);
             String userWeixinId = msg.getFromUserName();
             String userCardNum = bindService.isBind(userWeixinId);
 
             if (null == userCardNum || userCardNum.isEmpty()) {
-                return new TextMsg("请先绑定学员卡号,发送信息(3:学号卡号)");
+                return new TextMsg("请您先绑定用户信息.");
             } else {
                 List<RestStudentScoreInfo> infos = CJHttpRequest.getManageCJ(userCardNum);
 
                 if (infos.size() < 1) {
-                    return new TextMsg("成绩暂时还没有公布");
+                    return new TextMsg("您暂时没有成绩录入到系统中.");
                 }
 
                 TextMsg textMsg = new TextMsg();
@@ -74,12 +76,14 @@ public class ServletWeixinSupport extends WeixinSupport {
 
                 return textMsg;
             }
-        } else if (list.get(0).equals(Constants.KC_REQUEST)) {
+        } else if (commandPrefix.equals(Constants.WEIXIN_MSG_KECHENG_PREFIX)) {
+            String kcStr = message.substring(2); // 某天日期
+
             String userWeixinId = msg.getFromUserName();
             String userCardNum = bindService.isBind(userWeixinId);
 
             if (null == userCardNum || userCardNum.isEmpty()) {
-                return new TextMsg("请先绑定学员卡号,发送信息(3:学号卡号)");
+                return new TextMsg("请您先绑定用户信息.");
             } else {
                 List<RestNowStudentCourseInfo> infos = KCHttpRequest.getManageKC(userCardNum);
 
@@ -95,55 +99,9 @@ public class ServletWeixinSupport extends WeixinSupport {
 
                 return textMsg;
             }
-        } else if (list.get(0).equals(Constants.TQ_REQUEST)) {
-            if (list.size() <= 1) {
-                list = Arrays.asList(content, Constants.DEFAULT_TQ_QUERY_LOCATION);
-            }
-
-            TQSummary tqSummary = TQHttpRequest.getBaiduTQ(list.get(1));
-
-            if (tqSummary.getError() > 0) {
-                return new TextMsg("请填写正确的查询格式,4:地点(默认为:大连)");
-            }
-
-            return new TextMsg(tqSummary.toString());
-        } else if (list.get(0).equals(Constants.BD_REQUEST)) {
-            if (list.size() <= 1) {
-                return new TextMsg("请注意绑定的格式为:\n " +
-                        "3:0123456789(学生卡号)\n" +
-                        "数字3与卡号用英文冒号隔开");
-            }
-
-            String userWeixinId = msg.getFromUserName();
-            String userCardNum = list.get(1);
-
-            if (bindService.bind(userCardNum, userWeixinId)) {
-                if (LOG.isInfoEnabled())
-                    LOG.info("[OK] {} 绑定卡号成功", userCardNum);
-                return new TextMsg("绑定卡号成功" + userCardNum);
-            } else {
-                return new TextMsg("您已经绑定了,微信号与卡号一一对应,如绑定信息错误请联系管理员.");
-            }
-        } else if (list.get(0).equals(Constants.RQ_REQUEST)) {
-            String queryDate = DateUtils.now4Y2M2D();
-
-            if (list.size() > 1) {
-                queryDate = DateUtils.dateFormat4Y2M2D(list.get(1));
-            }
-
-            RQSummary summary = RQHttpRequest.getDateInfo(queryDate);
-
-            if (!summary.getError_code().equals("0") || summary.getError_code().length() > 1) {
-                return new TextMsg("请输入正确是查询格式,如 5:20150503");
-            } else {
-                return new TextMsg(summary.toString());
-            }
         }
 
-            if (LOG.isDebugEnabled())
-            LOG.debug("用户发送到服务器的内容:{}", content);
-
-        return new TextMsg("请输入正确的信息！");
+        return new TextMsg("请您按着帮助文档输入正确的数据格式");
     }
 
     @Override

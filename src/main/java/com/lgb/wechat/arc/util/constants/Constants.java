@@ -8,24 +8,17 @@ public class Constants {
     public static final int DEFAULT_RECORD_NOT_DELETE = 0;
 
     // 微信菜单
-    public static final String MENU_XNFU_KEY = "xnfw"; //校内服务
     public static final String MENU_XINWEN_KEY = "xinwen"; //一级导航栏新闻
-//    public final static String MENU_JRKC_KEY = "jrkc"; //今日课表
     public static final String MENU_JWGG_KEY = "jwgg"; //教务公告
     public static final String MENU_ZXJY_KEY = "zxjy"; //在线教育
-//    public final static String MENU_CJCX_KEY = "cjcx"; //成绩查询
     public static final String MENU_SHZS_KEY = "shzs"; //生活助手
     public static final String MENU_WYJ_KEY = "wyj"; //外语角
     public static final String MENU_CJCX_KEY = "cjcx"; //成绩
     public static final String MENU_JRKC_KEY = "jrkc"; //今日课程
-    public static final String MENU_TQCX_KEY = "cxbz"; //天气查询
+    public static final String MENU_TQCX_KEY = "tqcx"; //天气查询
     public static final String MENU_RQCX_KEY = "rqcx"; //日期查询
-    public static final String MENU_DCXY_KEY = "dcxy"; //多彩校园
     public static final String MENU_JQHD_KEY = "jqhd"; //近期活动
     public static final String MENU_LSZK_KEY = "lszk"; //历史周刊
-    public static final String MENU_XXJJ_KEY = "xxjj"; //学校简介
-    public static final String MENU_DXWZ_KEY = "dxwz"; //大学网站
-    public static final String MENU_XNCX_KEY = "xncx"; //校内查询
     public static final String MENU_KWXX_KEY = "kwxx"; //课外学习
     public static final String MENU_BD_KEY = "bd"; //账号绑定
     public static final String MENU_FZCX_KEY = "fzcx"; //辅助查询
@@ -53,11 +46,19 @@ public class Constants {
     public static final String DEFAULT_TQ_QUERY_LOCATION = "大连";
 
     // 帮助图片media ID
-    public static final String WECHAT_HELP_IMAGE_MEDIA_ID = "gmiIqhrNfK7n_9UlDO1aoz9VMIT17PGyFQbq6BJ3HiRx9aSKfC05usagLWFPqOjk";
+    public static final String WECHAT_HELP_IMAGE_MEDIA_ID = "ebr8ldhXDLF_5m9kfKqgKNBCv1QIY26iqGEBSNNSby2FT54UOwLA5Oec98Du8BkL";
     // 推送文章存放的collection名
     public static final String PUSH_ARTICLE_COLLECTION_NAME = "push";
     // 推送文章的类型
     public static final String PUSH_ARTICLE_TYPE = "push";
     // 设定为默认非推送状态
     public static final int DEFAULT_PUSH_ARTICLE_NOT_PUSHED = 0;
+    // 天气查询
+    public static final String WEIXIN_MSG_TIANQI_PREFIX = "TQ";
+    // 日期查询
+    public static final String WEINXIN_MSG_RIQI_PREFIX = "RQ";
+    // 成绩查询
+    public static final String WEIXIN_MSG_CHENGJI_PREFIX = "CJ";
+    // 课程查询
+    public static final String WEIXIN_MSG_KECHENG_PREFIX = "KC";
 }
